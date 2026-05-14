@@ -1,0 +1,66 @@
+# Deploy static export (out/) to S3 + CloudFront invalidation.
+# Configure on github.com/autoconnecto/website:
+# Secrets:
+#   AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+#   WEBSITE_S3_BUCKET
+#   WEBSITE_CLOUDFRONT_DISTRIBUTION_ID  (optional — skip invalidation if unset)
+# Repository variables (Settings → Variables → Actions), all optional:
+#   NEXT_PUBLIC_SITE_URL  (defaults to https://www.autoconnecto.in in workflow)
+#   NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, NEXT_PUBLIC_LEAD_WEBHOOK_URL, NEXT_PUBLIC_LEADS_EMAIL
+#
+# Region: ap-south-1 (match other Autoconnecto buckets unless you know otherwise).
+
+name: Website — deploy static export to S3
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # package-lock.json may be gitignored in this tree; use install until lockfile is committed.
+      - name: Install
+        run: npm install
+
+      - name: Build static export
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }}
+          NEXT_PUBLIC_LEAD_WEBHOOK_URL: ${{ vars.NEXT_PUBLIC_LEAD_WEBHOOK_URL }}
+          NEXT_PUBLIC_LEADS_EMAIL: ${{ vars.NEXT_PUBLIC_LEADS_EMAIL }}
+        run: |
+          export NEXT_PUBLIC_SITE_URL="${NEXT_PUBLIC_SITE_URL:-https://www.autoconnecto.in}"
+          npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+
+      - name: Sync to S3
+        env:
+          WEBSITE_S3_BUCKET: ${{ secrets.WEBSITE_S3_BUCKET }}
+        run: |
+          test -n "$WEBSITE_S3_BUCKET"
+          aws s3 sync out/ "s3://${WEBSITE_S3_BUCKET}/" --delete --region ap-south-1
+
+      - name: Invalidate CloudFront
+        env:
+          CF_ID: ${{ secrets.WEBSITE_CLOUDFRONT_DISTRIBUTION_ID }}
+        run: |
+          if [ -z "$CF_ID" ]; then echo "Skip invalidation (WEBSITE_CLOUDFRONT_DISTRIBUTION_ID unset)"; exit 0; fi
+          aws cloudfront create-invalidation --distribution-id "$CF_ID" --paths "/*"
