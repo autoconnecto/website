@@ -65,8 +65,18 @@ jobs:
           aws s3 sync out/ "s3://${WEBSITE_S3_BUCKET}/" --delete --region ap-south-1
 
       - name: Invalidate CloudFront
+        id: invalidate
+        continue-on-error: true
         run: |
           echo "CloudFront distribution: ${WEBSITE_CLOUDFRONT_DISTRIBUTION_ID}"
           aws cloudfront create-invalidation \
             --distribution-id "${WEBSITE_CLOUDFRONT_DISTRIBUTION_ID}" \
             --paths "/*"
+
+      - name: Deploy summary
+        if: steps.invalidate.outcome == 'failure'
+        run: |
+          echo "::warning::S3 sync succeeded but CloudFront invalidation was denied."
+          echo "::warning::Attach customer-managed policy AutoconnectoWebsiteDeploy to IAM user autoconnecto-backend"
+          echo "::warning::(see website/scripts/iam/website-deploy-s3-cloudfront.policy.json) for distribution E3UPPLM5N2GQ5Z."
+          echo "::warning::Until then, invalidate /* manually in the CloudFront console after each deploy."
