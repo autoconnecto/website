@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "WebsiteBucketList",
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket", "s3:GetBucketLocation"],
+      "Resource": "arn:aws:s3:::autoconnecto-www-site"
+    },
+    {
+      "Sid": "WebsiteBucketObjects",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:PutObjectAcl"
+      ],
+      "Resource": "arn:aws:s3:::autoconnecto-www-site/*"
+    },
+    {
+      "Sid": "WebsiteCloudFrontInvalidate",
+      "Effect": "Allow",
+      "Action": "cloudfront:CreateInvalidation",
+      "Resource": "arn:aws:cloudfront::813417990382:distribution/E3UPPLM5N2GQ5Z"
+    }
+  ]
+}

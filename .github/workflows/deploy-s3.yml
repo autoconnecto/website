@@ -2,8 +2,9 @@
 # Configure on github.com/autoconnecto/website:
 # Secrets:
 #   AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
-#   WEBSITE_S3_BUCKET
-#   WEBSITE_CLOUDFRONT_DISTRIBUTION_ID  (optional — skip invalidation if unset)
+#   WEBSITE_S3_BUCKET                    e.g. autoconnecto-www-site
+#   WEBSITE_CLOUDFRONT_DISTRIBUTION_ID    production: E3UPPLM5N2GQ5Z (www marketing site)
+# IAM: attach website/scripts/iam/website-deploy-s3-cloudfront.policy.json to the CI user.
 # Repository variables (Settings → Variables → Actions), all optional:
 #   NEXT_PUBLIC_SITE_URL  (defaults to https://www.autoconnecto.in in workflow)
 #   NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, NEXT_PUBLIC_LEAD_WEBHOOK_URL, NEXT_PUBLIC_LEADS_EMAIL

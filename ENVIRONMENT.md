@@ -34,6 +34,27 @@ If you use **DNS TXT** verification instead, you do not need this env var; add t
 
 Older templates sometimes listed **Supabase, OpenAI, Gemini, Anthropic, GA, AdSense, Perplexity, Stripe** keys. The current **`website/src`** code does **not** read any of those. If you add analytics, payments, or auth to this Next app later, introduce variables then and document them here.
 
+## GitHub Actions deploy (`deploy-s3.yml`)
+
+Production (confirmed):
+
+| Setting | Value |
+|---------|--------|
+| S3 bucket | `autoconnecto-www-site` |
+| CloudFront distribution | `E3UPPLM5N2GQ5Z` |
+| Region | `ap-south-1` |
+
+On **https://github.com/autoconnecto/website** → **Settings → Secrets and variables → Actions**, add:
+
+| Secret | Value |
+|--------|--------|
+| `AWS_ACCESS_KEY_ID` | IAM user access key (e.g. `autoconnecto-backend`) |
+| `AWS_SECRET_ACCESS_KEY` | Matching secret |
+| `WEBSITE_S3_BUCKET` | `autoconnecto-www-site` |
+| `WEBSITE_CLOUDFRONT_DISTRIBUTION_ID` | `E3UPPLM5N2GQ5Z` |
+
+Attach IAM policy **`scripts/iam/website-deploy-s3-cloudfront.policy.json`** to that user (inline or customer-managed). **`ListDistributions` is not required** — only `CreateInvalidation` on the distribution ARN above.
+
 ## Security
 
 - Do **not** commit real API keys or payment keys to git.
