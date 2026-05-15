@@ -1,15 +1,17 @@
 # Deploy static export (out/) to S3 + CloudFront invalidation.
-# Configure on github.com/autoconnecto/website:
-# Secrets:
-#   AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
-#   WEBSITE_S3_BUCKET                    e.g. autoconnecto-www-site
-#   WEBSITE_CLOUDFRONT_DISTRIBUTION_ID    production: E3UPPLM5N2GQ5Z (www marketing site)
-# IAM: attach website/scripts/iam/website-deploy-s3-cloudfront.policy.json to the CI user.
-# Repository variables (Settings → Variables → Actions), all optional:
-#   NEXT_PUBLIC_SITE_URL  (defaults to https://www.autoconnecto.in in workflow)
-#   NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, NEXT_PUBLIC_LEAD_WEBHOOK_URL, NEXT_PUBLIC_LEADS_EMAIL
 #
-# Region: ap-south-1 (match other Autoconnecto buckets unless you know otherwise).
+# Required repository SECRETS (Settings → Secrets and variables → Actions → Secrets):
+#   AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+#
+# Bucket + distribution ID are not secret — set via Secrets OR Variables OR use
+# production defaults below. If sync failed with empty WEBSITE_S3_BUCKET, you likely
+# added values under the Variables tab but named them as secrets (or vice versa).
+#
+# Optional overrides (Secrets or Variables, same names):
+#   WEBSITE_S3_BUCKET                  default: autoconnecto-www-site
+#   WEBSITE_CLOUDFRONT_DISTRIBUTION_ID default: E3UPPLM5N2GQ5Z
+#
+# IAM: customer-managed policy AutoconnectoWebsiteDeploy on autoconnecto-backend.
 
 name: Website — deploy static export to S3
 
@@ -21,6 +23,10 @@ on:
 permissions:
   contents: read
 
+env:
+  WEBSITE_S3_BUCKET: ${{ secrets.WEBSITE_S3_BUCKET || vars.WEBSITE_S3_BUCKET || 'autoconnecto-www-site' }}
+  WEBSITE_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.WEBSITE_CLOUDFRONT_DISTRIBUTION_ID || vars.WEBSITE_CLOUDFRONT_DISTRIBUTION_ID || 'E3UPPLM5N2GQ5Z' }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -31,7 +37,6 @@ jobs:
         with:
           node-version: "20"
 
-      # package-lock.json may be gitignored in this tree; use install until lockfile is committed.
       - name: Install
         run: npm install
 
@@ -53,15 +58,14 @@ jobs:
           aws-region: ap-south-1
 
       - name: Sync to S3
-        env:
-          WEBSITE_S3_BUCKET: ${{ secrets.WEBSITE_S3_BUCKET }}
         run: |
-          test -n "$WEBSITE_S3_BUCKET"
+          echo "Target bucket: ${WEBSITE_S3_BUCKET}"
+          test -n "${WEBSITE_S3_BUCKET}"
           aws s3 sync out/ "s3://${WEBSITE_S3_BUCKET}/" --delete --region ap-south-1
 
       - name: Invalidate CloudFront
-        env:
-          CF_ID: ${{ secrets.WEBSITE_CLOUDFRONT_DISTRIBUTION_ID }}
         run: |
-          if [ -z "$CF_ID" ]; then echo "Skip invalidation (WEBSITE_CLOUDFRONT_DISTRIBUTION_ID unset)"; exit 0; fi
-          aws cloudfront create-invalidation --distribution-id "$CF_ID" --paths "/*"
+          echo "CloudFront distribution: ${WEBSITE_CLOUDFRONT_DISTRIBUTION_ID}"
+          aws cloudfront create-invalidation \
+            --distribution-id "${WEBSITE_CLOUDFRONT_DISTRIBUTION_ID}" \
+            --paths "/*"
