@@ -7,9 +7,9 @@
 # production defaults below. If sync failed with empty WEBSITE_S3_BUCKET, you likely
 # added values under the Variables tab but named them as secrets (or vice versa).
 #
-# Optional overrides (Secrets or Variables, same names):
-#   WEBSITE_S3_BUCKET                  default: autoconnecto-www-site
-#   WEBSITE_CLOUDFRONT_DISTRIBUTION_ID default: E3UPPLM5N2GQ5Z
+# Optional overrides (Secrets or Variables) — any of these names work:
+#   WEBSITE_S3_BUCKET or S3_BUCKET                  default: autoconnecto-www-site
+#   WEBSITE_CLOUDFRONT_DISTRIBUTION_ID or CLOUDFRONT_DISTRIBUTION_ID  default: E3UPPLM5N2GQ5Z
 #
 # IAM: customer-managed policy AutoconnectoWebsiteDeploy on autoconnecto-backend.
 
@@ -24,8 +24,9 @@ permissions:
   contents: read
 
 env:
-  WEBSITE_S3_BUCKET: ${{ secrets.WEBSITE_S3_BUCKET || vars.WEBSITE_S3_BUCKET || 'autoconnecto-www-site' }}
-  WEBSITE_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.WEBSITE_CLOUDFRONT_DISTRIBUTION_ID || vars.WEBSITE_CLOUDFRONT_DISTRIBUTION_ID || 'E3UPPLM5N2GQ5Z' }}
+  # Accept WEBSITE_* or short names (S3_BUCKET / CLOUDFRONT_DISTRIBUTION_ID) or defaults.
+  WEBSITE_S3_BUCKET: ${{ secrets.WEBSITE_S3_BUCKET || vars.WEBSITE_S3_BUCKET || secrets.S3_BUCKET || vars.S3_BUCKET || 'autoconnecto-www-site' }}
+  WEBSITE_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.WEBSITE_CLOUDFRONT_DISTRIBUTION_ID || vars.WEBSITE_CLOUDFRONT_DISTRIBUTION_ID || secrets.CLOUDFRONT_DISTRIBUTION_ID || vars.CLOUDFRONT_DISTRIBUTION_ID || 'E3UPPLM5N2GQ5Z' }}
 
 jobs:
   deploy:
