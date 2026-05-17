@@ -2,26 +2,36 @@
 
 import React, { useEffect, useRef } from 'react';
 import Icon from '@/components/ui/AppIcon';
-
-const DOCS_PUBLIC = 'https://docs.autoconnecto.in/';
-const SDK_GITHUB = 'https://github.com/autoconnecto/autoconnecto-sdk';
+import {
+  ARDUINO_SDK_GITHUB_URL,
+  DOCS_URL,
+  MOBILE_APP_DOWNLOAD_URL,
+} from '@/config/links';
 
 const cards = [
   {
     title: 'Public documentation',
     description:
       'User guides, dashboard widgets, devices, alarms, tenant settings — maintained as a dedicated docs site.',
-    href: DOCS_PUBLIC,
+    href: DOCS_URL,
     cta: 'Open docs.autoconnecto.in',
     icon: 'BookOpenIcon' as const,
   },
   {
-    title: 'Device SDK (Arduino / ESP32)',
+    title: 'Autoconnecto Arduino SDK',
     description:
-      'Clone or download the SDK from GitHub. Connect devices over MQTT/WSS with attributes, RPC, and automatic dashboard sync.',
-    href: SDK_GITHUB,
-    cta: 'View on GitHub',
+      'Official Arduino library for ESP32 and compatible boards — MQTT/WSS connectivity, telemetry, attributes, RPC, and dashboard sync. Install via Arduino Library Manager or clone from GitHub.',
+    href: ARDUINO_SDK_GITHUB_URL,
+    cta: 'Arduino SDK on GitHub',
     icon: 'CodeBracketIcon' as const,
+  },
+  {
+    title: 'Mobile app (Android APK)',
+    description:
+      'Monitor live telemetry and manage alarms on the go. The download link always serves the latest APK — same Cognito login and production API as the web app.',
+    href: MOBILE_APP_DOWNLOAD_URL,
+    cta: 'Download latest APK',
+    icon: 'DevicePhoneMobileIcon' as const,
   },
 ];
 
@@ -61,12 +71,12 @@ export default function DevelopersSection() {
             <span className="text-gradient-primary">documented platform</span>
           </h2>
           <p className="text-muted-foreground text-lg font-light">
-            Public docs for operators and integrators, plus the open device SDK for ESP32 — no hunting through search
-            results.
+            Public docs for operators, the Autoconnecto Arduino SDK for device firmware, and a mobile
+            companion app for field monitoring.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, i) => (
             <a
               key={card.title}
@@ -74,7 +84,7 @@ export default function DevelopersSection() {
               target="_blank"
               rel="noopener noreferrer"
               className={`scroll-reveal hidden-init group relative overflow-hidden rounded-2xl border border-border bg-card p-8 card-glow card-glow-hover transition-all duration-300 flex flex-col gap-4 min-h-[200px] ${
-                i === 0 ? 'scroll-reveal-delay-2' : 'scroll-reveal-delay-3'
+                i === 0 ? 'scroll-reveal-delay-2' : i === 1 ? 'scroll-reveal-delay-3' : 'scroll-reveal-delay-4'
               }`}
             >
               <div className="w-11 h-11 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center">

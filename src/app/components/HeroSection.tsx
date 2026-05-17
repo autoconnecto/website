@@ -3,10 +3,11 @@
 import React, { useEffect, useRef } from 'react';
 import Icon from '@/components/ui/AppIcon';
 import Image from 'next/image';
+import { MOBILE_APP_DOWNLOAD_URL } from '@/config/links';
 
 const trustStats = [
   { value: '10M+', label: 'Devices Supported' },
-  { value: '50+', label: 'Dashboard Widgets' },
+  { value: '60+', label: 'Dashboard Widgets' },
   { value: '99.9%', label: 'Uptime SLA' },
   { value: 'Multi', label: 'Tenant Ready' },
 ];
@@ -97,6 +98,15 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-border text-foreground font-semibold text-sm hover:bg-white/5 hover:border-primary/30 transition"
             >
               Read docs
+            </a>
+            <a
+              href={MOBILE_APP_DOWNLOAD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-primary/40 bg-primary/10 text-foreground font-semibold text-sm hover:bg-primary/20 transition"
+            >
+              <Icon name="DevicePhoneMobileIcon" size={16} className="text-primary" />
+              Download mobile app
             </a>
           </div>
 
