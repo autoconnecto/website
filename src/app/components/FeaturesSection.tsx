@@ -140,13 +140,13 @@ export default function FeaturesSection() {
             </div>
           </div>
 
-          {/* Card 3: 50+ Widgets */}
+          {/* Card 3: 60+ Widgets */}
           {/* BENTO: Row 2, col-1 */}
           <div className="scroll-reveal hidden-init scroll-reveal-delay-1 relative overflow-hidden rounded-2xl border border-border bg-card card-glow card-glow-hover transition-all duration-300 p-6">
             <div className="w-8 h-8 rounded-lg bg-violet-500/15 border border-violet-500/20 flex items-center justify-center mb-3">
               <Icon name="Squares2X2Icon" size={16} className="text-violet-400" />
             </div>
-            <h3 className="font-semibold text-base text-foreground mb-1">50+ Widget Library</h3>
+            <h3 className="font-semibold text-base text-foreground mb-1">60+ Widget Library</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-3">
               Charts, gauges, maps, tables, alarms, custom HTML — everything to build your perfect dashboard.
             </p>

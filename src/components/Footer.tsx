@@ -1,6 +1,10 @@
 import React from 'react';
 import AppLogo from '@/components/ui/AppLogo';
 import Icon from '@/components/ui/AppIcon';
+import {
+  ARDUINO_SDK_GITHUB_URL,
+  MOBILE_APP_RELEASES_URL,
+} from '@/config/links';
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.autoconnecto.in').trim().replace(/\/+$/, '');
 
@@ -9,6 +13,8 @@ const footerLinks = [
   { label: 'Features', href: '/#features', external: false },
   { label: 'Scale', href: '/#scale', external: false },
   { label: 'Developers', href: '/#developers', external: false },
+  { label: 'Arduino SDK', href: ARDUINO_SDK_GITHUB_URL, external: true },
+  { label: 'Mobile app', href: MOBILE_APP_RELEASES_URL, external: true },
   { label: 'Docs', href: 'https://docs.autoconnecto.in', external: true },
   { label: 'Privacy', href: '/privacy', external: false },
   { label: 'Terms', href: '/terms', external: false },

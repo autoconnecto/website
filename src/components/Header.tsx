@@ -4,12 +4,18 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Icon from '@/components/ui/AppIcon';
 import Link from 'next/link';
+import {
+  ARDUINO_SDK_GITHUB_URL,
+  MOBILE_APP_RELEASES_URL,
+} from '@/config/links';
 
 const navLinks = [
   { label: 'Platform', href: '/#platform' },
   { label: 'Features', href: '/#features' },
   { label: 'Scale', href: '/#scale' },
   { label: 'Developers', href: '/#developers' },
+  { label: 'Arduino SDK', href: ARDUINO_SDK_GITHUB_URL, external: true },
+  { label: 'Mobile app', href: MOBILE_APP_RELEASES_URL, external: true },
   { label: 'Docs', href: 'https://docs.autoconnecto.in', external: true },
   { label: 'Contact', href: '/#contact' },
 ];

@@ -15,7 +15,7 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 export const metadata: Metadata = {
   title: 'Autoconnecto — Enterprise IoT Platform',
   description:
-    'Autoconnecto is a full-stack IoT platform with live dashboards, 50+ widgets, MQTT/HTTPS support, RBAC, alarms engine, and white-label capability for enterprise scale.',
+    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS support, RBAC, alarms engine, and white-label capability for enterprise scale.',
   openGraph: {
     type: 'website',
     url: baseUrl,
@@ -52,7 +52,7 @@ export default function LandingPage() {
             '@context': 'https://schema.org',
             '@type': 'WebPage',
             name: 'Autoconnecto — Enterprise IoT Platform',
-            description: 'Autoconnecto is a full-stack IoT platform with live dashboards, 50+ widgets, MQTT/HTTPS support, RBAC, alarms engine, and white-label capability for enterprise scale.',
+            description: 'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS support, RBAC, alarms engine, and white-label capability for enterprise scale.',
             url: baseUrl,
             image: `${baseUrl}/assets/images/app_logo.png`,
             isPartOf: {

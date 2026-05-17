@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: 'Autoconnecto — Enterprise IoT Platform',
   description:
-    'Autoconnecto is a full-stack IoT platform with live dashboards, 50+ widgets, MQTT/HTTPS support, RBAC, alarms engine, and white-label capability for enterprise scale.',
+    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS support, RBAC, alarms engine, and white-label capability for enterprise scale.',
   keywords: ['IoT platform', 'MQTT', 'device management', 'dashboards', 'enterprise IoT', 'white-label'],
   authors: [{ name: 'Autoconnecto' }],
   creator: 'Autoconnecto',
@@ -98,6 +98,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 'https://autoconnecto.in/',
                 'https://docs.autoconnecto.in/',
                 'https://github.com/autoconnecto/autoconnecto-sdk',
+                'https://github.com/autoconnecto/autoconnecto-mobile',
               ],
               contactPoint: {
                 '@type': 'ContactPoint',
