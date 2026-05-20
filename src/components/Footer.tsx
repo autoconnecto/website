@@ -10,6 +10,7 @@ const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.autoconnecto.i
 
 const footerLinks = [
   { label: 'Platform', href: '/#platform', external: false },
+  { label: 'Pricing', href: '/pricing', external: false },
   { label: 'Features', href: '/#features', external: false },
   { label: 'Scale', href: '/#scale', external: false },
   { label: 'Developers', href: '/#developers', external: false },

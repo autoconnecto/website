@@ -12,7 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteOrigin();
   const now = new Date();
   // Single-page marketing site: only real crawlable URLs (fragments like /#features are not separate index entries).
-  return [{ url: `${base}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
+  return [
+    { url: `${base}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/pricing`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${base}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ];
