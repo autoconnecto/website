@@ -5,7 +5,7 @@
 | Variable | Purpose |
 |----------|---------|
 | **`NEXT_PUBLIC_SITE_URL`** | Canonical site origin (no trailing slash), e.g. `https://www.autoconnecto.in`. Baked into `layout.tsx`, `page.tsx`, `sitemap.ts`, and `robots.ts` at **build** time. |
-| **`NEXT_PUBLIC_API_URL`** *(optional)* | Backend origin for **`/pricing`** plan cards (fetches `GET /api/plans` at runtime). Defaults to **`https://api.autoconnecto.in`**. |
+| **`NEXT_PUBLIC_API_URL`** *(optional)* | Used at **build** time only (`scripts/fetch-public-plans.mjs`) to pull `GET /api/plans` into `public/plans.json`. Defaults to **`https://api.autoconnecto.in`**. The live site reads `/plans.json` (same origin — no browser CORS). |
 | **`NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`** *(optional)* | Google Search Console **HTML tag** verification token only (the string inside `content="..."`). Adds `<meta name="google-site-verification" …>` via Next `metadata.verification` at **build** time. |
 
 Copy **`website/.env.example`** to **`website/.env`** for local builds, or set the same variable in CI before `npm run build`.
