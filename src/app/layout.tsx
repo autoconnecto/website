@@ -50,7 +50,8 @@ export const metadata: Metadata = {
     canonical: `${baseUrl}/`,
   },
   icons: {
-    icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
+    icon: [{ url: '/favicon.png', type: 'image/png' }],
+    apple: [{ url: '/apple-touch-icon.png', type: 'image/png' }],
   },
   openGraph: {
     type: 'website',

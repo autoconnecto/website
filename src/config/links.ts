@@ -1,4 +1,6 @@
 export const DOCS_URL = "https://docs.autoconnecto.in/";
+export const DEVICE_CONNECTIVITY_DOCS_URL =
+  "https://docs.autoconnecto.in/developer/device-connectivity";
 export const APP_LOGIN_URL = "https://app.autoconnecto.in/login";
 export const APP_SIGNUP_URL = "https://app.autoconnecto.in/signup";
 export const ARDUINO_SDK_GITHUB_URL =

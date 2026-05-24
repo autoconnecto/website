@@ -84,17 +84,17 @@ export default function FeaturesSection() {
                   <Icon name="WifiIcon" size={20} className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-foreground">HTTPS &amp; MQTT Connectivity</h3>
-                  <p className="text-xs text-muted-foreground">Encrypted transport, device auth, credential management</p>
+                  <h3 className="font-semibold text-lg text-foreground">Universal device connectivity</h3>
+                  <p className="text-xs text-muted-foreground">HTTP, MQTT, WebSocket, gateways, LoRa webhooks</p>
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-lg">
-                Connect any device using industry-standard protocols. TLS/SSL encryption on both MQTT and HTTPS. Built-in device authentication and credential lifecycle management — no vendor lock-in.
+                Connect ESP32 firmware with the Arduino SDK, any device over HTTPS or MQTT, edge gateways with child relay, and LoRaWAN via ChirpStack or TTN webhooks. Per-device Check connectivity in the app; generic JSON webhooks for your own cloud.
               </p>
             </div>
             {/* Protocol badges */}
             <div className="flex gap-2 mt-4 flex-wrap">
-              {['MQTT 3.1.1', 'MQTT 5.0', 'HTTPS/REST', 'CoAP', 'LwM2M']?.map((p) => (
+              {['HTTPS / REST', 'MQTT (TLS)', 'WebSocket', 'Gateway relay', 'LoRa webhooks', 'Generic webhook']?.map((p) => (
                 <span key={p} className="px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-xs font-medium text-primary">
                   {p}
                 </span>
