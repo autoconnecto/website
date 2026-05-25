@@ -95,18 +95,31 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               url: `${baseUrl}/`,
               logo: `${baseUrl}/assets/images/app_logo.png`,
               description: 'Enterprise IoT Platform for device management and visualization',
+              email: 'support@autoconnecto.in',
               sameAs: [
                 'https://autoconnecto.in/',
+                'https://www.autoconnecto.in/',
+                'https://app.autoconnecto.in/',
                 'https://docs.autoconnecto.in/',
                 'https://github.com/autoconnecto/autoconnecto-sdk',
                 'https://github.com/autoconnecto/autoconnecto-mobile',
               ],
-              contactPoint: {
-                '@type': 'ContactPoint',
-                contactType: 'Customer Support',
-                telephone: '+91-92121-00555',
-                areaServed: 'IN',
-              },
+              contactPoint: [
+                {
+                  '@type': 'ContactPoint',
+                  contactType: 'Customer Support',
+                  email: 'support@autoconnecto.in',
+                  telephone: '+91-92121-00555',
+                  areaServed: 'IN',
+                },
+                {
+                  '@type': 'ContactPoint',
+                  contactType: 'Sales',
+                  email: 'founder@autoconnecto.in',
+                  telephone: '+91-92121-00555',
+                  areaServed: 'IN',
+                },
+              ],
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Villa-71, Galaxy Enclave, Mahindra SEZ Road, Kalwara',

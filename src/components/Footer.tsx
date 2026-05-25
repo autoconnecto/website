@@ -9,6 +9,7 @@ import {
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.autoconnecto.in').trim().replace(/\/+$/, '');
 
 const footerLinks = [
+  { label: 'Product', href: '/product', external: false },
   { label: 'Platform', href: '/#platform', external: false },
   { label: 'Pricing', href: '/pricing', external: false },
   { label: 'Features', href: '/#features', external: false },
@@ -23,6 +24,7 @@ const footerLinks = [
 
 const socialLinks = [
   { icon: 'GlobeAltIcon', href: `${siteUrl}/`, label: 'Marketing site' },
+  { icon: 'EnvelopeIcon', href: 'mailto:support@autoconnecto.in', label: 'Email support' },
   { icon: 'EnvelopeIcon', href: 'mailto:founder@autoconnecto.in', label: 'Email founder' },
 ];
 

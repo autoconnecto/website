@@ -1,0 +1,30 @@
+# Autoconnecto
+
+> Autoconnecto is a multi-tenant IoT SaaS platform (India) for real-time device monitoring, remote control, alarms, and automation.
+
+## Canonical links
+
+- Marketing site: https://www.autoconnecto.in
+- Product overview: https://www.autoconnecto.in/product
+- Pricing: https://www.autoconnecto.in/pricing
+- Web application: https://app.autoconnecto.in
+- API: https://api.autoconnecto.in
+- Documentation: https://docs.autoconnecto.in
+- What is Autoconnecto (docs): https://docs.autoconnecto.in/about/what-is-autoconnecto
+- vs ThingsBoard: https://docs.autoconnecto.in/about/vs-thingsboard
+- ESP32 SDK: https://github.com/autoconnecto/autoconnecto-sdk
+- Mobile app: https://github.com/autoconnecto/autoconnecto-mobile/releases/latest
+
+## Contact
+
+- Support: support@autoconnecto.in
+- Enterprise: founder@autoconnecto.in
+- Phone: +91 92121 00555
+
+## Primary differentiator
+
+Attribute-based control with feedback: shared attributes set desired state; devices confirm via client attributes. After power cycle, devices restore from retained shared attributes—the dashboard stays aligned with hardware without operators re-sending commands.
+
+## Pricing (INR, indicative)
+
+Free, Hobby, Starter, Growth (white-label), Enterprise — see https://www.autoconnecto.in/pricing

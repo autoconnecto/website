@@ -10,6 +10,7 @@ import {
 } from '@/config/links';
 
 const navLinks = [
+  { label: 'Product', href: '/product' },
   { label: 'Platform', href: '/#platform' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Features', href: '/#features' },
