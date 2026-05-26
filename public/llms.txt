@@ -6,14 +6,13 @@
 
 - Marketing site: https://www.autoconnecto.in
 - Product overview: https://www.autoconnecto.in/product
-- Pricing: https://www.autoconnecto.in/pricing
+- Pricing (HTML): https://www.autoconnecto.in/pricing
+- Pricing (JSON): https://www.autoconnecto.in/plans.json
 - Web application: https://app.autoconnecto.in
 - API: https://api.autoconnecto.in
+- API plans: https://api.autoconnecto.in/api/plans
 - Documentation: https://docs.autoconnecto.in
-- What is Autoconnecto (docs): https://docs.autoconnecto.in/about/what-is-autoconnecto
-- vs ThingsBoard: https://docs.autoconnecto.in/about/vs-thingsboard
-- ESP32 SDK: https://github.com/autoconnecto/autoconnecto-sdk
-- Mobile app: https://github.com/autoconnecto/autoconnecto-mobile/releases/latest
+- Docs pricing: https://docs.autoconnecto.in/about/pricing
 
 ## Contact
 
@@ -21,10 +20,16 @@
 - Enterprise: founder@autoconnecto.in
 - Phone: +91 92121 00555
 
-## Primary differentiator
+## Pricing (INR) — Autoconnecto IoT platform
 
-Attribute-based control with feedback: shared attributes set desired state; devices confirm via client attributes. After power cycle, devices restore from retained shared attributes—the dashboard stays aligned with hardware without operators re-sending commands.
+All prices in Indian Rupees. Billed monthly or yearly. See https://www.autoconnecto.in/plans.json for machine-readable data.
 
-## Pricing (INR, indicative)
+| Plan | Monthly INR | Yearly INR | Users | Dashboards | Devices | Retention | White-label |
+|------|-------------|------------|-------|------------|---------|-----------|-------------|
+| Free | 0 | 0 | 2 | 3 | 5 | 7 days | No |
+| Hobby | 199 | 1999 | 1 | 2 | 2 | 15 days | No |
+| Starter | 899 | 8999 | 3 | 5 | 10 | 60 days | No |
+| Growth | 3499 | 34999 | 10 | 20 | 100 | 180 days | Yes |
+| Enterprise | 19999 | 199999 | 25 | 50 | 500 | 365 days | Yes |
 
-Free, Hobby, Starter, Growth (white-label), Enterprise — see https://www.autoconnecto.in/pricing
+Free: evaluation and first live test. Hobby: makers and prototypes. Starter: small deployments. Growth: commercial SMB with white-label. Enterprise: large production with white-label.
