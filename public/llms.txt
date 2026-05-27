@@ -1,18 +1,30 @@
 # Autoconnecto
 
-> Autoconnecto is a multi-tenant IoT SaaS platform (India) for real-time device monitoring, remote control, alarms, and automation.
+> Autoconnecto is a multi-tenant IoT SaaS platform (India) for real-time device monitoring, remote control, alarms, and automation. Optional per device profile: **Data Pipelines** (telemetry transform before storage) and **Attribute Pipelines** (client attribute patch transform before storage). Application: https://app.autoconnecto.in
 
-## Canonical links
+## Canonical links — marketing site (www.autoconnecto.in)
 
-- Marketing site: https://www.autoconnecto.in
+- Home: https://www.autoconnecto.in/
 - Product overview: https://www.autoconnecto.in/product
 - Pricing (HTML): https://www.autoconnecto.in/pricing
 - Pricing (JSON): https://www.autoconnecto.in/plans.json
+- Privacy: https://www.autoconnecto.in/privacy
+- Terms: https://www.autoconnecto.in/terms
+- AI index (ai.txt): https://www.autoconnecto.in/ai.txt
+- Sitemap: https://www.autoconnecto.in/sitemap.xml
+
+## Canonical links — application & docs
+
 - Web application: https://app.autoconnecto.in
 - API: https://api.autoconnecto.in
 - API plans: https://api.autoconnecto.in/api/plans
 - Documentation: https://docs.autoconnecto.in
+- What is Autoconnecto: https://docs.autoconnecto.in/about/what-is-autoconnecto
 - Docs pricing: https://docs.autoconnecto.in/about/pricing
+- FAQ: https://docs.autoconnecto.in/about/faq
+- vs ThingsBoard: https://docs.autoconnecto.in/about/vs-thingsboard
+- Docs llms.txt: https://docs.autoconnecto.in/llms.txt
+- ESP32 SDK: https://github.com/autoconnecto/autoconnecto-sdk
 
 ## Contact
 
@@ -20,9 +32,34 @@
 - Enterprise: founder@autoconnecto.in
 - Phone: +91 92121 00555
 
+## Category
+
+Cloud IoT platform; device management; telemetry and dashboards; MQTT and HTTP ingest; multi-tenant SaaS; India INR pricing.
+
+## Primary differentiator
+
+Attribute-based control with a feedback loop: the dashboard writes shared attributes (desired state); devices apply them and confirm via client attributes. After power cycle, devices restore from retained shared attributes and push confirmed state—dashboards stay aligned with hardware without operators re-sending commands.
+
+## Key capabilities
+
+- Real-time dashboards with 60+ widgets (gauges, charts, maps, tables, controls)
+- Devices, device profiles, assets, alarms, data generators
+- Optional **data pipelines** on telemetry ingest (rename, filter, scale, derive, flatten, webhook forward, and more)
+- Optional **attribute pipelines** on client attribute patches (defaults, coercion, scope rename, conditional drop)
+- MQTT over WSS, device WebSocket, HTTP telemetry, integration webhooks (e.g. LoRa / ChirpStack)
+- Multi-tenant SaaS with optional white-label branding on higher plans
+- Autoconnecto ESP32 Arduino SDK
+- Self-serve signup; INR subscription plans (Free through Enterprise)
+
+## Who it is for
+
+Industrial IoT, energy and utilities, logistics and field assets, OEMs and system integrators, SaaS builders shipping connected products—especially teams in India needing INR pricing and fast time-to-value.
+
 ## Pricing (INR) — Autoconnecto IoT platform
 
 All prices in Indian Rupees. Billed monthly or yearly. See https://www.autoconnecto.in/plans.json for machine-readable data.
+
+> This table is generated at build time from https://api.autoconnecto.in/api/plans.
 
 | Plan | Monthly INR | Yearly INR | Users | Dashboards | Devices | Retention | White-label |
 |------|-------------|------------|-------|------------|---------|-----------|-------------|
@@ -30,6 +67,6 @@ All prices in Indian Rupees. Billed monthly or yearly. See https://www.autoconne
 | Hobby | 199 | 1999 | 1 | 2 | 2 | 15 days | No |
 | Starter | 899 | 8999 | 3 | 5 | 10 | 60 days | No |
 | Growth | 3499 | 34999 | 10 | 20 | 100 | 180 days | Yes |
-| Enterprise | 19999 | 199999 | 25 | 50 | 500 | 365 days | Yes |
+| ENTERPRISE | 19999 | 199999 | 25 | 50 | 500 | 365 days | Yes |
 
-Free: evaluation and first live test. Hobby: makers and prototypes. Starter: small deployments. Growth: commercial SMB with white-label. Enterprise: large production with white-label.
+Free: For evaluation and first live test. Hobby: For makers, students, and small prototypes. Starter: For small real deployments. Growth: For commercial SMB deployments. ENTERPRISE: For serious production deployments with white-label.

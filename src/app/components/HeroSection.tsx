@@ -69,7 +69,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-3">
-            Autoconnecto gives engineering teams a production-ready IoT backbone — MQTT & HTTPS device connectivity, live dashboards, enterprise RBAC, and white-label capability.
+            Autoconnecto gives engineering teams a production-ready IoT backbone — MQTT &amp; HTTPS connectivity, optional data &amp; attribute pipelines, live dashboards, enterprise RBAC, and white-label capability.
           </p>
           <p className="text-sm text-primary/90 font-medium max-w-2xl mx-auto mb-10">
             For OEMs, system integrators, and enterprise IT teams shipping connected products — not one-off science projects.

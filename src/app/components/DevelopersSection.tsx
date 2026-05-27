@@ -7,6 +7,9 @@ import {
   DEVICE_CONNECTIVITY_DOCS_URL,
   DOCS_URL,
   MOBILE_APP_DOWNLOAD_URL,
+  SDK_INTEGRATIONS_URL,
+  SDK_LINUX_SBC_EXAMPLES_URL,
+  SDK_STM32_ARDUINO_GUIDE_URL,
 } from '@/config/links';
 
 const cards = [
@@ -21,9 +24,33 @@ const cards = [
   {
     title: 'Autoconnecto Arduino SDK',
     description:
-      'ESP32 library for MQTT/WSS and HTTPS — telemetry, attributes, RPC, batch HTTP, and gateway relay sketches. Plus integration examples (generic webhook, ChirpStack, TTN) for servers and LoRa.',
+      'ESP32 library for MQTT/WSS and HTTPS — telemetry, attributes, RPC, LTE PPP (EC200), watchdog/reconnect patterns, and batch telemetry examples. Plus gateway and integration scripts.',
     href: ARDUINO_SDK_GITHUB_URL,
     cta: 'Arduino SDK on GitHub',
+    icon: 'CodeBracketIcon' as const,
+  },
+  {
+    title: 'STM32 (Arduino core)',
+    description:
+      'Quick-start guide for STM32 users using Arduino cores: topic contracts, TLS roots, and a template sketch to publish telemetry and receive attributes/RPC.',
+    href: SDK_STM32_ARDUINO_GUIDE_URL,
+    cta: 'Open STM32 guide',
+    icon: 'CommandLineIcon' as const,
+  },
+  {
+    title: 'Linux SBC / gateways',
+    description:
+      'Raspberry Pi / Debian / Ubuntu gateway examples: MQTT + HTTPS device scripts mirroring ESP32 example names, plus a systemd template for run-on-boot.',
+    href: SDK_LINUX_SBC_EXAMPLES_URL,
+    cta: 'Open Linux examples',
+    icon: 'SignalIcon' as const,
+  },
+  {
+    title: 'Industrial integrations',
+    description:
+      'Gateway scripts for OPC‑UA, Modbus (TCP/RTU), MQTT bridging, and generic webhooks — forward plant protocols to Autoconnecto token telemetry topics.',
+    href: SDK_INTEGRATIONS_URL,
+    cta: 'Browse integrations',
     icon: 'CodeBracketIcon' as const,
   },
   {
@@ -84,7 +111,7 @@ export default function DevelopersSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {cards.map((card, i) => (
             <a
               key={card.title}

@@ -14,11 +14,16 @@ export default function robots(): MetadataRoute.Robots {
   const aiAgents = [
     'GPTBot',
     'ChatGPT-User',
+    'OAI-SearchBot',
     'Google-Extended',
     'anthropic-ai',
     'ClaudeBot',
+    'Claude-Web',
     'PerplexityBot',
     'Applebot-Extended',
+    'cohere-ai',
+    'Bytespider',
+    'CCBot',
   ];
 
   return {

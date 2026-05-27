@@ -20,6 +20,7 @@ const footerLinks = [
   { label: 'Docs', href: 'https://docs.autoconnecto.in', external: true },
   { label: 'Privacy', href: '/privacy', external: false },
   { label: 'Terms', href: '/terms', external: false },
+  { label: 'AI guide', href: '/llms.txt', external: false },
 ];
 
 const socialLinks = [

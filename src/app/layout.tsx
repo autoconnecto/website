@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import { DM_Sans, Fraunces } from 'next/font/google';
+import { siteOrigin } from '@/lib/siteOrigin';
 import '../styles/tailwind.css';
 
 const dmSans = DM_Sans({
@@ -22,7 +23,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').trim().replace(/\/+$/, '');
+const baseUrl = siteOrigin();
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
 
@@ -30,8 +31,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: 'Autoconnecto — Enterprise IoT Platform',
   description:
-    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS support, RBAC, alarms engine, and white-label capability for enterprise scale.',
-  keywords: ['IoT platform', 'MQTT', 'device management', 'dashboards', 'enterprise IoT', 'white-label'],
+    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS, optional data and attribute pipelines, RBAC, alarms, and white-label for enterprise scale. India.',
+  keywords: [
+    'IoT platform',
+    'MQTT',
+    'device management',
+    'dashboards',
+    'enterprise IoT',
+    'white-label',
+    'data pipelines',
+    'India IoT SaaS',
+  ],
   authors: [{ name: 'Autoconnecto' }],
   creator: 'Autoconnecto',
   publisher: 'Autoconnecto',
@@ -84,7 +94,26 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
+      <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt — site summary for AI assistants" />
+        <link rel="alternate" type="text/plain" href="/ai.txt" title="AI.txt — machine-readable site index" />
+      </head>
       <body className={dmSans.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Autoconnecto',
+              url: `${baseUrl}/`,
+              description:
+                'Enterprise IoT platform for device management, dashboards, pipelines, and realtime control.',
+              publisher: { '@type': 'Organization', name: 'Autoconnecto', url: `${baseUrl}/` },
+              inLanguage: 'en',
+            }),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

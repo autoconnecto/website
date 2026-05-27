@@ -258,8 +258,45 @@ export default function FeaturesSection() {
             </div>
           </div>
 
-          {/* Card 8: Multi-Tenant — col-span-3 */}
-          {/* BENTO: Row 4, col-1-3, cs-3 */}
+          {/* Card 8: Data & attribute pipelines — col-span-3 */}
+          <div className="scroll-reveal hidden-init scroll-reveal-delay-2 lg:col-span-3 relative overflow-hidden rounded-2xl border border-border bg-card card-glow card-glow-hover transition-all duration-300 p-6 flex flex-col md:flex-row items-start md:items-center gap-6">
+            <div
+              className="absolute inset-0 opacity-15 pointer-events-none"
+              style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.12) 0%, transparent 55%)' }}
+            />
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-violet-500/15 border border-violet-500/20 flex items-center justify-center">
+              <Icon name="Squares2X2Icon" size={24} className="text-violet-400" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-semibold text-lg text-foreground mb-1">Data &amp; attribute pipelines</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
+                Optional per device profile: transform telemetry and client attributes before storage — rename keys, filter bad readings, flatten nested JSON, compute fields, and bulk key scope changes. Blank profile binding means passthrough (store as received).{' '}
+                <a href="/product#pipelines" className="text-violet-300 font-medium hover:underline">
+                  See product overview →
+                </a>
+              </p>
+              <div className="flex gap-2 mt-3 flex-wrap">
+                {['Rename & scope', 'Filter / clamp', 'Scale & derive', 'Flatten JSON', 'Pick keys', 'Webhooks']?.map((p) => (
+                  <span key={p} className="px-3 py-1 rounded-full border border-violet-500/20 bg-violet-500/10 text-xs font-medium text-violet-300">
+                    {p}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex-shrink-0 grid grid-cols-2 gap-3 text-center min-w-[200px]">
+              {[
+                { v: '2', l: 'Pipeline types' },
+                { v: '14+', l: 'Step kinds' },
+              ]?.map((s, i) => (
+                <div key={i} className="bg-secondary/40 rounded-xl px-4 py-3">
+                  <div className="font-display font-bold text-xl text-violet-400">{s?.v}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">{s?.l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Card 9: Multi-Tenant — col-span-3 */}
           <div className="scroll-reveal hidden-init scroll-reveal-delay-2 lg:col-span-3 relative overflow-hidden rounded-2xl border border-border bg-card card-glow card-glow-hover transition-all duration-300 p-6 flex flex-col md:flex-row items-start md:items-center gap-6">
             <div
               className="absolute inset-0 opacity-15 pointer-events-none"

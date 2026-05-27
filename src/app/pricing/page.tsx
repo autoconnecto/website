@@ -4,10 +4,9 @@ import Footer from '@/components/Footer';
 import PricingPlansServer from '@/app/components/PricingPlansServer';
 import { getPublicPlans } from '@/lib/publicPlans';
 import { buildPricingJsonLd } from '@/lib/pricingJsonLd';
+import { siteOrigin } from '@/lib/siteOrigin';
 
-const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000')
-  .trim()
-  .replace(/\/+$/, '');
+const baseUrl = siteOrigin();
 
 const plans = getPublicPlans();
 const priceSummary = plans

@@ -9,18 +9,21 @@ import ScaleSection from '@/app/components/ScaleSection';
 import DevelopersSection from '@/app/components/DevelopersSection';
 import ContactSection from '@/app/components/ContactSection';
 import TestimonialsSection from '@/app/components/TestimonialsSection';
+import { siteOrigin } from '@/lib/siteOrigin';
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const baseUrl = siteOrigin();
 
 export const metadata: Metadata = {
   title: 'Autoconnecto — Enterprise IoT Platform',
   description:
-    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS support, RBAC, alarms engine, and white-label capability for enterprise scale.',
+    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS support, optional data and attribute pipelines, RBAC, alarms engine, and white-label capability for enterprise scale.',
+  alternates: { canonical: `${baseUrl}/` },
   openGraph: {
     type: 'website',
-    url: baseUrl,
+    url: `${baseUrl}/`,
     title: 'Autoconnecto — Enterprise IoT Platform',
-    description: 'Full-stack IoT platform for enterprise device management and visualization.',
+    description:
+      'Full-stack IoT platform: dashboards, pipelines, alarms, MQTT/HTTPS, multi-tenant SaaS from India.',
     siteName: 'Autoconnecto',
     images: [
       {
@@ -36,7 +39,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Autoconnecto — Enterprise IoT Platform',
-    description: 'Full-stack IoT platform for enterprise device management and visualization.',
+    description:
+      'Full-stack IoT platform: dashboards, pipelines, alarms, MQTT/HTTPS, multi-tenant SaaS from India.',
     images: [`${baseUrl}/assets/images/app_logo.png`],
   },
 };
@@ -52,8 +56,9 @@ export default function LandingPage() {
             '@context': 'https://schema.org',
             '@type': 'WebPage',
             name: 'Autoconnecto — Enterprise IoT Platform',
-            description: 'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS support, RBAC, alarms engine, and white-label capability for enterprise scale.',
-            url: baseUrl,
+            description:
+              'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS, optional data and attribute pipelines, RBAC, alarms, and white-label capability.',
+            url: `${baseUrl}/`,
             image: `${baseUrl}/assets/images/app_logo.png`,
             isPartOf: {
               '@type': 'WebSite',
@@ -79,12 +84,8 @@ export default function LandingPage() {
             offers: {
               '@type': 'Offer',
               price: '0',
-              priceCurrency: 'USD',
-            },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '4.8',
-              ratingCount: '100',
+              priceCurrency: 'INR',
+              url: `${baseUrl}/pricing`,
             },
             author: {
               '@type': 'Organization',

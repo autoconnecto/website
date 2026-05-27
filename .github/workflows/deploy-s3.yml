@@ -12,12 +12,17 @@
 #   WEBSITE_CLOUDFRONT_DISTRIBUTION_ID or CLOUDFRONT_DISTRIBUTION_ID  default: E3UPPLM5N2GQ5Z
 #
 # IAM: customer-managed policy AutoconnectoWebsiteDeploy on autoconnecto-backend.
+#
+# Triggered by backend after platform-admin plan changes when EC2 has
+# PLANS_CATALOG_DISPATCH_PAT (repository_dispatch: plans-catalog-changed).
 
 name: Website — deploy static export to S3
 
 on:
   push:
     branches: [main]
+  repository_dispatch:
+    types: [plans-catalog-changed]
   workflow_dispatch:
 
 permissions:

@@ -17,6 +17,20 @@ export const SUPPORT_PHONE = "+919212100555";
 export const ARDUINO_SDK_GITHUB_URL =
   "https://github.com/autoconnecto/autoconnecto-sdk";
 
+// Deep links into the SDK repo (used on marketing site)
+export const SDK_STM32_ARDUINO_GUIDE_URL =
+  "https://github.com/autoconnecto/autoconnecto-sdk/blob/main/stm32/README.md";
+export const SDK_LINUX_SBC_EXAMPLES_URL =
+  "https://github.com/autoconnecto/autoconnecto-sdk/blob/main/raspberrypi/README.md";
+export const SDK_INTEGRATIONS_URL =
+  "https://github.com/autoconnecto/autoconnecto-sdk/tree/main/examples/integrations";
+export const SDK_OPCUA_GATEWAY_URL =
+  "https://github.com/autoconnecto/autoconnecto-sdk/tree/main/examples/integrations/opcua-gateway";
+export const SDK_MODBUS_GATEWAY_URL =
+  "https://github.com/autoconnecto/autoconnecto-sdk/tree/main/examples/integrations/modbus-gateway";
+export const SDK_MQTT_BRIDGE_URL =
+  "https://github.com/autoconnecto/autoconnecto-sdk/tree/main/examples/integrations/mqtt-bridge";
+
 /** Latest mobile release notes (GitHub redirects to newest tag). */
 export const MOBILE_APP_RELEASES_URL =
   "https://github.com/autoconnecto/autoconnecto-mobile/releases/latest";
