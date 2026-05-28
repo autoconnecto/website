@@ -4,12 +4,12 @@
     "display_name": "Free",
     "price_monthly_inr": 0,
     "price_yearly_inr": 0,
-    "max_users": 2,
-    "max_dashboards": 3,
-    "max_devices": 5,
+    "max_users": 1,
+    "max_dashboards": 1,
+    "max_devices": 2,
     "telemetry_per_minute": 120,
     "telemetry_per_day": 10000,
-    "retention_days": 7,
+    "retention_days": 3,
     "min_telemetry_interval_sec": 30,
     "min_aggregation_interval_sec": 60,
     "whitelabel_enabled": false,
@@ -34,7 +34,7 @@
     "whitelabel_enabled": false,
     "description": "For makers, students, and small prototypes",
     "sort_order": 2,
-    "is_active": false,
+    "is_active": true,
     "is_public_visible": true
   },
   {
@@ -53,7 +53,7 @@
     "whitelabel_enabled": false,
     "description": "For small real deployments",
     "sort_order": 3,
-    "is_active": false,
+    "is_active": true,
     "is_public_visible": true
   },
   {
@@ -72,7 +72,7 @@
     "whitelabel_enabled": true,
     "description": "For commercial SMB deployments",
     "sort_order": 4,
-    "is_active": false,
+    "is_active": true,
     "is_public_visible": true
   },
   {
@@ -91,7 +91,7 @@
     "whitelabel_enabled": true,
     "description": "For serious production deployments with white-label",
     "sort_order": 5,
-    "is_active": false,
+    "is_active": true,
     "is_public_visible": true
   }
 ]

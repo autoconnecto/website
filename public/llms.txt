@@ -63,7 +63,7 @@ All prices in Indian Rupees. Billed monthly or yearly. See https://www.autoconne
 
 | Plan | Monthly INR | Yearly INR | Users | Dashboards | Devices | Retention | White-label |
 |------|-------------|------------|-------|------------|---------|-----------|-------------|
-| Free | 0 | 0 | 2 | 3 | 5 | 7 days | No |
+| Free | 0 | 0 | 1 | 1 | 2 | 3 days | No |
 | Hobby | 199 | 1999 | 1 | 2 | 2 | 15 days | No |
 | Starter | 899 | 8999 | 3 | 5 | 10 | 60 days | No |
 | Growth | 3499 | 34999 | 10 | 20 | 100 | 180 days | Yes |

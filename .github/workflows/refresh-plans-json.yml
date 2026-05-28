@@ -1,0 +1,63 @@
+# Refresh /plans.json in S3 from the Plans API (live catalog),
+# without rebuilding the website. This keeps pricing "live" while
+# still hosting the site as static S3/CloudFront.
+#
+# Uses the same AWS secrets/vars conventions as deploy-s3.yml.
+name: Website — refresh plans.json
+
+on:
+  schedule:
+    # Every 15 minutes
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  WEBSITE_S3_BUCKET: ${{ secrets.WEBSITE_S3_BUCKET || vars.WEBSITE_S3_BUCKET || secrets.S3_BUCKET || vars.S3_BUCKET || 'autoconnecto-www-site' }}
+  WEBSITE_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.WEBSITE_CLOUDFRONT_DISTRIBUTION_ID || vars.WEBSITE_CLOUDFRONT_DISTRIBUTION_ID || secrets.CLOUDFRONT_DISTRIBUTION_ID || vars.CLOUDFRONT_DISTRIBUTION_ID || 'E3UPPLM5N2GQ5Z' }}
+  API_BASE_URL: ${{ vars.NEXT_PUBLIC_API_URL || vars.API_BASE_URL || 'https://api.autoconnecto.in' }}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch plans from API
+        id: fetch
+        run: |
+          set -euo pipefail
+          api="${API_BASE_URL%/}/api/plans"
+          echo "GET ${api}"
+          node -e "fetch(process.env.API).then(r=>{if(!r.ok) throw new Error('HTTP '+r.status); return r.json()}).then(j=>{if(!Array.isArray(j)) throw new Error('not array'); console.log(JSON.stringify(j,null,2))})" > plans.json
+        env:
+          API: ${{ env.API_BASE_URL }}/api/plans
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+
+      - name: Upload plans.json to S3
+        run: |
+          set -e
+          echo "Target bucket: ${WEBSITE_S3_BUCKET}"
+          test -n "${WEBSITE_S3_BUCKET}"
+          aws s3 cp plans.json "s3://${WEBSITE_S3_BUCKET}/plans.json" \
+            --content-type "application/json" \
+            --cache-control "public, max-age=60, s-maxage=60, must-revalidate"
+
+      - name: Invalidate CloudFront (plans.json only)
+        continue-on-error: true
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${WEBSITE_CLOUDFRONT_DISTRIBUTION_ID}" \
+            --paths "/plans.json"
+
