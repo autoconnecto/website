@@ -37,7 +37,7 @@ const FLOW_STEPS = [
   {
     icon: 'BellAlertIcon',
     title: 'Act',
-    desc: 'Alarms, shared attributes, remote control',
+    desc: 'Alarms, rule engine, scheduler, shared attributes, remote control',
   },
 ];
 
@@ -73,16 +73,16 @@ const PILLARS = [
   {
     icon: 'BellAlertIcon',
     color: 'orange',
-    title: 'Alarms & rules',
-    desc: 'Profile alarm rules on telemetry and attributes. Escalation, acknowledge, inactivity — without a heavy rule-engine canvas.',
-    tags: ['Thresholds', 'Inactivity', 'Notify'],
+    title: 'Alarms & automation',
+    desc: 'Profile alarm rules plus a visual rule engine for ingest-time logic. Escalation, acknowledge, inactivity, email — SMS delivery still parked.',
+    tags: ['Alarms', 'Rule engine', 'Notify'],
   },
   {
     icon: 'LockClosedIcon',
     color: 'emerald',
     title: 'Enterprise ready',
-    desc: 'Multi-tenant isolation, RBAC, white-label branding, custom domains, INR plans from free tier to enterprise.',
-    tags: ['RBAC', 'White-label', 'Multi-tenant'],
+    desc: 'Multi-tenant isolation, RBAC, white-label branding, custom domains, calculated fields, scheduler, Integration Hub, and INR plans from free tier to enterprise.',
+    tags: ['RBAC', 'White-label', 'Scheduler'],
   },
 ];
 

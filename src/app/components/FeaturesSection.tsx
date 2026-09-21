@@ -94,7 +94,7 @@ export default function FeaturesSection() {
             </div>
             {/* Protocol badges */}
             <div className="flex gap-2 mt-4 flex-wrap">
-              {['HTTPS / REST', 'MQTT (TLS)', 'WebSocket', 'Gateway relay', 'LoRa webhooks', 'Generic webhook']?.map((p) => (
+              {['HTTPS / REST', 'MQTT (TLS)', 'WebSocket', 'Gateway relay', 'LoRa webhooks', 'Modbus (MQTT serial)', 'Generic webhook']?.map((p) => (
                 <span key={p} className="px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-xs font-medium text-primary">
                   {p}
                 </span>
@@ -293,6 +293,32 @@ export default function FeaturesSection() {
                   <div className="text-xs text-muted-foreground mt-0.5">{s?.l}</div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Card: Automation stack — Rule engine, scheduler, Integration Hub, calculated fields, reports */}
+          <div className="scroll-reveal hidden-init scroll-reveal-delay-2 lg:col-span-3 relative overflow-hidden rounded-2xl border border-border bg-card card-glow card-glow-hover transition-all duration-300 p-6">
+            <div
+              className="absolute inset-0 opacity-15 pointer-events-none"
+              style={{ background: 'linear-gradient(135deg, rgba(14,165,233,0.12) 0%, transparent 55%)' }}
+            />
+            <div className="flex flex-col md:flex-row md:items-start gap-6">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-sky-500/15 border border-sky-500/20 flex items-center justify-center">
+                <Icon name="CpuChipIcon" size={24} className="text-sky-400" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold text-lg text-foreground mb-1">Automation &amp; integrations</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl">
+                  Visual rule engine on the ingest path, calculated fields on device profiles, a job scheduler for recurring work, Integration Hub for external webhooks with mapping pipelines, and scheduled CSV report emails — built for multi-product fleets, not one-off demos.
+                </p>
+                <div className="flex gap-2 mt-3 flex-wrap">
+                  {['Rule engine', 'Calculated fields', 'Scheduler', 'Integration Hub', 'Reports', 'Modbus auto-poll']?.map((p) => (
+                    <span key={p} className="px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/10 text-xs font-medium text-sky-300">
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
