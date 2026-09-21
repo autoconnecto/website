@@ -7,6 +7,9 @@
 
 - Home: https://www.autoconnecto.in/
 - Product overview: https://www.autoconnecto.in/product
+- Solutions catalog: https://www.autoconnecto.in/solutions
+- Indoor Humidity & Temperature: https://www.autoconnecto.in/solutions/humidity-temperature
+- EnergyFleet: https://www.autoconnecto.in/solutions/energy-fleet
 - Pricing (HTML): https://www.autoconnecto.in/pricing
 - Pricing (JSON): https://www.autoconnecto.in/plans.json
 - Privacy: https://www.autoconnecto.in/privacy

@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { listSolutionSlugs } from '@/content/solutions';
 
 export const dynamic = 'force-static'; // ✅ REQUIRED for static export
 
@@ -11,10 +12,17 @@ function siteOrigin(): string {
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteOrigin();
   const now = new Date();
-  // Single-page marketing site: only real crawlable URLs (fragments like /#features are not separate index entries).
+  // Marketing site crawlable URLs (fragments like /#features are not separate index entries).
   return [
     { url: `${base}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${base}/product`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${base}/solutions`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
+    ...listSolutionSlugs().map((slug) => ({
+      url: `${base}/solutions/${slug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    })),
     { url: `${base}/pricing`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/plans.json`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },

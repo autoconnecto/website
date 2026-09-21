@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
 import { mailtoForLead, postLeadWebhook } from '@/lib/submitLead';
+import { getSolutionBySlug } from '@/content/solutions';
 
 interface FormState {
   name: string;
@@ -23,6 +24,7 @@ const EMPTY_CONTACT = { name: '', email: '', subject: '', message: '' };
 export default function ContactSection() {
   const [demoForm, setDemoForm] = useState(EMPTY_DEMO);
   const [contactForm, setContactForm] = useState(EMPTY_CONTACT);
+  const [solutionSlug, setSolutionSlug] = useState<string>('');
   const [demoSubmitted, setDemoSubmitted] = useState(false);
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [activeTab, setActiveTab] = useState<'demo' | 'contact'>('demo');
@@ -33,6 +35,41 @@ export default function ContactSection() {
   const [demoMailtoHref, setDemoMailtoHref] = useState('');
   const [contactMailtoHref, setContactMailtoHref] = useState('');
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const slug = String(params.get('solution') || '')
+      .trim()
+      .toLowerCase();
+    const tab = String(params.get('tab') || '')
+      .trim()
+      .toLowerCase();
+    const offering = slug ? getSolutionBySlug(slug) : undefined;
+
+    if (offering) {
+      setSolutionSlug(offering.slug);
+      setContactForm((prev) => ({
+        ...prev,
+        subject: prev.subject.trim() ? prev.subject : offering.contactSubject,
+        message: prev.message.trim()
+          ? prev.message
+          : `I am interested in the ${offering.title} solution. Please share pricing, lead time, and next steps.\n`,
+      }));
+      setActiveTab('contact');
+    } else if (tab === 'contact') {
+      setActiveTab('contact');
+    }
+
+    const subjectParam = String(params.get('subject') || '').trim();
+    if (subjectParam) {
+      setContactForm((prev) => ({
+        ...prev,
+        subject: prev.subject.trim() ? prev.subject : subjectParam,
+      }));
+      setActiveTab('contact');
+    }
+  }, []);
 
   const handleDemoSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,6 +115,7 @@ export default function ContactSection() {
       email: contactForm.email.trim(),
       subject: contactForm.subject.trim(),
       message: contactForm.message.trim(),
+      ...(solutionSlug ? { solutionSlug } : {}),
     };
     try {
       const { ok } = await postLeadWebhook(payload);
@@ -461,6 +499,15 @@ export default function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleContactSubmit} className="space-y-4 flex-1 flex flex-col">
+                {solutionSlug ? (
+                  <div className="rounded-xl border border-primary/25 bg-primary/10 px-4 py-3 text-sm text-foreground">
+                    Inquiring about{' '}
+                    <span className="font-semibold text-primary">
+                      {getSolutionBySlug(solutionSlug)?.title || solutionSlug}
+                    </span>
+                    . Subject and message are prefilled — edit freely before sending.
+                  </div>
+                ) : null}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1.5">Name *</label>

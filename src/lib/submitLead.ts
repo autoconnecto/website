@@ -22,6 +22,8 @@ export type ContactLeadPayload = {
   email: string;
   subject: string;
   message: string;
+  /** Marketing solutions catalog slug when lead came from a solution page */
+  solutionSlug?: string;
 };
 
 export type LeadPayload = DemoLeadPayload | ContactLeadPayload;
@@ -50,9 +52,12 @@ export function mailtoForLead(payload: LeadPayload): string {
     `Name: ${payload.name}`,
     `Email: ${payload.email}`,
     `Subject: ${payload.subject || '(none)'}`,
+    payload.solutionSlug ? `Solution: ${payload.solutionSlug}` : null,
     '',
     payload.message,
-  ].join('\n');
+  ]
+    .filter((line) => line !== null)
+    .join('\n');
   return buildMailto(
     DEFAULT_TO,
     payload.subject?.trim() ? `Autoconnecto: ${payload.subject.trim()}` : `Message from ${payload.name}`,

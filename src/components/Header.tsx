@@ -11,6 +11,7 @@ import {
 
 const navLinks = [
   { label: 'Product', href: '/product' },
+  { label: 'Solutions', href: '/solutions' },
   { label: 'Platform', href: '/#platform' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Features', href: '/#features' },
