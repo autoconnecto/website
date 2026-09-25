@@ -1,22 +1,7 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
-import { DM_Sans, Fraunces } from 'next/font/google';
 import { siteOrigin } from '@/lib/siteOrigin';
 import '../styles/tailwind.css';
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-dm-sans',
-  display: 'swap',
-});
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
-  display: 'swap',
-  axes: ['SOFT', 'WONK'],
-});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -95,12 +80,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
+    <html lang="en">
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt — site summary for AI assistants" />
         <link rel="alternate" type="text/plain" href="/ai.txt" title="AI.txt — machine-readable site index" />
       </head>
-      <body className={dmSans.className}>
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
