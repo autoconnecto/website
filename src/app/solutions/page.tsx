@@ -12,7 +12,7 @@ const solutions = listSolutions();
 export const metadata: Metadata = {
   title: 'Solutions — Hardware + Autoconnecto Platform',
   description:
-    'Sellable Autoconnecto solutions: Indoor Humidity & Temperature kits, EnergyFleet industrial energy monitoring, and more. Contact for bundle pricing.',
+    'EnergyFleet 14-day pilot (₹25,000, one site) is the offer we sell first. Indoor climate remains in the catalog.',
   alternates: { canonical: `${baseUrl}/solutions` },
   openGraph: {
     title: 'Solutions — Autoconnecto',

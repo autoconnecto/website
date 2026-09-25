@@ -49,4 +49,18 @@ export type SolutionOffering = {
   contactSubject: string;
   /** Optional later: in-app dashboard template id */
   inAppSolutionId?: string;
+  /** When set, this offering is the priced pilot on the detail page */
+  pilot?: {
+    priceInr: number;
+    days: number;
+    title: string;
+    scope: string[];
+    note: string;
+    proof?: {
+      label: string;
+      site: string;
+      dashboard: string;
+      alarm: string;
+    };
+  };
 };

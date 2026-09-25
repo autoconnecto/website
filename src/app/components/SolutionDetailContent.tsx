@@ -64,6 +64,41 @@ export default function SolutionDetailContent({
               Platform pricing
             </Link>
           </div>
+          {solution.pilot ? (
+            <div className="mt-8 rounded-2xl border border-amber-500/30 bg-amber-500/10 p-5 max-w-xl">
+              <p className="text-[10px] uppercase tracking-widest text-amber-300 mb-1">
+                {solution.pilot.title} · {solution.pilot.days} days
+              </p>
+              <p className="font-display text-3xl font-bold text-foreground">
+                ₹{solution.pilot.priceInr.toLocaleString('en-IN')}
+              </p>
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+                {solution.pilot.scope.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <p className="mt-3 text-xs text-muted-foreground">{solution.pilot.note}</p>
+              {solution.pilot.proof ? (
+                <div className="mt-4 border-t border-amber-500/20 pt-4 space-y-2 text-sm">
+                  <p className="text-[10px] uppercase tracking-widest text-amber-200/80">
+                    {solution.pilot.proof.label}
+                  </p>
+                  <p>
+                    <span className="text-foreground font-medium">Site. </span>
+                    {solution.pilot.proof.site}
+                  </p>
+                  <p>
+                    <span className="text-foreground font-medium">Dashboard. </span>
+                    {solution.pilot.proof.dashboard}
+                  </p>
+                  <p>
+                    <span className="text-foreground font-medium">Who got the alarm. </span>
+                    {solution.pilot.proof.alarm}
+                  </p>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
         </div>
 
         <div className="rounded-2xl border border-border bg-card/80 p-6 space-y-5">

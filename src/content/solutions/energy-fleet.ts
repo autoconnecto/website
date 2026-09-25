@@ -2,95 +2,103 @@ import type { SolutionOffering } from './types';
 
 export const energyFleet: SolutionOffering = {
   slug: 'energy-fleet',
-  order: 20,
+  order: 1,
   title: 'EnergyFleet',
   shortDescription:
-    'Industrial energy monitoring on Autoconnecto — Modbus over MQTT serial, cloud auto-poll, live power dashboards, and alarms for plant fleets.',
-  eyebrow: 'Industrial energy solution',
-  headline: 'EnergyFleet — meters and panels into live operator dashboards',
+    '14-day pilot for one site: one gateway, live power dashboard, L1 Telegram alarms, and one weekly report. ₹25,000.',
+  eyebrow: 'The offer we sell first',
+  headline: 'One site. One gateway. Alarms to the right people in 14 days.',
   support:
-    'Built for cellular Modbus gateways (DR154-class MQTT serial) and Autoconnecto auto-poll. Hardware and integration scoped at quote; platform subscription separate.',
+    'EnergyFleet is the product. The pilot is one plant, one Modbus gateway, a live dashboard, L1 Telegram when a threshold trips, and one weekly CSV. Meters and the gateway are quoted separately. Climate kits are a later call.',
   iconName: 'BoltIcon',
   accent: 'amber',
-  tags: ['Modbus', 'MQTT serial', 'Energy', 'Auto-poll'],
-  industries: ['Manufacturing', 'Utilities', 'Commercial energy', 'Multi-site fleets'],
-  audience: [
-    'Plant and energy managers',
-    'Integrators deploying USR-DR154 / Modbus gateways',
-    'Enterprises standardizing multi-site energy visibility',
-  ],
+  tags: ['One site', '14 days', 'L1 Telegram', 'Weekly CSV'],
+  industries: ['Manufacturing', 'Utilities', 'Commercial energy'],
+  audience: ['Plant and energy managers', 'Integrators with a DR154-class gateway'],
   includes: [
     {
-      kind: 'hardware',
-      title: 'Gateway & meter path (scoped at quote)',
+      kind: 'platform',
+      title: 'One site, one gateway',
       description:
-        'Typical path: cellular Modbus RTU/TCP gateway (e.g. USR-DR154 MQTT serial) plus meters/panels already on site — exact BOM confirmed when we quote.',
+        'A single plant and one cellular Modbus gateway (DR154-class MQTT serial) or a gateway you already have. Not a multi-site rollout.',
     },
     {
       kind: 'platform',
-      title: 'Modbus MQTT serial + cloud auto-poll',
+      title: 'Live power dashboard',
       description:
-        'Autoconnecto Nest path for devices/+/modbus — register maps, auto_poll attributes, and continuous cloud polling while the API is online.',
+        'Cloud auto-poll into one operator dashboard with gap-aware charts so an outage does not draw a false line.',
     },
     {
       kind: 'platform',
-      title: 'Energy dashboards & gap-aware charts',
+      title: 'L1 Telegram alarms',
       description:
-        'Live and historical power metrics with timeseries gap handling so outages do not draw false diagonals across missing samples.',
-    },
-    {
-      kind: 'platform',
-      title: 'Alarms, calculated fields, reports',
-      description:
-        'Threshold and inactivity alarms, profile calculated fields, scheduled CSV reports — automation stack on the same tenant.',
-    },
-    {
-      kind: 'platform',
-      title: 'Fleet tenancy & access control',
-      description:
-        'Multi-site devices under one tenant (or white-label per customer). RBAC for operators vs admins. Platform plan required.',
+        'When a threshold trips, the L1 group gets one message: device, value, and what tripped. L2 and L3 groups are optional after the pilot.',
     },
     {
       kind: 'service',
-      title: 'Commissioning support',
+      title: 'One weekly CSV',
+      description: 'One scheduled report email for that site during the pilot.',
+    },
+    {
+      kind: 'hardware',
+      title: 'Meter and gateway (quoted separately)',
       description:
-        'Register-map validation, first live poll, and dashboard handoff. Ongoing support via Autoconnecto support channels.',
+        'We do not hide hardware inside the pilot fee. Bring your meter, or we quote the gateway and panel path.',
     },
   ],
   howItWorks: [
     {
-      title: 'Share sites and meter types',
-      description:
-        'We map Modbus points, poll intervals, and which gateways sit on cellular MQTT serial.',
+      title: 'Day 0 — confirm the site',
+      description: 'One plant, one gateway, the points you care about (power, voltage).',
     },
     {
-      title: 'Quote hardware + integration',
+      title: 'Days 1–3 — first live poll and L1 group',
       description:
-        'Gateway/meter sourcing or BYO hardware — commercial terms via Request quote. Platform plan from Pricing.',
+        'Gateway online, dashboard showing the meter, bot in the L1 Telegram group, test alarm delivered.',
     },
     {
-      title: 'Connect and auto-poll',
+      title: 'Day 14 — keep or stop',
       description:
-        'Devices register in Autoconnecto; cloud auto-poll keeps energy telemetry flowing into dashboards and alarms.',
+        'You have a live dashboard, at least one alarm in Telegram, and one weekly CSV. Continue on a platform plan, or stop.',
     },
   ],
   faqs: [
     {
-      question: 'Do I need Autoconnecto Nest always on?',
+      question: 'What does ₹25,000 cover?',
       answer:
-        'Yes for cloud auto-poll. EnergyFleet polling runs inside the Autoconnecto backend. One Nest instance is enough; multi-replica API requires auto-poll on a single instance only.',
+        'The 14-day EnergyFleet pilot: platform setup for one site, one gateway connection, one dashboard, L1 Telegram, and one weekly report. It does not include meters, a cellular gateway, or installation labour.',
     },
     {
-      question: 'Is checkout available?',
+      question: 'Why not start with the climate kit?',
       answer:
-        'Not for the EnergyFleet bundle yet. Contact sales for pricing and lead time. You can still start a SaaS plan independently on Pricing.',
+        'The first sales conversation is EnergyFleet. Indoor climate remains available, but it is not the offer we lead with.',
     },
     {
-      question: 'Can this white-label for my customers?',
+      question: 'Can this white-label later?',
       answer:
-        'Yes on supported plans — branding, custom hostname, and tenant isolation. Ask when you request a quote if end customers need their own portal.',
+        'Yes on Growth and Enterprise after the pilot. The pilot itself is one Autoconnecto tenant.',
     },
   ],
-  ctaLabel: 'Request quote',
-  contactSubject: 'Quote / demo: EnergyFleet solution',
+  ctaLabel: 'Book the 14-day pilot',
+  contactSubject: 'EnergyFleet 14-day pilot — ₹25,000',
+  pilot: {
+    priceInr: 25000,
+    days: 14,
+    title: 'One-site pilot',
+    scope: [
+      'One plant, one gateway',
+      'Live power dashboard',
+      'L1 Telegram alarms',
+      'One weekly CSV',
+    ],
+    note: 'Meters, gateway hardware, and site labour are quoted separately.',
+    proof: {
+      label: 'Reference setup (Autoconnecto lab, not a customer plant)',
+      site: 'PurpleChilly tenant — lab gateway path',
+      dashboard:
+        'A live dashboard for device http3 with voltage telemetry. An out-of-range voltage raises HighVoltage.',
+      alarm:
+        'Telegram group autoconnecto_alarms received HighVoltage CRITICAL for device http3, value voltage1=288 (>= 260).',
+    },
+  },
 };
