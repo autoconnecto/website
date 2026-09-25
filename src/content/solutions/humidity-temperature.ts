@@ -42,7 +42,7 @@ export const humidityTemperature: SolutionOffering = {
       kind: 'platform',
       title: 'Thresholds, alarms, and notifications',
       description:
-        'Profile rules on humidity and temperature, inactivity awareness, email alerts. SMS delivery remains parked on the platform.',
+        'Profile rules on humidity and temperature, inactivity awareness, email and Telegram ops-group alerts.',
     },
     {
       kind: 'platform',

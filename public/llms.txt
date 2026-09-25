@@ -1,6 +1,6 @@
 # Autoconnecto
 
-> Autoconnecto is a multi-tenant IoT SaaS platform (India) for real-time device monitoring, remote control, alarms, and automation. Optional per device profile: **Data Pipelines** (telemetry transform before storage) and **Attribute Pipelines** (client attribute patch transform before storage). Application: https://app.autoconnecto.in
+> Autoconnecto is a multi-tenant IoT SaaS platform (India) for real-time device monitoring, remote control, alarms, and automation. Visual **Rule Engine** on ingest (transform, notify, webhooks, downlink); profile Alarm Rules; Telegram ops-group alerts; Scheduler. Application: https://app.autoconnecto.in
 
 ## Canonical links — marketing site (www.autoconnecto.in)
 
@@ -47,9 +47,10 @@ Attribute-based control with a feedback loop: the dashboard writes shared attrib
 
 - Real-time dashboards with 60+ widgets (gauges, charts, maps, tables, controls)
 - Devices, device profiles, assets, alarms, data generators
-- Optional **data pipelines** on telemetry ingest (rename, filter, scale, derive, flatten, webhook forward, and more)
-- Optional **attribute pipelines** on client attribute patches (defaults, coercion, scope rename, conditional drop)
-- MQTT over WSS, device WebSocket, HTTP telemetry, integration webhooks (e.g. LoRa / ChirpStack)
+- Visual **Rule Engine** on ingest (filter, transform, notify Telegram/email, webhooks, delay, downlink, …)
+- Profile **Alarm Rules** + tenant **Telegram ops group** for alarm posts
+- **Scheduler** for timed shared-attribute / command jobs
+- MQTT over WSS, device WebSocket, HTTP telemetry, Integration Hub (ChirpStack / TTN / MQTT bridge)
 - Multi-tenant SaaS with optional white-label branding on higher plans
 - Autoconnecto ESP32 Arduino SDK
 - Self-serve signup; INR subscription plans (Free through Enterprise)

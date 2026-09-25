@@ -16,14 +16,14 @@ const baseUrl = siteOrigin();
 export const metadata: Metadata = {
   title: 'Autoconnecto — Enterprise IoT Platform',
   description:
-    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS support, optional data and attribute pipelines, RBAC, alarms engine, and white-label capability for enterprise scale.',
+    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS support, visual Rule Engine, RBAC, alarms engine, and white-label capability for enterprise scale.',
   alternates: { canonical: `${baseUrl}/` },
   openGraph: {
     type: 'website',
     url: `${baseUrl}/`,
     title: 'Autoconnecto — Enterprise IoT Platform',
     description:
-      'Full-stack IoT platform: dashboards, pipelines, alarms, MQTT/HTTPS, multi-tenant SaaS from India.',
+      'Full-stack IoT platform: dashboards, Rule Engine, alarms, MQTT/HTTPS, multi-tenant SaaS from India.',
     siteName: 'Autoconnecto',
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Autoconnecto — Enterprise IoT Platform',
     description:
-      'Full-stack IoT platform: dashboards, pipelines, alarms, MQTT/HTTPS, multi-tenant SaaS from India.',
+      'Full-stack IoT platform: dashboards, Rule Engine, alarms, MQTT/HTTPS, multi-tenant SaaS from India.',
     images: [`${baseUrl}/assets/images/app_logo.png`],
   },
 };
@@ -57,7 +57,7 @@ export default function LandingPage() {
             '@type': 'WebPage',
             name: 'Autoconnecto — Enterprise IoT Platform',
             description:
-              'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS, optional data and attribute pipelines, RBAC, alarms, and white-label capability.',
+              'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS, visual Rule Engine, RBAC, alarms, and white-label capability.',
             url: `${baseUrl}/`,
             image: `${baseUrl}/assets/images/app_logo.png`,
             isPartOf: {

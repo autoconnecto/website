@@ -194,7 +194,7 @@ export default function FeaturesSection() {
             </div>
             <h3 className="font-semibold text-base text-foreground mb-1">Full-Scale Alarms Engine</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-              Rule-chain driven alarms on telemetry, inactivity, or user actions. Route to email, Slack, or webhooks.
+              Rule-chain driven alarms on telemetry, inactivity, or user actions. Route to Telegram ops groups, email, or webhooks.
             </p>
             <div className="space-y-1.5">
               {ALARM_EVENTS?.map((ev, i) => (
@@ -258,7 +258,7 @@ export default function FeaturesSection() {
             </div>
           </div>
 
-          {/* Card 8: Data & attribute pipelines — col-span-3 */}
+          {/* Card 8: Rule Engine — col-span-3 */}
           <div className="scroll-reveal hidden-init scroll-reveal-delay-2 lg:col-span-3 relative overflow-hidden rounded-2xl border border-border bg-card card-glow card-glow-hover transition-all duration-300 p-6 flex flex-col md:flex-row items-start md:items-center gap-6">
             <div
               className="absolute inset-0 opacity-15 pointer-events-none"
@@ -268,15 +268,15 @@ export default function FeaturesSection() {
               <Icon name="Squares2X2Icon" size={24} className="text-violet-400" />
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold text-lg text-foreground mb-1">Data &amp; attribute pipelines</h3>
+              <h3 className="font-semibold text-lg text-foreground mb-1">Visual Rule Engine</h3>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
-                Optional per device profile: transform telemetry and client attributes before storage — rename keys, filter bad readings, flatten nested JSON, compute fields, and bulk key scope changes. Blank profile binding means passthrough (store as received).{' '}
-                <a href="/product#pipelines" className="text-violet-300 font-medium hover:underline">
+                Graph automation on the ingest path — transform, branch, notify, webhook, attributes, commands, and LoRa downlinks. Bind a Started engine on the device profile (or a tenant default). Simple thresholds stay on profile Alarm Rules.{' '}
+                <a href="/product#rule-engine" className="text-violet-300 font-medium hover:underline">
                   See product overview →
                 </a>
               </p>
               <div className="flex gap-2 mt-3 flex-wrap">
-                {['Rename & scope', 'Filter / clamp', 'Scale & derive', 'Flatten JSON', 'Pick keys', 'Webhooks']?.map((p) => (
+                {['Filter / switch', 'Notify (Telegram/email)', 'Webhook', 'Delay / dedupe', 'Downlink', 'Dry-run preview']?.map((p) => (
                   <span key={p} className="px-3 py-1 rounded-full border border-violet-500/20 bg-violet-500/10 text-xs font-medium text-violet-300">
                     {p}
                   </span>
@@ -285,8 +285,8 @@ export default function FeaturesSection() {
             </div>
             <div className="flex-shrink-0 grid grid-cols-2 gap-3 text-center min-w-[200px]">
               {[
-                { v: '2', l: 'Pipeline types' },
-                { v: '14+', l: 'Step kinds' },
+                { v: '15+', l: 'Node types' },
+                { v: '1', l: 'Ingest path' },
               ]?.map((s, i) => (
                 <div key={i} className="bg-secondary/40 rounded-xl px-4 py-3">
                   <div className="font-display font-bold text-xl text-violet-400">{s?.v}</div>
@@ -296,7 +296,7 @@ export default function FeaturesSection() {
             </div>
           </div>
 
-          {/* Card: Automation stack — Rule engine, scheduler, Integration Hub, calculated fields, reports */}
+          {/* Card: Automation stack */}
           <div className="scroll-reveal hidden-init scroll-reveal-delay-2 lg:col-span-3 relative overflow-hidden rounded-2xl border border-border bg-card card-glow card-glow-hover transition-all duration-300 p-6">
             <div
               className="absolute inset-0 opacity-15 pointer-events-none"
@@ -309,10 +309,10 @@ export default function FeaturesSection() {
               <div className="flex-1">
                 <h3 className="font-semibold text-lg text-foreground mb-1">Automation &amp; integrations</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl">
-                  Visual rule engine on the ingest path, calculated fields on device profiles, a job scheduler for recurring work, Integration Hub for external webhooks with mapping pipelines, and scheduled CSV report emails — built for multi-product fleets, not one-off demos.
+                  Rule Engine on ingest, profile Alarm Rules, Telegram ops-group alerts, a job scheduler for recurring control, Integration Hub for ChirpStack/TTN/MQTT bridges, and scheduled CSV report emails — built for multi-product fleets.
                 </p>
                 <div className="flex gap-2 mt-3 flex-wrap">
-                  {['Rule engine', 'Calculated fields', 'Scheduler', 'Integration Hub', 'Reports', 'Modbus auto-poll']?.map((p) => (
+                  {['Rule engine', 'Telegram alarms', 'Scheduler', 'Integration Hub', 'Reports', 'Modbus auto-poll']?.map((p) => (
                     <span key={p} className="px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/10 text-xs font-medium text-sky-300">
                       {p}
                     </span>

@@ -39,4 +39,4 @@
 
 ## Entity (verbatim)
 
-Autoconnecto (https://app.autoconnecto.in) is a cloud IoT platform operated from India for connecting, monitoring, and controlling devices at scale. It provides multi-tenant dashboards, real-time telemetry, optional data and attribute pipelines per device profile, alarms, and MQTT/HTTPS/ESP32 connectivity. Documentation: https://docs.autoconnecto.in
+Autoconnecto (https://app.autoconnecto.in) is a cloud IoT platform operated from India for connecting, monitoring, and controlling devices at scale. It provides multi-tenant dashboards, real-time telemetry, a visual Rule Engine on ingest, profile Alarm Rules, Telegram ops-group + email alarms, Scheduler, Integration Hub, and MQTT/HTTPS/ESP32 connectivity. Documentation: https://docs.autoconnecto.in

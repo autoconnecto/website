@@ -22,7 +22,7 @@ const FLOW_STEPS = [
   {
     icon: 'FunnelIcon',
     title: 'Process',
-    desc: 'Optional data & attribute pipelines per device profile',
+    desc: 'Visual Rule Engine per device profile (transform, notify, webhooks)',
   },
   {
     icon: 'CircleStackIcon',
@@ -59,50 +59,36 @@ const PILLARS = [
   {
     icon: 'Squares2X2Icon',
     color: 'violet',
-    title: 'Data pipelines',
-    desc: 'Transform telemetry before storage: rename, filter, scale, flatten, compute fields, webhooks — bound per device profile.',
-    tags: ['Per profile', 'Preview', 'Fail-open'],
-  },
-  {
-    icon: 'Squares2X2Icon',
-    color: 'sky',
-    title: 'Attribute pipelines',
-    desc: 'Same step engine on client attribute patches — bulk key scope changes, defaults, coercion, conditional drop.',
-    tags: ['Patch merge', 'Scope rename', 'Optional'],
+    title: 'Visual Rule Engine',
+    desc: 'Graph automation on ingest: filter, transform, notify (Telegram/email), webhooks, attributes, commands, LoRa downlink — bound per device profile or tenant default.',
+    tags: ['React Flow', 'Dry-run', 'Templates'],
   },
   {
     icon: 'BellAlertIcon',
     color: 'orange',
-    title: 'Alarms & automation',
-    desc: 'Profile alarm rules plus a visual rule engine for ingest-time logic. Escalation, acknowledge, inactivity, email — SMS delivery still parked.',
-    tags: ['Alarms', 'Rule engine', 'Notify'],
+    title: 'Alarms & notifications',
+    desc: 'Profile Alarm Rules plus Rule Engine create_alarm. Escalation, acknowledge, inactivity, email digests, and a one-time Telegram ops group for the whole team.',
+    tags: ['Alarms', 'Telegram', 'Email'],
   },
   {
     icon: 'LockClosedIcon',
     color: 'emerald',
     title: 'Enterprise ready',
-    desc: 'Multi-tenant isolation, RBAC, white-label branding, custom domains, calculated fields, scheduler, Integration Hub, and INR plans from free tier to enterprise.',
+    desc: 'Multi-tenant isolation, RBAC, white-label branding, custom domains, scheduler, Integration Hub, CSV reports, and INR plans from free tier to enterprise.',
     tags: ['RBAC', 'White-label', 'Scheduler'],
   },
 ];
 
-const TELEMETRY_STEPS = [
-  'Rename keys',
-  'Change scope',
-  'Filter / clamp',
-  'Scale & derive',
-  'Flatten JSON',
-  'Pick keys',
+const RULE_ENGINE_NODES = [
+  'Filter / switch',
+  'Enrich / math',
+  'Notify',
   'Webhook',
-];
-
-const ATTRIBUTE_STEPS = [
-  'Change scope',
-  'Set defaults',
-  'Coerce types',
-  'Copy key',
-  'Conditional drop',
-  'Remove empty',
+  'Delay / dedupe',
+  'Create alarm',
+  'Set attribute',
+  'Command',
+  'Downlink',
 ];
 
 const AUDIENCE = [
@@ -150,50 +136,6 @@ function colorClasses(color: string) {
   return map[color] || map.primary;
 }
 
-function PipelineMock({
-  title,
-  input,
-  output,
-  accent,
-}: {
-  title: string;
-  input: string;
-  output: string;
-  accent: 'violet' | 'sky';
-}) {
-  const border = accent === 'violet' ? 'border-violet-500/30' : 'border-sky-500/30';
-  const glow =
-    accent === 'violet'
-      ? 'from-violet-500/10'
-      : 'from-sky-500/10';
-
-  return (
-    <div className={`rounded-2xl border ${border} bg-card/80 overflow-hidden card-glow`}>
-      <div className={`px-4 py-3 border-b border-border bg-gradient-to-r ${glow} to-transparent`}>
-        <span className="text-sm font-semibold text-foreground">{title}</span>
-      </div>
-      <div className="p-4 grid sm:grid-cols-2 gap-4">
-        <div>
-          <div className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">
-            Device sends
-          </div>
-          <pre className="text-xs font-mono text-muted-foreground bg-secondary/50 rounded-lg p-3 overflow-x-auto">
-            {input}
-          </pre>
-        </div>
-        <div>
-          <div className="text-[10px] uppercase tracking-widest text-emerald-400/90 mb-2">
-            Stored &amp; live UI
-          </div>
-          <pre className="text-xs font-mono text-foreground bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-3 overflow-x-auto">
-            {output}
-          </pre>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function ProductPageContent() {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -238,9 +180,9 @@ export default function ProductPageContent() {
           </h1>
 
           <p className="scroll-reveal hidden-init scroll-reveal-delay-2 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
-            Autoconnecto is multi-tenant SaaS for connecting devices, processing payloads with
-            optional pipelines, building live dashboards, and controlling equipment — with
-            dashboards that stay correct after every reboot.
+            Autoconnecto is multi-tenant SaaS for connecting devices, automating with a visual
+            Rule Engine, building live dashboards, and controlling equipment — with dashboards
+            that stay correct after every reboot.
           </p>
           <p className="scroll-reveal hidden-init scroll-reveal-delay-2 text-sm text-primary/90 font-medium mb-10">
             Built in India · INR pricing · No ThingsBoard-style rule-engine maze on day one
@@ -331,8 +273,8 @@ export default function ProductPageContent() {
               Everything in one platform
             </h2>
             <p className="text-muted-foreground">
-              Pick what you need. Leave pipelines blank and behavior stays exactly as today —
-              raw ingest, no forced configuration.
+              Pick what you need. Skip the Rule Engine and behavior stays simple —
+              raw ingest plus profile Alarm Rules when you add them.
             </p>
           </div>
 
@@ -376,9 +318,9 @@ export default function ProductPageContent() {
         </div>
       </section>
 
-      {/* Pipelines deep dive */}
+      {/* Rule Engine deep dive */}
       <section
-        id="pipelines"
+        id="rule-engine"
         data-reveal-root
         className="px-4 sm:px-6 mb-24 scroll-mt-28"
       >
@@ -392,107 +334,46 @@ export default function ProductPageContent() {
             <div className="relative">
               <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-violet-300 mb-4">
                 <Icon name="Squares2X2Icon" size={12} />
-                Processing layer
+                Automation layer
               </span>
 
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-foreground mb-4 max-w-2xl">
-                Data pipelines &amp; attribute pipelines
+                Visual Rule Engine
               </h2>
               <p className="text-muted-foreground max-w-2xl mb-8 leading-relaxed">
-                Two separate pipeline types, one step engine. Bind each optionally on a{' '}
-                <strong className="text-foreground font-medium">device profile</strong> — not
-                per device, not tenant-wide. Blank binding means passthrough: store payloads as
-                received.
+                One graph on the ingest path — transform, branch, notify, forward, and control.
+                Bind a <strong className="text-foreground font-medium">Started</strong> engine on
+                the device profile (or a tenant default). Simple thresholds stay on profile Alarm
+                Rules. Legacy pipeline URLs redirect here.
               </p>
 
-              <div className="grid lg:grid-cols-2 gap-8 mb-10">
-                <div className="space-y-4">
-                  <h3 className="font-semibold text-foreground flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-violet-400" />
-                    Data pipelines (telemetry)
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Run on every telemetry message <em>before</em> database write, realtime
-                    emit, and alarm evaluation.
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {TELEMETRY_STEPS.map((s) => (
-                      <span
-                        key={s}
-                        className="text-xs px-2.5 py-1 rounded-full bg-violet-500/15 border border-violet-500/25 text-violet-200"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <h3 className="font-semibold text-foreground flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-sky-400" />
-                    Attribute pipelines (client attributes)
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Run on each <strong className="text-foreground">client attribute patch</strong>{' '}
-                    before merge into stored state — ideal for normalizing config keys from
-                    firmware.
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {ATTRIBUTE_STEPS.map((s) => (
-                      <span
-                        key={s}
-                        className="text-xs px-2.5 py-1 rounded-full bg-sky-500/15 border border-sky-500/25 text-sky-200"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-6 mb-8">
-                <PipelineMock
-                  title="Telemetry example — rename + pick keys"
-                  accent="violet"
-                  input={`{
-  "T1": 24.2,
-  "humidity": 61,
-  "extra_debug": true
-}`}
-                  output={`{
-  "temperature": 24.2,
-  "humidity": 61
-}`}
-                />
-                <PipelineMock
-                  title="Attribute example — change scope (prefix)"
-                  accent="sky"
-                  input={`{
-  "cfg.tempMin": 18,
-  "cfg.mode": "auto"
-}`}
-                  output={`{
-  "config.tempMin": 18,
-  "config.mode": "auto"
-}`}
-                />
+              <div className="flex flex-wrap gap-1.5 mb-10">
+                {RULE_ENGINE_NODES.map((s) => (
+                  <span
+                    key={s}
+                    className="text-xs px-2.5 py-1 rounded-full bg-violet-500/15 border border-violet-500/25 text-violet-200"
+                  >
+                    {s}
+                  </span>
+                ))}
               </div>
 
               <ul className="grid sm:grid-cols-3 gap-4 text-sm">
                 {[
                   {
                     icon: 'EyeIcon',
-                    title: 'Preview in UI',
-                    desc: 'Sample JSON in → transformed out, with warnings',
+                    title: 'Dry-run preview',
+                    desc: 'Sample JSON in → path highlight on the canvas',
                   },
                   {
                     icon: 'ShieldCheckIcon',
                     title: 'Fail-open',
-                    desc: 'Pipeline errors never block ingest',
+                    desc: 'Unexpected errors never block ingest unless you drop',
                   },
                   {
-                    icon: 'PowerIcon',
-                    title: 'Kill switches',
-                    desc: 'Disable via env without redeploying old code',
+                    icon: 'BellAlertIcon',
+                    title: 'Telegram ops group',
+                    desc: 'One group chat id for tenant-wide alarm posts',
                   },
                 ].map((item) => (
                   <li
@@ -635,8 +516,8 @@ export default function ProductPageContent() {
             Ready to connect your fleet?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Start on the free tier, bind a pipeline when you need it, and scale to white-label
-            enterprise when you&apos;re production-ready.
+            Start on the free tier, attach a Rule Engine when you need automation, and scale to
+            white-label enterprise when you&apos;re production-ready.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             <a

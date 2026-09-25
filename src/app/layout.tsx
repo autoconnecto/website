@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: 'Autoconnecto — Enterprise IoT Platform',
   description:
-    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS, optional data and attribute pipelines, RBAC, alarms, and white-label for enterprise scale. India.',
+    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS, visual Rule Engine, RBAC, alarms with Telegram ops alerts, and white-label for enterprise scale. India.',
   keywords: [
     'IoT platform',
     'MQTT',
@@ -39,7 +39,9 @@ export const metadata: Metadata = {
     'dashboards',
     'enterprise IoT',
     'white-label',
-    'data pipelines',
+    'rule engine',
+    'Telegram alarms',
+    'IoT dashboards',
     'India IoT SaaS',
   ],
   authors: [{ name: 'Autoconnecto' }],
@@ -108,7 +110,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               name: 'Autoconnecto',
               url: `${baseUrl}/`,
               description:
-                'Enterprise IoT platform for device management, dashboards, pipelines, and realtime control.',
+                'Enterprise IoT platform for device management, dashboards, Rule Engine automation, and realtime control.',
               publisher: { '@type': 'Organization', name: 'Autoconnecto', url: `${baseUrl}/` },
               inLanguage: 'en',
             }),
