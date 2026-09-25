@@ -70,7 +70,8 @@ export default function SolutionDetailContent({
                 {solution.pilot.title} · {solution.pilot.days} days
               </p>
               <p className="font-display text-3xl font-bold text-foreground">
-                ₹{solution.pilot.priceInr.toLocaleString('en-IN')}
+                {solution.pilot.priceLabel ??
+                  `₹${solution.pilot.priceInr.toLocaleString('en-IN')}`}
               </p>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 {solution.pilot.scope.map((item) => (

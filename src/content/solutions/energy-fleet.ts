@@ -5,11 +5,11 @@ export const energyFleet: SolutionOffering = {
   order: 1,
   title: 'EnergyFleet',
   shortDescription:
-    '14-day pilot for one site: one gateway, live power dashboard, L1 Telegram alarms, and one weekly report. ₹25,000.',
+    '14-day trial for one site: gateway and meter, live power dashboard, L1 Telegram alarms, and one weekly report. Free. Travel at actuals.',
   eyebrow: 'The offer we sell first',
   headline: 'One site. One gateway. Alarms to the right people in 14 days.',
   support:
-    'EnergyFleet is the product. The pilot is one plant, one Modbus gateway, a live dashboard, L1 Telegram when a threshold trips, and one weekly CSV. Meters and the gateway are quoted separately. Climate kits are a later call.',
+    'EnergyFleet is the product. The 14-day trial is one plant, hardware included, a live dashboard, L1 Telegram when a threshold trips, and one weekly CSV. You pay only travel at actual cost. Climate kits are a later call.',
   iconName: 'BoltIcon',
   accent: 'amber',
   tags: ['One site', '14 days', 'L1 Telegram', 'Weekly CSV'],
@@ -41,9 +41,9 @@ export const energyFleet: SolutionOffering = {
     },
     {
       kind: 'hardware',
-      title: 'Meter and gateway (quoted separately)',
+      title: 'Gateway and meter, included',
       description:
-        'We do not hide hardware inside the pilot fee. Bring your meter, or we quote the gateway and panel path.',
+        'For the trial, the gateway and meter are provided. This is one plant, not a multi-site rollout.',
     },
   ],
   howItWorks: [
@@ -64,9 +64,9 @@ export const energyFleet: SolutionOffering = {
   ],
   faqs: [
     {
-      question: 'What does ₹25,000 cover?',
+      question: 'What do I pay?',
       answer:
-        'The 14-day EnergyFleet pilot: platform setup for one site, one gateway connection, one dashboard, L1 Telegram, and one weekly report. It does not include meters, a cellular gateway, or installation labour.',
+        'Nothing for the 14-day trial. Hardware, platform, dashboard, L1 Telegram, and the weekly report are included. You pay only travel at actual cost.',
     },
     {
       question: 'Why not start with the climate kit?',
@@ -79,19 +79,21 @@ export const energyFleet: SolutionOffering = {
         'Yes on Growth and Enterprise after the pilot. The pilot itself is one Autoconnecto tenant.',
     },
   ],
-  ctaLabel: 'Book the 14-day pilot',
-  contactSubject: 'EnergyFleet 14-day pilot — ₹25,000',
+  ctaLabel: 'Book the free 14-day trial',
+  contactSubject: 'EnergyFleet 14-day trial — free, travel at actuals',
   pilot: {
-    priceInr: 25000,
+    priceInr: 0,
+    priceLabel: 'Free',
     days: 14,
-    title: 'One-site pilot',
+    title: 'One-site trial',
     scope: [
-      'One plant, one gateway',
+      'One plant',
+      'Gateway and meter included',
       'Live power dashboard',
       'L1 Telegram alarms',
       'One weekly CSV',
     ],
-    note: 'Meters, gateway hardware, and site labour are quoted separately.',
+    note: 'The only charge is travel, billed at actual cost.',
     proof: {
       label: 'Reference setup (Autoconnecto lab, not a customer plant)',
       site: 'PurpleChilly tenant — lab gateway path',

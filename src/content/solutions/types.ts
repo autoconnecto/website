@@ -52,6 +52,8 @@ export type SolutionOffering = {
   /** When set, this offering is the priced pilot on the detail page */
   pilot?: {
     priceInr: number;
+    /** Shown instead of a rupee amount when the pilot is free */
+    priceLabel?: string;
     days: number;
     title: string;
     scope: string[];

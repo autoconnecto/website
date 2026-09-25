@@ -12,7 +12,7 @@ const solutions = listSolutions();
 export const metadata: Metadata = {
   title: 'Solutions — Hardware + Autoconnecto Platform',
   description:
-    'EnergyFleet 14-day pilot (₹25,000, one site) is the offer we sell first. Indoor climate remains in the catalog.',
+    'EnergyFleet 14-day trial is free for one site, hardware included. Travel is billed at actual cost. Indoor climate remains in the catalog.',
   alternates: { canonical: `${baseUrl}/solutions` },
   openGraph: {
     title: 'Solutions — Autoconnecto',
