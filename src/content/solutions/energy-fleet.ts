@@ -59,7 +59,7 @@ export const energyFleet: SolutionOffering = {
     {
       title: 'Day 14 — keep or stop',
       description:
-        'You have a live dashboard, at least one alarm in Telegram, and one weekly CSV. Continue on a platform plan, or stop.',
+        'You have a live dashboard, at least one alarm in Telegram, and one weekly CSV. On day 15 continue on a paid SaaS plan (checkout in the app), or stop. Hardware included for the trial is returned or purchased as agreed in writing before day 15. Travel stays at actuals.',
     },
   ],
   faqs: [
@@ -67,6 +67,11 @@ export const energyFleet: SolutionOffering = {
       question: 'What do I pay?',
       answer:
         'Nothing for the 14-day trial. Hardware, platform, dashboard, L1 Telegram, and the weekly report are included. You pay only travel at actual cost.',
+    },
+    {
+      question: 'What happens on day 15?',
+      answer:
+        'To keep the live site, move onto a paid Autoconnecto plan (Hobby, Starter, Growth, or Enterprise) and complete checkout in the app. If you stop, the trial workspace returns to the Free plan. Gateway and meter included for the trial are returned or purchased as agreed before day 15 — that is separate from the SaaS subscription.',
     },
     {
       question: 'Why not start with the climate kit?',
@@ -93,7 +98,7 @@ export const energyFleet: SolutionOffering = {
       'L1 Telegram alarms',
       'One weekly CSV',
     ],
-    note: 'The only charge is travel, billed at actual cost.',
+    note: 'The only charge during the trial is travel, billed at actual cost. Day 15: paid SaaS plan via checkout, or stop; hardware return or purchase as agreed in writing.',
     proof: {
       label: 'Reference setup (Autoconnecto lab, not a customer plant)',
       site: 'PurpleChilly tenant — lab gateway path',

@@ -67,7 +67,7 @@ const PILLARS = [
     icon: 'BellAlertIcon',
     color: 'orange',
     title: 'Alarms & notifications',
-    desc: 'Profile Alarm Rules plus Rule Engine create_alarm. Escalation, acknowledge, inactivity, email digests, and a one-time Telegram ops group for the whole team.',
+    desc: 'Profile Alarm Rules plus Rule Engine create_alarm. Escalation, acknowledge, inactivity, email digests, and Telegram L1/L2/L3 ops groups for the plant team.',
     tags: ['Alarms', 'Telegram', 'Email'],
   },
   {
@@ -216,9 +216,9 @@ export default function ProductPageContent() {
           <div className="scroll-reveal hidden-init scroll-reveal-delay-4 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
               { v: '60+', l: 'Dashboard widgets' },
-              { v: '14+', l: 'Pipeline step types' },
-              { v: '2', l: 'Pipeline kinds' },
-              { v: '99.9%', l: 'Uptime target' },
+              { v: 'Rule Engine', l: 'Visual automation' },
+              { v: 'L1–L3', l: 'Telegram alarm groups' },
+              { v: 'Always-on', l: 'Designed for continuous ops' },
             ].map((s) => (
               <div
                 key={s.l}

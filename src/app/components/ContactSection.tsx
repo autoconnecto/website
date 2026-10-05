@@ -181,6 +181,22 @@ export default function ContactSection() {
               </div>
             </a>
           ))}
+          <a
+            href="https://t.me/autoconnecto_community"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all group"
+          >
+            <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+              <Icon name="ChatBubbleLeftRightIcon" size={15} className="text-primary" />
+            </div>
+            <div className="text-left">
+              <p className="text-xs font-medium text-muted-foreground leading-none mb-1">Community</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                @autoconnecto_community
+              </p>
+            </div>
+          </a>
           {/* Phone */}
           <a
             href="tel:+919212100555"

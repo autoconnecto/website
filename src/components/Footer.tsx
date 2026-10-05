@@ -3,6 +3,7 @@ import AppLogo from '@/components/ui/AppLogo';
 import Icon from '@/components/ui/AppIcon';
 import {
   ARDUINO_SDK_GITHUB_URL,
+  COMMUNITY_TELEGRAM_URL,
   MOBILE_APP_RELEASES_URL,
 } from '@/config/links';
 
@@ -18,6 +19,7 @@ const footerLinks = [
   { label: 'Developers', href: '/#developers', external: false },
   { label: 'Arduino SDK', href: ARDUINO_SDK_GITHUB_URL, external: true },
   { label: 'Mobile app', href: MOBILE_APP_RELEASES_URL, external: true },
+  { label: 'Community', href: COMMUNITY_TELEGRAM_URL, external: true },
   { label: 'Docs', href: 'https://docs.autoconnecto.in', external: true },
   { label: 'Privacy', href: '/privacy', external: false },
   { label: 'Terms', href: '/terms', external: false },
@@ -26,6 +28,7 @@ const footerLinks = [
 
 const socialLinks = [
   { icon: 'GlobeAltIcon', href: `${siteUrl}/`, label: 'Marketing site' },
+  { icon: 'ChatBubbleLeftRightIcon', href: COMMUNITY_TELEGRAM_URL, label: 'Telegram community' },
   { icon: 'EnvelopeIcon', href: 'mailto:support@autoconnecto.in', label: 'Email support' },
   { icon: 'EnvelopeIcon', href: 'mailto:founder@autoconnecto.in', label: 'Email founder' },
 ];

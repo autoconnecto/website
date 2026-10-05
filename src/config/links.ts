@@ -14,6 +14,9 @@ export const API_URL = "https://api.autoconnecto.in";
 export const SUPPORT_EMAIL = "support@autoconnecto.in";
 export const FOUNDER_EMAIL = "founder@autoconnecto.in";
 export const SUPPORT_PHONE = "+919212100555";
+/** Public Telegram community (not alarm L1/L2/L3 ops groups). */
+export const COMMUNITY_TELEGRAM_URL = "https://t.me/autoconnecto_community";
+export const COMMUNITY_TELEGRAM_HANDLE = "@autoconnecto_community";
 export const ARDUINO_SDK_GITHUB_URL =
   "https://github.com/autoconnecto/autoconnecto-sdk";
 

@@ -6,10 +6,10 @@ import Image from 'next/image';
 import { MOBILE_APP_DOWNLOAD_URL } from '@/config/links';
 
 const trustStats = [
-  { value: '10M+', label: 'Devices Supported' },
-  { value: '60+', label: 'Dashboard Widgets' },
-  { value: '99.9%', label: 'Uptime SLA' },
-  { value: 'Multi', label: 'Tenant Ready' },
+  { value: 'India', label: 'Built for INR buyers' },
+  { value: '60+', label: 'Dashboard widgets' },
+  { value: '14-day', label: 'EnergyFleet trial' },
+  { value: 'Telegram', label: 'Ops alarms' },
 ];
 
 export default function HeroSection() {

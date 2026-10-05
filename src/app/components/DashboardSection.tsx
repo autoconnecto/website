@@ -15,10 +15,10 @@ const CHART_BARS = [
 const SPARKLINE_POINTS = "0,40 20,35 40,42 60,28 80,32 100,20 120,25 140,18 160,22 180,15 200,18";
 
 const WIDGETS = [
-{ icon: 'BoltIcon', label: 'Live Telemetry', value: '2,847', unit: 'msg/s', color: 'text-primary' },
-{ icon: 'SignalIcon', label: 'Active Devices', value: '14,203', unit: 'online', color: 'text-accent' },
-{ icon: 'ExclamationTriangleIcon', label: 'Active Alarms', value: '3', unit: 'critical', color: 'text-orange-400' },
-{ icon: 'ShieldCheckIcon', label: 'Auth Success', value: '99.97', unit: '%', color: 'text-emerald-400' }];
+{ icon: 'BoltIcon', label: 'Live telemetry', value: 'Real-time', unit: 'Socket.IO', color: 'text-primary' },
+{ icon: 'SignalIcon', label: 'Devices', value: 'Online', unit: 'status', color: 'text-accent' },
+{ icon: 'ExclamationTriangleIcon', label: 'Alarms', value: 'L1–L3', unit: 'Telegram', color: 'text-orange-400' },
+{ icon: 'ShieldCheckIcon', label: 'Access', value: 'Cognito', unit: 'auth', color: 'text-emerald-400' }];
 
 
 export default function DashboardSection() {
