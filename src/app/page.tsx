@@ -16,7 +16,7 @@ const baseUrl = siteOrigin();
 export const metadata: Metadata = {
   title: 'Autoconnecto — Enterprise IoT Platform',
   description:
-    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS support, visual Rule Engine, RBAC, alarms engine, and white-label capability for enterprise scale.',
+    'Autoconnecto is a full-stack IoT platform with live dashboards, 80+ widgets, MQTT/HTTPS support, visual Rule Engine, RBAC, alarms engine, and white-label capability for enterprise scale.',
   alternates: { canonical: `${baseUrl}/` },
   openGraph: {
     type: 'website',
@@ -57,7 +57,7 @@ export default function LandingPage() {
             '@type': 'WebPage',
             name: 'Autoconnecto — Enterprise IoT Platform',
             description:
-              'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS, visual Rule Engine, RBAC, alarms, and white-label capability.',
+              'Autoconnecto is a full-stack IoT platform with live dashboards, 80+ widgets, MQTT/HTTPS, visual Rule Engine, RBAC, alarms, and white-label capability.',
             url: `${baseUrl}/`,
             image: `${baseUrl}/assets/images/app_logo.png`,
             isPartOf: {

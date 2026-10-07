@@ -1,3 +1,4 @@
+import { climateFleet } from './climate-fleet';
 import { energyFleet } from './energy-fleet';
 import { humidityTemperature } from './humidity-temperature';
 import type { SolutionOffering } from './types';
@@ -5,7 +6,7 @@ import type { SolutionOffering } from './types';
 export type { SolutionOffering, SolutionInclude, SolutionFaq, SolutionStep } from './types';
 
 /** Ordered public catalog. Add a new offering file and register it here. */
-const ALL: SolutionOffering[] = [humidityTemperature, energyFleet];
+const ALL: SolutionOffering[] = [humidityTemperature, energyFleet, climateFleet];
 
 export function listSolutions(): SolutionOffering[] {
   return [...ALL].sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));

@@ -7,7 +7,7 @@ import { MOBILE_APP_DOWNLOAD_URL } from '@/config/links';
 
 const trustStats = [
   { value: 'India', label: 'Built for INR buyers' },
-  { value: '60+', label: 'Dashboard widgets' },
+  { value: '80+', label: 'Dashboard widgets' },
   { value: '14-day', label: 'EnergyFleet trial' },
   { value: 'Telegram', label: 'Ops alarms' },
 ];

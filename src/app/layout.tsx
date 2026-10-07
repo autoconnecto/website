@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: 'Autoconnecto — Enterprise IoT Platform',
   description:
-    'Autoconnecto is a full-stack IoT platform with live dashboards, 60+ widgets, MQTT/HTTPS, visual Rule Engine, RBAC, alarms with Telegram ops alerts, and white-label for enterprise scale. India.',
+    'Autoconnecto is a full-stack IoT platform with live dashboards, 80+ widgets, MQTT/HTTPS, visual Rule Engine, RBAC, alarms with Telegram ops alerts, and white-label for enterprise scale. India.',
   keywords: [
     'IoT platform',
     'MQTT',

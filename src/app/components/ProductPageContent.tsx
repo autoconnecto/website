@@ -7,7 +7,6 @@ import {
   APP_URL,
   DOCS_ABOUT_URL,
   DOCS_FAQ_URL,
-  DOCS_VS_THINGSBOARD_URL,
   FOUNDER_EMAIL,
   SUPPORT_EMAIL,
   SUPPORT_PHONE,
@@ -32,7 +31,7 @@ const FLOW_STEPS = [
   {
     icon: 'PresentationChartLineIcon',
     title: 'Visualize',
-    desc: 'Live dashboards, 60+ widgets, mobile app',
+    desc: 'Live dashboards, 80+ widgets, mobile app',
   },
   {
     icon: 'BellAlertIcon',
@@ -53,8 +52,8 @@ const PILLARS = [
     icon: 'PresentationChartLineIcon',
     color: 'accent',
     title: 'Live dashboards',
-    desc: 'Drag-and-drop builder, realtime Socket.IO, 60+ widget types — charts, maps, gauges, tables, controls.',
-    tags: ['60+ widgets', 'Realtime', 'Share & embed'],
+    desc: 'Drag-and-drop builder, realtime Socket.IO, 80+ widget types — charts, maps, gauges, tables, controls.',
+    tags: ['80+ widgets', 'Realtime', 'Share & embed'],
   },
   {
     icon: 'Squares2X2Icon',
@@ -185,7 +184,7 @@ export default function ProductPageContent() {
             that stay correct after every reboot.
           </p>
           <p className="scroll-reveal hidden-init scroll-reveal-delay-2 text-sm text-primary/90 font-medium mb-10">
-            Built in India · INR pricing · No ThingsBoard-style rule-engine maze on day one
+            Built in India · INR pricing · Visual Rule Engine without the ops maze
           </p>
 
           <div className="scroll-reveal hidden-init scroll-reveal-delay-3 flex flex-wrap items-center justify-center gap-3 mb-14">
@@ -215,7 +214,7 @@ export default function ProductPageContent() {
 
           <div className="scroll-reveal hidden-init scroll-reveal-delay-4 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
-              { v: '60+', l: 'Dashboard widgets' },
+              { v: '80+', l: 'Dashboard widgets' },
               { v: 'Rule Engine', l: 'Visual automation' },
               { v: 'L1–L3', l: 'Telegram alarm groups' },
               { v: 'Always-on', l: 'Designed for continuous ops' },
@@ -469,17 +468,6 @@ export default function ProductPageContent() {
               <li>
                 <a href="/pricing" className="text-primary font-medium hover:underline">
                   Pricing (INR plans)
-                </a>
-              </li>
-              <li>
-                <a
-                  href={DOCS_VS_THINGSBOARD_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary font-medium hover:underline inline-flex items-center gap-1"
-                >
-                  Autoconnecto vs ThingsBoard
-                  <Icon name="ArrowTopRightOnSquareIcon" size={12} />
                 </a>
               </li>
               <li>

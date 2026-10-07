@@ -59,7 +59,7 @@ export default function DashboardSection() {
             <span className="text-gradient-primary">In Real Time.</span>
           </h2>
           <p className="text-muted-foreground text-lg font-light leading-relaxed">
-            Build pixel-perfect dashboards with 60+ chart types, maps, gauges, and custom widgets — no code required.
+            Build pixel-perfect dashboards with 80+ widgets — charts, maps, gauges, tables, controls — no code required.
           </p>
         </div>
 

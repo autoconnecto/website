@@ -74,9 +74,9 @@ export const energyFleet: SolutionOffering = {
         'To keep the live site, move onto a paid Autoconnecto plan (Hobby, Starter, Growth, or Enterprise) and complete checkout in the app. If you stop, the trial workspace returns to the Free plan. Gateway and meter included for the trial are returned or purchased as agreed before day 15 — that is separate from the SaaS subscription.',
     },
     {
-      question: 'Why not start with the climate kit?',
+      question: 'What about ClimateFleet?',
       answer:
-        'The first sales conversation is EnergyFleet. Indoor climate remains available, but it is not the offer we lead with.',
+        'EnergyFleet is the lead offer. ClimateFleet is available for humidity/temperature fleets on the same platform — see Solutions.',
     },
     {
       question: 'Can this white-label later?',

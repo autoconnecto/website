@@ -13,7 +13,7 @@ const METRICS = [
 
 const TESTIMONIAL = {
   quote:
-  "We evaluated ThingsBoard, AWS IoT, and Autoconnecto. Autoconnecto was the only platform that gave us white-label dashboards, RBAC, and a working multi-tenant setup in under 48 hours. Our clients think it's our own product.",
+  "Autoconnecto gave us white-label dashboards, RBAC, and a working multi-tenant setup in under 48 hours. Our clients think it's our own product.",
   author: 'Marcus Hoffmann',
   role: 'CTO, Nexus Industrial Systems',
   avatar: "https://img.rocket.new/generatedImages/rocket_gen_img_17c6ec630-1763296514678.png",

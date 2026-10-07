@@ -2,8 +2,6 @@ export const DOCS_URL = "https://docs.autoconnecto.in/";
 export const DOCS_ABOUT_URL =
   "https://docs.autoconnecto.in/about/what-is-autoconnecto";
 export const DOCS_PRICING_URL = "https://docs.autoconnecto.in/about/pricing";
-export const DOCS_VS_THINGSBOARD_URL =
-  "https://docs.autoconnecto.in/about/vs-thingsboard";
 export const DOCS_FAQ_URL = "https://docs.autoconnecto.in/about/faq";
 export const DEVICE_CONNECTIVITY_DOCS_URL =
   "https://docs.autoconnecto.in/developer/device-connectivity";

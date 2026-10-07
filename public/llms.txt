@@ -25,7 +25,6 @@
 - What is Autoconnecto: https://docs.autoconnecto.in/about/what-is-autoconnecto
 - Docs pricing: https://docs.autoconnecto.in/about/pricing
 - FAQ: https://docs.autoconnecto.in/about/faq
-- vs ThingsBoard: https://docs.autoconnecto.in/about/vs-thingsboard
 - Docs llms.txt: https://docs.autoconnecto.in/llms.txt
 - ESP32 SDK: https://github.com/autoconnecto/autoconnecto-sdk
 
@@ -45,7 +44,7 @@ Attribute-based control with a feedback loop: the dashboard writes shared attrib
 
 ## Key capabilities
 
-- Real-time dashboards with 60+ widgets (gauges, charts, maps, tables, controls)
+- Real-time dashboards with 80+ widgets (gauges, charts, maps, tables, controls)
 - Devices, device profiles, assets, alarms, data generators
 - Visual **Rule Engine** on ingest (filter, transform, notify Telegram/email, webhooks, delay, downlink, …)
 - Profile **Alarm Rules** + tenant **Telegram ops group** for alarm posts

@@ -29,7 +29,6 @@
 - What is Autoconnecto: https://docs.autoconnecto.in/about/what-is-autoconnecto
 - Docs pricing: https://docs.autoconnecto.in/about/pricing
 - FAQ: https://docs.autoconnecto.in/about/faq
-- vs ThingsBoard: https://docs.autoconnecto.in/about/vs-thingsboard
 
 ## Contact
 
