@@ -72,24 +72,24 @@ export default function HeroSection() {
             Autoconnecto gives engineering teams a production-ready IoT backbone — MQTT &amp; HTTPS connectivity, visual Rule Engine, live dashboards, enterprise RBAC, and white-label capability.
           </p>
           <p className="text-sm text-primary/90 font-medium max-w-2xl mx-auto mb-10">
-            For OEMs, system integrators, and enterprise IT teams shipping connected products — not one-off science projects.
+            For plant teams and integrators in India. Start with EnergyFleet: one site, gateway and meter included, live dashboard and Telegram alarms — free for 14 days. You pay only travel at actual cost.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
             <a
-              href="https://app.autoconnecto.in/login"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/solutions/energy-fleet"
               className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-white font-semibold hover:bg-primary/90 transition"
             >
-              Try live dashboard
+              Book the free 14-day trial
               <Icon name="ArrowRightIcon" size={16} />
             </a>
             <a
-              href="/#contact"
+              href="https://app.autoconnecto.in/login"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-border text-foreground font-semibold text-sm hover:bg-white/5 hover:border-primary/30 transition"
             >
-              Book a demo
+              Try the live app
             </a>
             <a
               href="https://docs.autoconnecto.in/"
