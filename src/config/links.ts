@@ -32,10 +32,13 @@ export const SDK_MODBUS_GATEWAY_URL =
 export const SDK_MQTT_BRIDGE_URL =
   "https://github.com/autoconnecto/autoconnecto-sdk/tree/main/examples/integrations/mqtt-bridge";
 
+/** Keep in step with autoconnecto-mobile package.json and the APK tag. */
+export const MOBILE_APP_VERSION = "1.6.5";
+
 /** Latest mobile release notes (GitHub redirects to newest tag). */
 export const MOBILE_APP_RELEASES_URL =
   "https://github.com/autoconnecto/autoconnecto-mobile/releases/latest";
 
-/** Direct APK download; asset name is fixed on every release. */
+/** Versioned APK so the downloaded file name shows the release. */
 export const MOBILE_APP_DOWNLOAD_URL =
-  "https://github.com/autoconnecto/autoconnecto-mobile/releases/latest/download/autoconnecto-mobile.apk";
+  `https://github.com/autoconnecto/autoconnecto-mobile/releases/latest/download/autoconnecto-mobile-v${MOBILE_APP_VERSION}.apk`;

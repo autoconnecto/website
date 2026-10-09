@@ -4,7 +4,8 @@ import Icon from '@/components/ui/AppIcon';
 import {
   ARDUINO_SDK_GITHUB_URL,
   COMMUNITY_TELEGRAM_URL,
-  MOBILE_APP_RELEASES_URL,
+  MOBILE_APP_DOWNLOAD_URL,
+  MOBILE_APP_VERSION,
 } from '@/config/links';
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.autoconnecto.in').trim().replace(/\/+$/, '');
@@ -18,7 +19,7 @@ const footerLinks = [
   { label: 'Scale', href: '/#scale', external: false },
   { label: 'Developers', href: '/#developers', external: false },
   { label: 'Arduino SDK', href: ARDUINO_SDK_GITHUB_URL, external: true },
-  { label: 'Mobile app', href: MOBILE_APP_RELEASES_URL, external: true },
+  { label: `Android app v${MOBILE_APP_VERSION}`, href: MOBILE_APP_DOWNLOAD_URL, external: true },
   { label: 'Community', href: COMMUNITY_TELEGRAM_URL, external: true },
   { label: 'Docs', href: 'https://docs.autoconnecto.in', external: true },
   { label: 'Privacy', href: '/privacy', external: false },
