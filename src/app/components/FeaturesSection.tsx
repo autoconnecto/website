@@ -85,16 +85,16 @@ export default function FeaturesSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">Universal device connectivity</h3>
-                  <p className="text-xs text-muted-foreground">HTTP, MQTT, WebSocket, gateways, LoRa webhooks</p>
+                  <p className="text-xs text-muted-foreground">HTTP, MQTT, WebSocket, CoAP, AMQP, gateways, LoRa webhooks</p>
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-lg">
-                Connect ESP32 firmware with the Arduino SDK, any device over HTTPS or MQTT, edge gateways with child relay, and LoRaWAN via ChirpStack or TTN webhooks. Per-device Check connectivity in the app; generic JSON webhooks for your own cloud.
+                Connect ESP32 firmware with the Arduino SDK, any device over HTTPS, MQTT, CoAP, or AMQP, edge gateways with child relay, and LoRaWAN webhooks. Per-device Check connectivity in the app; generic JSON webhooks for your own cloud.
               </p>
             </div>
             {/* Protocol badges */}
             <div className="flex gap-2 mt-4 flex-wrap">
-              {['HTTPS / REST', 'MQTT (TLS)', 'WebSocket', 'Gateway relay', 'LoRa webhooks', 'Modbus (MQTT serial)', 'Generic webhook']?.map((p) => (
+              {['HTTPS / REST', 'MQTT (TLS)', 'WebSocket', 'CoAP', 'AMQP', 'Gateway relay', 'LoRa webhooks', 'Modbus (MQTT serial)', 'Generic webhook']?.map((p) => (
                 <span key={p} className="px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-xs font-medium text-primary">
                   {p}
                 </span>
@@ -309,7 +309,7 @@ export default function FeaturesSection() {
               <div className="flex-1">
                 <h3 className="font-semibold text-lg text-foreground mb-1">Automation &amp; integrations</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl">
-                  Rule Engine on ingest, profile Alarm Rules, Telegram ops-group alerts, a job scheduler for recurring control, Integration Hub for ChirpStack/TTN/MQTT bridges, and scheduled CSV report emails — built for multi-product fleets.
+                  Rule Engine on ingest, profile Alarm Rules, Telegram ops-group alerts, a job scheduler for recurring control, Integration Hub for LoRaWAN and MQTT bridges, and scheduled CSV report emails — built for multi-product fleets.
                 </p>
                 <div className="flex gap-2 mt-3 flex-wrap">
                   {['Rule engine', 'Telegram alarms', 'Scheduler', 'Integration Hub', 'Reports', 'Modbus auto-poll']?.map((p) => (

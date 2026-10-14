@@ -16,7 +16,7 @@ const FLOW_STEPS = [
   {
     icon: 'WifiIcon',
     title: 'Connect',
-    desc: 'MQTT, HTTPS, WebSocket, gateways, LoRa webhooks',
+    desc: 'MQTT, HTTPS, WebSocket, CoAP, AMQP, gateways, LoRa webhooks',
   },
   {
     icon: 'FunnelIcon',
@@ -45,8 +45,8 @@ const PILLARS = [
     icon: 'WifiIcon',
     color: 'primary',
     title: 'Universal connectivity',
-    desc: 'ESP32 SDK, REST/MQTT ingest, device WebSocket, gateway child relay, ChirpStack & generic webhooks.',
-    tags: ['MQTT TLS', 'HTTPS', 'WebSocket', 'LoRa'],
+    desc: 'ESP32 SDK, REST/MQTT ingest, device WebSocket, CoAP, AMQP, gateway child relay, and generic webhooks.',
+    tags: ['MQTT TLS', 'HTTPS', 'WebSocket', 'CoAP', 'AMQP'],
   },
   {
     icon: 'PresentationChartLineIcon',

@@ -143,7 +143,7 @@ export default function HeroSection() {
 
         {/* PROTOCOLS */}
         <div className="mt-10 flex items-center justify-center gap-3 flex-wrap">
-          {['MQTT', 'HTTPS', 'TLS/SSL', 'REST API', 'WebSocket'].map((p) => (
+          {['MQTT', 'HTTPS', 'TLS/SSL', 'REST API', 'WebSocket', 'CoAP', 'AMQP'].map((p) => (
             <span key={p} className="px-3 py-1 rounded-full border text-xs">
               {p}
             </span>

@@ -56,7 +56,7 @@ const cards = [
   {
     title: 'Device connectivity',
     description:
-      'HTTP, MQTT, WebSocket, gateway child relay, and tenant webhooks (generic, ChirpStack, TTN). Copy-ready from Check connectivity in the app; full guide in the docs.',
+      'HTTP, MQTT, WebSocket, CoAP, AMQP, gateway child relay, and tenant webhooks. Copy-ready from Check connectivity in the app; full guide in the docs.',
     href: DEVICE_CONNECTIVITY_DOCS_URL,
     cta: 'Connectivity guide',
     icon: 'SignalIcon' as const,
