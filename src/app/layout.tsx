@@ -14,20 +14,20 @@ const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: 'Autoconnecto — Enterprise IoT Platform',
+  title: 'Autoconnecto — IoT platform for plants and OEMs',
   description:
-    'Autoconnecto is a full-stack IoT platform with live dashboards, 80+ widgets, MQTT/HTTPS, visual Rule Engine, RBAC, alarms with Telegram ops alerts, and white-label for enterprise scale. India.',
+    'Hosted IoT platform for plants and OEMs in India. MQTT and HTTPS, Analytics from stored readings, alarms by email or Telegram, white-label on Growth and Enterprise, and an on-premises server install. Scaled when you need more.',
   keywords: [
     'IoT platform',
     'MQTT',
     'device management',
     'dashboards',
-    'enterprise IoT',
+    'IoT analytics',
+    'on-premises IoT',
     'white-label',
     'rule engine',
-    'Telegram alarms',
-    'IoT dashboards',
-    'India IoT SaaS',
+    'IoT alarms',
+    'India IoT',
   ],
   authors: [{ name: 'Autoconnecto' }],
   creator: 'Autoconnecto',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: `${baseUrl}/`,
     siteName: 'Autoconnecto',
-    title: 'Autoconnecto — Enterprise IoT Platform',
+    title: 'Autoconnecto — IoT platform for plants and OEMs',
     description: 'Full-stack IoT platform for enterprise device management and visualization.',
     images: [
       {
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Autoconnecto — Enterprise IoT Platform',
+    title: 'Autoconnecto — IoT platform for plants and OEMs',
     description: 'Full-stack IoT platform for enterprise device management and visualization.',
     images: ['/assets/images/app_logo.png'],
   },
@@ -95,7 +95,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               name: 'Autoconnecto',
               url: `${baseUrl}/`,
               description:
-                'Enterprise IoT platform for device management, dashboards, Rule Engine automation, and realtime control.',
+                'Hosted IoT platform for plants and OEMs in India. Readings are stored. Analytics answers from those readings. Scaled when you need more. An on-premises server install is available.',
               publisher: { '@type': 'Organization', name: 'Autoconnecto', url: `${baseUrl}/` },
               inLanguage: 'en',
             }),
@@ -110,7 +110,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               name: 'Autoconnecto',
               url: `${baseUrl}/`,
               logo: `${baseUrl}/assets/images/app_logo.png`,
-              description: 'Enterprise IoT Platform for device management and visualization',
+              description: 'Hosted IoT platform for plants and OEMs in India. Analytics answers from stored readings. An on-premises server install is available.',
               email: 'support@autoconnecto.in',
               sameAs: [
                 'https://autoconnecto.in/',

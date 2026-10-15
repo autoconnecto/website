@@ -264,7 +264,9 @@ export default function PricingPlansServer() {
         <p className="mt-12 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed">
           Prices exclude applicable taxes. Paid subscriptions are non-refundable
           after activation. You can change or cancel plans from the app billing
-          page. Need a custom deployment?{" "}
+          page. The public app is hosted. If you need more than the catalog, it
+          can be scaled. An on-premises install on your server is available. One
+          server installation is ready.{" "}
           <a href="/#contact" className="text-primary hover:underline">
             Talk to us
           </a>

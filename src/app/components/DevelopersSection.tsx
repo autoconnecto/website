@@ -24,7 +24,7 @@ const cards = [
   {
     title: 'Autoconnecto Arduino SDK',
     description:
-      'ESP32 library for MQTT/WSS and HTTPS — telemetry, attributes, RPC, LTE PPP (EC200), watchdog/reconnect patterns, and batch telemetry examples. Plus gateway and integration scripts.',
+      'ESP32 library for MQTT — telemetry, attributes, RPC, LTE PPP (EC200), watchdog and reconnect, and batch telemetry examples. Plus gateway and integration scripts.',
     href: ARDUINO_SDK_GITHUB_URL,
     cta: 'Arduino SDK on GitHub',
     icon: 'CodeBracketIcon' as const,
@@ -56,7 +56,7 @@ const cards = [
   {
     title: 'Device connectivity',
     description:
-      'HTTP, MQTT, WebSocket, CoAP, AMQP, gateway child relay, and tenant webhooks. Copy-ready from Check connectivity in the app; full guide in the docs.',
+      'HTTP, MQTT, device WebSocket, CoAP, gateway child relay, and tenant webhooks. Copy-ready from Check connectivity in the app; full guide in the docs.',
     href: DEVICE_CONNECTIVITY_DOCS_URL,
     cta: 'Connectivity guide',
     icon: 'SignalIcon' as const,

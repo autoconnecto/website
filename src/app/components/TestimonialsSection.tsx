@@ -51,18 +51,6 @@ const INDUSTRIES = [
   'Environmental',
 ];
 
-function StarDecor() {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-amber-400/90">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
-
 function AvatarCircle({ initials }: { initials: string }) {
   return (
     <div className="rounded-full bg-primary/15 border border-primary/25 flex items-center justify-center font-semibold text-primary text-xs flex-shrink-0 ring-2 ring-primary/15">
@@ -140,7 +128,7 @@ export default function TestimonialsSection() {
             <div className="relative z-10 bg-card border border-primary/20 rounded-2xl p-7 card-glow h-full flex flex-col justify-between group-hover:border-primary/40 transition-colors duration-300">
               <div>
                 <div className="flex items-start justify-between mb-5">
-                  <StarDecor />
+                  <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Example</span>
                   <span className="px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-medium text-primary">
                     {featured.tag}
                   </span>
@@ -169,7 +157,7 @@ export default function TestimonialsSection() {
             >
               <div>
                 <div className="flex items-start justify-between mb-4">
-                  <StarDecor />
+                  <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Example</span>
                   <span className="px-2.5 py-1 rounded-full bg-secondary/60 border border-border text-xs font-medium text-muted-foreground">
                     {t.tag}
                   </span>

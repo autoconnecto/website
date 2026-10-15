@@ -14,16 +14,16 @@ import { siteOrigin } from '@/lib/siteOrigin';
 const baseUrl = siteOrigin();
 
 export const metadata: Metadata = {
-  title: 'Autoconnecto — Enterprise IoT Platform',
+  title: 'Autoconnecto — IoT platform for plants and OEMs',
   description:
-    'Autoconnecto is a full-stack IoT platform with live dashboards, 80+ widgets, MQTT/HTTPS support, visual Rule Engine, RBAC, alarms engine, and white-label capability for enterprise scale.',
+    'Hosted IoT platform for plants and OEMs in India. Connect MQTT or HTTPS, store readings, ask Analytics, raise alarms, and run on your own server when you need to. Plans scale when you need more.',
   alternates: { canonical: `${baseUrl}/` },
   openGraph: {
     type: 'website',
     url: `${baseUrl}/`,
-    title: 'Autoconnecto — Enterprise IoT Platform',
+    title: 'Autoconnecto — IoT platform for plants and OEMs',
     description:
-      'Full-stack IoT platform: dashboards, Rule Engine, alarms, MQTT/HTTPS, multi-tenant SaaS from India.',
+      'Hosted IoT platform from India. MQTT and HTTPS, Analytics from stored readings, alarms, and an on-premises install. Scaled when you need more.',
     siteName: 'Autoconnecto',
     images: [
       {
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Autoconnecto — Enterprise IoT Platform',
+    title: 'Autoconnecto — IoT platform for plants and OEMs',
     description:
-      'Full-stack IoT platform: dashboards, Rule Engine, alarms, MQTT/HTTPS, multi-tenant SaaS from India.',
+      'Hosted IoT platform from India. MQTT and HTTPS, Analytics from stored readings, alarms, and an on-premises install. Scaled when you need more.',
     images: [`${baseUrl}/assets/images/app_logo.png`],
   },
 };
@@ -55,9 +55,9 @@ export default function LandingPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebPage',
-            name: 'Autoconnecto — Enterprise IoT Platform',
+            name: 'Autoconnecto — IoT platform for plants and OEMs',
             description:
-              'Autoconnecto is a full-stack IoT platform with live dashboards, 80+ widgets, MQTT/HTTPS, visual Rule Engine, RBAC, alarms, and white-label capability.',
+              'Hosted IoT platform for plants and OEMs in India. Readings are stored. Analytics answers from those readings. An on-premises server install is available.',
             url: `${baseUrl}/`,
             image: `${baseUrl}/assets/images/app_logo.png`,
             isPartOf: {
@@ -77,10 +77,10 @@ export default function LandingPage() {
             '@context': 'https://schema.org',
             '@type': 'SoftwareApplication',
             name: 'Autoconnecto',
-            description: 'Enterprise IoT Platform for device management and visualization',
+            description: 'Hosted IoT platform for device connectivity, Analytics, dashboards, and on-premises installation',
             url: baseUrl,
             applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Cloud',
+            operatingSystem: 'Web, on-premises server',
             offers: {
               '@type': 'Offer',
               price: '0',

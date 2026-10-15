@@ -338,7 +338,7 @@ export default function ContactSection() {
                       type="text" required
                       value={demoForm.name}
                       onChange={(e) => setDemoForm({ ...demoForm, name: e.target.value })}
-                      placeholder="Marcus Hoffmann"
+                      placeholder="Your name"
                       className="w-full px-4 py-2.5 rounded-xl border border-border bg-secondary/30 text-foreground text-sm placeholder-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all"
                     />
                   </div>
@@ -348,7 +348,7 @@ export default function ContactSection() {
                       type="email" required
                       value={demoForm.email}
                       onChange={(e) => setDemoForm({ ...demoForm, email: e.target.value })}
-                      placeholder="marcus@nexusindustrial.com"
+                      placeholder="you@company.com"
                       className="w-full px-4 py-2.5 rounded-xl border border-border bg-secondary/30 text-foreground text-sm placeholder-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all"
                     />
                   </div>
@@ -360,7 +360,7 @@ export default function ContactSection() {
                       type="text" required
                       value={demoForm.company}
                       onChange={(e) => setDemoForm({ ...demoForm, company: e.target.value })}
-                      placeholder="Nexus Industrial Systems"
+                      placeholder="Your company"
                       className="w-full px-4 py-2.5 rounded-xl border border-border bg-secondary/30 text-foreground text-sm placeholder-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all"
                     />
                   </div>

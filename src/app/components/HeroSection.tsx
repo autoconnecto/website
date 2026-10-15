@@ -6,10 +6,10 @@ import Image from 'next/image';
 import { MOBILE_APP_DOWNLOAD_URL } from '@/config/links';
 
 const trustStats = [
-  { value: 'India', label: 'Built for INR buyers' },
-  { value: '80+', label: 'Dashboard widgets' },
-  { value: '14-day', label: 'EnergyFleet trial' },
-  { value: 'Telegram', label: 'Ops alarms' },
+  { value: 'India', label: 'Hosted service, INR plans' },
+  { value: 'Free', label: 'Open the app, no site visit' },
+  { value: 'Analytics', label: 'Answers from stored readings' },
+  { value: 'On-prem', label: 'Server install ready' },
 ];
 
 export default function HeroSection() {
@@ -64,32 +64,35 @@ export default function HeroSection() {
           </div>
 
           <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-7xl leading-[0.95] tracking-tight mb-6">
-            <span className="text-gradient-soft block">Connect. Process.</span>
-            <span className="text-gradient-primary block">Visualize at Scale 🚀</span>
+            <span className="text-gradient-soft block">Connect the plant.</span>
+            <span className="text-gradient-primary block">See it live.</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-3">
-            Autoconnecto gives engineering teams a production-ready IoT backbone — MQTT &amp; HTTPS connectivity, visual Rule Engine, live dashboards, enterprise RBAC, and white-label capability.
+            Autoconnecto is a hosted IoT platform for plant teams and OEMs in India. Connect a device over MQTT or HTTPS. The reading is stored. A profile alarm and a rule engine can both act. The dashboard shows the last value the device reported.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-3">
+            Analytics answers a question from those stored readings: which device is highest, when a value will cross a line, a vibration check, and a watch that learns the normal band.
           </p>
           <p className="text-sm text-primary/90 font-medium max-w-2xl mx-auto mb-10">
-            For plant teams and integrators in India. Start with EnergyFleet: one site, gateway and meter included, live dashboard and Telegram alarms — free for 14 days. You pay only travel at actual cost.
+            Two ways to start. Open the app on the Free plan and connect a device yourself. Or book EnergyFleet: one site, gateway and meter included, 14 days, you pay only travel at cost. An on-premises install on your server is available. One server installation is ready.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
             <a
-              href="/solutions/energy-fleet"
-              className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-white font-semibold hover:bg-primary/90 transition"
-            >
-              Book the free 14-day trial
-              <Icon name="ArrowRightIcon" size={16} />
-            </a>
-            <a
               href="https://app.autoconnecto.in/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-border text-foreground font-semibold text-sm hover:bg-white/5 hover:border-primary/30 transition"
+              className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-white font-semibold hover:bg-primary/90 transition"
             >
               Try the live app
+              <Icon name="ArrowRightIcon" size={16} />
+            </a>
+            <a
+              href="/solutions/energy-fleet"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-border text-foreground font-semibold text-sm hover:bg-white/5 hover:border-primary/30 transition"
+            >
+              Book the EnergyFleet trial
             </a>
             <a
               href="https://docs.autoconnecto.in/"
@@ -143,7 +146,7 @@ export default function HeroSection() {
 
         {/* PROTOCOLS */}
         <div className="mt-10 flex items-center justify-center gap-3 flex-wrap">
-          {['MQTT', 'HTTPS', 'TLS/SSL', 'REST API', 'WebSocket', 'CoAP', 'AMQP'].map((p) => (
+          {['MQTT', 'HTTPS', 'Device WebSocket', 'CoAP', 'LoRaWAN', 'Modbus gateway'].map((p) => (
             <span key={p} className="px-3 py-1 rounded-full border text-xs">
               {p}
             </span>

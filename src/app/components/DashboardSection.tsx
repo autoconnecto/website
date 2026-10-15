@@ -17,7 +17,7 @@ const SPARKLINE_POINTS = "0,40 20,35 40,42 60,28 80,32 100,20 120,25 140,18 160,
 const WIDGETS = [
 { icon: 'BoltIcon', label: 'Live telemetry', value: 'Real-time', unit: 'Socket.IO', color: 'text-primary' },
 { icon: 'SignalIcon', label: 'Devices', value: 'Online', unit: 'status', color: 'text-accent' },
-{ icon: 'ExclamationTriangleIcon', label: 'Alarms', value: 'L1–L3', unit: 'Telegram', color: 'text-orange-400' },
+{ icon: 'ExclamationTriangleIcon', label: 'Alarms', value: 'Raised', unit: 'in the app', color: 'text-orange-400' },
 { icon: 'ShieldCheckIcon', label: 'Access', value: 'Cognito', unit: 'auth', color: 'text-emerald-400' }];
 
 

@@ -9,12 +9,12 @@ const baseUrl = siteOrigin();
 export const metadata: Metadata = {
   title: 'Product — Autoconnecto IoT Platform',
   description:
-    'Multi-tenant IoT SaaS: device connectivity, visual Rule Engine, live dashboards, Telegram/email alarms, reboot-safe control, and ESP32 SDK. Built in India.',
+    'Hosted IoT platform: connectivity, rule engine, Analytics, live dashboards, alarms, and an on-premises server install. Built in India.',
   alternates: { canonical: `${baseUrl}/product` },
   openGraph: {
     title: 'Product — Autoconnecto IoT Platform',
     description:
-      'Connect devices, automate with a Rule Engine, visualize in realtime, and control equipment reliably.',
+      'Connect a device, store the reading, ask Analytics, and control from the last value the device reported. Hosted, or on your server.',
     url: `${baseUrl}/product`,
     images: [
       {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Product — Autoconnecto IoT Platform',
     description:
-      'Connect devices, automate with a Rule Engine, visualize in realtime, and control equipment reliably.',
+      'Connect a device, store the reading, ask Analytics, and control from the last value the device reported. Hosted, or on your server.',
     images: [`${baseUrl}/assets/images/app_logo.png`],
   },
 };
@@ -45,7 +45,7 @@ export default function ProductPage() {
             '@type': 'WebPage',
             name: 'Autoconnecto Product Overview',
             description:
-              'IoT platform with Rule Engine automation, live dashboards, Telegram/email alarms, and reboot-safe device control.',
+              'IoT platform with stored readings, Analytics, live dashboards, alarms, and reboot-safe device control.',
             url: `${baseUrl}/product`,
             isPartOf: { '@type': 'WebSite', name: 'Autoconnecto', url: baseUrl },
           }),

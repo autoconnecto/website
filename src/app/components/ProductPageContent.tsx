@@ -16,27 +16,27 @@ const FLOW_STEPS = [
   {
     icon: 'WifiIcon',
     title: 'Connect',
-    desc: 'MQTT, HTTPS, WebSocket, CoAP, AMQP, gateways, LoRa webhooks',
-  },
-  {
-    icon: 'FunnelIcon',
-    title: 'Process',
-    desc: 'Visual Rule Engine per device profile (transform, notify, webhooks)',
+    desc: 'MQTT, HTTPS, device WebSocket, CoAP, LoRaWAN webhooks, Modbus through a gateway. The ESP32 library speaks MQTT.',
   },
   {
     icon: 'CircleStackIcon',
     title: 'Store',
-    desc: 'Telemetry, attributes, alarms — tenant-isolated Postgres',
+    desc: 'Readings and attributes are stored. One database. Each tenant stays with that tenant.',
+  },
+  {
+    icon: 'ChartBarIcon',
+    title: 'Ask',
+    desc: 'Analytics answers from stored readings: rank, forecast, vibration, and a learned watch.',
   },
   {
     icon: 'PresentationChartLineIcon',
-    title: 'Visualize',
-    desc: 'Live dashboards, 80+ widgets, mobile app',
+    title: 'See',
+    desc: 'Live dashboards and the mobile app. A widget shows the last value the device reported.',
   },
   {
     icon: 'BellAlertIcon',
     title: 'Act',
-    desc: 'Alarms, rule engine, scheduler, shared attributes, remote control',
+    desc: 'A profile alarm and a rule engine can both run. A shared attribute sends the command back.',
   },
 ];
 
@@ -45,8 +45,8 @@ const PILLARS = [
     icon: 'WifiIcon',
     color: 'primary',
     title: 'Universal connectivity',
-    desc: 'ESP32 SDK, REST/MQTT ingest, device WebSocket, CoAP, AMQP, gateway child relay, and generic webhooks.',
-    tags: ['MQTT TLS', 'HTTPS', 'WebSocket', 'CoAP', 'AMQP'],
+    desc: 'ESP32 SDK over MQTT, HTTPS, device WebSocket, CoAP, gateway child relay, and LoRaWAN webhooks.',
+    tags: ['MQTT TLS', 'HTTPS', 'WebSocket', 'CoAP', 'LoRaWAN'],
   },
   {
     icon: 'PresentationChartLineIcon',
@@ -70,11 +70,18 @@ const PILLARS = [
     tags: ['Alarms', 'Telegram', 'Email'],
   },
   {
+    icon: 'ChartBarIcon',
+    color: 'sky',
+    title: 'Analytics with AI',
+    desc: 'Ask in ordinary words. Analytics ranks a fleet, forecasts a crossing, checks vibration, and can learn a normal band. The number comes from stored telemetry.',
+    tags: ['Ask', 'Forecast', 'Learned watch'],
+  },
+  {
     icon: 'LockClosedIcon',
     color: 'emerald',
-    title: 'Enterprise ready',
-    desc: 'Multi-tenant isolation, RBAC, white-label branding, custom domains, scheduler, Integration Hub, CSV reports, and INR plans from free tier to enterprise.',
-    tags: ['RBAC', 'White-label', 'Scheduler'],
+    title: 'Hosted or on your server',
+    desc: 'One database, tenant-scoped. Roles inside the tenant. White-label logo, colours, and your hostname on Growth and Enterprise. The public app is hosted. An on-premises install is available, and one server installation is ready. Plans list up to 500 devices on Enterprise. If you need more, it can be scaled.',
+    tags: ['INR plans', 'On-premises', 'White-label'],
   },
 ];
 
@@ -179,12 +186,11 @@ export default function ProductPageContent() {
           </h1>
 
           <p className="scroll-reveal hidden-init scroll-reveal-delay-2 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
-            Autoconnecto is multi-tenant SaaS for connecting devices, automating with a visual
-            Rule Engine, building live dashboards, and controlling equipment — with dashboards
-            that stay correct after every reboot.
+            Connect a device. The reading is stored. A profile alarm and a rule engine can both act.
+            Analytics answers from those readings. The dashboard shows the last value the device reported.
           </p>
           <p className="scroll-reveal hidden-init scroll-reveal-delay-2 text-sm text-primary/90 font-medium mb-10">
-            Built in India · INR pricing · Visual Rule Engine without the ops maze
+            Built in India · INR plans · Hosted, or on your server · Scaled when you need more
           </p>
 
           <div className="scroll-reveal hidden-init scroll-reveal-delay-3 flex flex-wrap items-center justify-center gap-3 mb-14">
@@ -214,10 +220,10 @@ export default function ProductPageContent() {
 
           <div className="scroll-reveal hidden-init scroll-reveal-delay-4 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
-              { v: '80+', l: 'Dashboard widgets' },
-              { v: 'Rule Engine', l: 'Visual automation' },
-              { v: 'L1–L3', l: 'Telegram alarm groups' },
-              { v: 'Always-on', l: 'Designed for continuous ops' },
+              { v: 'Analytics', l: 'Answers from stored readings' },
+              { v: 'On-prem', l: 'Server install ready' },
+              { v: 'Alarms', l: 'In the app, email, Telegram' },
+              { v: 'Scaled', l: 'When you need more' },
             ].map((s) => (
               <div
                 key={s.l}
@@ -289,7 +295,8 @@ export default function ProductPageContent() {
               return (
                 <div
                   key={p.title}
-                  className={`scroll-reveal hidden-init ${delayClass} rounded-2xl border border-border bg-card p-6 card-glow card-glow-hover transition-all duration-300 flex flex-col`}
+                  id={p.title === 'Analytics with AI' ? 'analytics' : undefined}
+                  className={`scroll-reveal hidden-init ${delayClass} rounded-2xl border border-border bg-card p-6 card-glow card-glow-hover transition-all duration-300 flex flex-col scroll-mt-28`}
                 >
                   <div
                     className={`w-10 h-10 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center mb-4`}
@@ -404,9 +411,10 @@ export default function ProductPageContent() {
                 Reboot-safe remote control
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Operator dashboards often lie after a device reboot — toggles show the wrong state
-                until someone clicks again. Autoconnecto ties shared attributes, client
-                confirmation, and UI resync into one flow.
+                The dashboard writes a shared attribute. The device applies it and reports a client
+                attribute. The widget shows the last value the device reported. An offline device
+                does not show the command as done. After power returns, the device reads the shared
+                attribute again.
               </p>
               <a
                 href={DOCS_ABOUT_URL}
@@ -421,10 +429,10 @@ export default function ProductPageContent() {
 
             <ol className="space-y-3">
               {[
-                'Operator sets a value on the dashboard (shared attribute).',
-                'Device applies it and confirms via client attribute.',
-                'After reboot, device reloads retained shared attributes and re-confirms.',
-                'Dashboard resynchronizes — no duplicate clicks.',
+                'The dashboard writes a shared attribute.',
+                'The device applies it and reports a client attribute.',
+                'The widget shows that report. Offline does not mean the command is done.',
+                'After power returns, the device reads the shared attribute again.',
               ].map((text, i) => (
                 <li
                   key={i}
@@ -504,8 +512,8 @@ export default function ProductPageContent() {
             Ready to connect your fleet?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Start on the free tier, attach a Rule Engine when you need automation, and scale to
-            white-label enterprise when you&apos;re production-ready.
+            Start on the Free plan. White-label is on Growth and Enterprise. If you need more than
+            the catalog, it can be scaled. An on-premises install on your server is available.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             <a

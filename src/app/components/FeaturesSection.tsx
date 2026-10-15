@@ -85,16 +85,16 @@ export default function FeaturesSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">Universal device connectivity</h3>
-                  <p className="text-xs text-muted-foreground">HTTP, MQTT, WebSocket, CoAP, AMQP, gateways, LoRa webhooks</p>
+                  <p className="text-xs text-muted-foreground">HTTPS, MQTT, device WebSocket, CoAP, gateways, LoRa webhooks</p>
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-lg">
-                Connect ESP32 firmware with the Arduino SDK, any device over HTTPS, MQTT, CoAP, or AMQP, edge gateways with child relay, and LoRaWAN webhooks. Per-device Check connectivity in the app; generic JSON webhooks for your own cloud.
+                Connect an ESP32 with the Arduino SDK over MQTT, or any device over HTTPS, MQTT, CoAP, or the device WebSocket. Edge gateways relay child devices. LoRaWAN arrives by webhook. Modbus is read through a gateway.
               </p>
             </div>
             {/* Protocol badges */}
             <div className="flex gap-2 mt-4 flex-wrap">
-              {['HTTPS / REST', 'MQTT (TLS)', 'WebSocket', 'CoAP', 'AMQP', 'Gateway relay', 'LoRa webhooks', 'Modbus (MQTT serial)', 'Generic webhook']?.map((p) => (
+              {['HTTPS / REST', 'MQTT (TLS)', 'Device WebSocket', 'CoAP', 'Gateway relay', 'LoRa webhooks', 'Modbus (gateway)', 'Generic webhook']?.map((p) => (
                 <span key={p} className="px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-xs font-medium text-primary">
                   {p}
                 </span>
@@ -194,7 +194,7 @@ export default function FeaturesSection() {
             </div>
             <h3 className="font-semibold text-base text-foreground mb-1">Full-Scale Alarms Engine</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-              Rule-chain driven alarms on telemetry, inactivity, or user actions. Route to Telegram ops groups, email, or webhooks.
+              The platform raises the alarm from a profile rule or from a rule-engine condition. Telegram, email, or a webhook delivers it.
             </p>
             <div className="space-y-1.5">
               {ALARM_EVENTS?.map((ev, i) => (
@@ -247,7 +247,7 @@ export default function FeaturesSection() {
             </div>
             <h3 className="font-semibold text-base text-foreground mb-1">White-Label Ready</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-              Your brand, your domain, your colors. Deliver a fully branded IoT platform to each client.
+              Logo, colours, and your own hostname. White-label is on Growth and Enterprise.
             </p>
             <div className="flex gap-2">
               {['#0EA5E9', '#8B5CF6', '#10B981', '#F59E0B']?.map((color, i) => (
@@ -309,15 +309,35 @@ export default function FeaturesSection() {
               <div className="flex-1">
                 <h3 className="font-semibold text-lg text-foreground mb-1">Automation &amp; integrations</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl">
-                  Rule Engine on ingest, profile Alarm Rules, Telegram ops-group alerts, a job scheduler for recurring control, Integration Hub for LoRaWAN and MQTT bridges, and scheduled CSV report emails — built for multi-product fleets.
+                  Profile Alarm Rules and a rule engine on ingest. Telegram and email deliver alarms. A job scheduler for recurring control, Integration Hub for LoRaWAN and MQTT bridges, and scheduled CSV report emails.
                 </p>
                 <div className="flex gap-2 mt-3 flex-wrap">
-                  {['Rule engine', 'Telegram alarms', 'Scheduler', 'Integration Hub', 'Reports', 'Modbus auto-poll']?.map((p) => (
+                  {['Rule engine', 'Profile alarms', 'Email', 'Telegram', 'Scheduler', 'Reports']?.map((p) => (
                     <span key={p} className="px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/10 text-xs font-medium text-sky-300">
                       {p}
                     </span>
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Analytics */}
+          <div id="analytics" className="scroll-reveal hidden-init scroll-reveal-delay-2 lg:col-span-3 relative overflow-hidden rounded-2xl border border-border bg-card card-glow card-glow-hover transition-all duration-300 p-6 flex flex-col md:flex-row items-start md:items-center gap-6 scroll-mt-28">
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center">
+              <Icon name="ChartBarIcon" size={24} className="text-primary" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-semibold text-lg text-foreground mb-1">Analytics with AI</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
+                Ask in ordinary words. Analytics ranks a fleet, forecasts when a value will cross a line, checks vibration, and can learn a normal band for a watch. The number is calculated from telemetry already stored.
+              </p>
+              <div className="flex gap-2 mt-3 flex-wrap">
+                {['Ask', 'Forecast', 'Vibration', 'Learned watch']?.map((p) => (
+                  <span key={p} className="px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-xs font-medium text-primary">
+                    {p}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -332,16 +352,16 @@ export default function FeaturesSection() {
               <Icon name="BuildingOffice2Icon" size={24} className="text-primary" />
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold text-lg text-foreground mb-1">Multi-Tenant &amp; Multi-User Architecture</h3>
+              <h3 className="font-semibold text-lg text-foreground mb-1">One database, tenant by tenant</h3>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
-                A single installation serves unlimited tenants, each with their own administrators, customers, devices, and assets. One tenant — millions of devices. Full isolation, zero cross-tenant data leakage.
+                One hosted database. Each tenant’s devices, readings, alarms, and users stay with that tenant. Public plans run from Free (2 devices) to Enterprise (500). If you need more, it can be scaled. White-label branding is on Growth and Enterprise.
               </p>
             </div>
             <div className="flex-shrink-0 grid grid-cols-3 gap-3 text-center">
               {[
-                { v: '∞', l: 'Tenants' },
-                { v: 'M+', l: 'Devices/Tenant' },
-                { v: '100%', l: 'Isolated' },
+                { v: '1', l: 'Database' },
+                { v: 'Scaled', l: 'When you need more' },
+                { v: 'Scoped', l: 'Per tenant' },
               ]?.map((s, i) => (
                 <div key={i} className="bg-secondary/40 rounded-xl px-4 py-3">
                   <div className="font-display font-bold text-xl text-primary">{s?.v}</div>
