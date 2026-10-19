@@ -1,13 +1,9 @@
 // CloudFront Function (runtime: cloudfront-js-2.0)
-// Not attached. Attach on viewer-request of distribution E3UPPLM5N2GQ5Z
-// when the site is next deployed.
+// Live name: www-static-rewrite on distribution E3UPPLM5N2GQ5Z.
 //
-// autoconnecto.in/product currently 404s. Only the home page redirects
-// to www. This sends every apex request to https://www.autoconnecto.in.
-//
-// HTTP that never reaches CloudFront cannot be redirected here. The
-// distribution viewer protocol policy has to be "Redirect HTTP to HTTPS",
-// and both hostnames have to be alternate domain names on this distribution.
+// autoconnecto.in is an alternate name on the same distribution as www.
+// Send it to https://www and keep the path. Then rewrite extensionless
+// Next export routes to the .html object S3 actually stores.
 function queryString(qs) {
     var parts = [];
     var key;
@@ -42,6 +38,16 @@ function handler(event) {
                 },
             },
         };
+    }
+
+    var uri = req.uri;
+    if (uri.endsWith("/")) {
+        req.uri = uri + "index.html";
+        return req;
+    }
+    var last = uri.substring(uri.lastIndexOf("/") + 1);
+    if (last.indexOf(".") === -1) {
+        req.uri = uri + ".html";
     }
     return req;
 }

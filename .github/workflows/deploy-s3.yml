@@ -44,9 +44,7 @@ jobs:
           node-version: "20"
 
       - name: Install
-        run: |
-          npm install -g npm@10.9.0
-          npm install
+        run: npm ci
 
       - name: Build static export
         env:
