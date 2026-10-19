@@ -4,22 +4,21 @@ import Footer from '@/components/Footer';
 import SolutionsCatalog from '@/app/components/SolutionsCatalog';
 import { listSolutions } from '@/content/solutions';
 import { buildSolutionsItemListJsonLd } from '@/lib/solutionsJsonLd';
+import { shareMeta } from '@/lib/shareMeta';
 import { siteOrigin } from '@/lib/siteOrigin';
 
 const baseUrl = siteOrigin();
 const solutions = listSolutions();
 
+const solutionsTitle = 'Solutions — Hardware + Autoconnecto Platform';
+const solutionsDescription =
+  'EnergyFleet 14-day trial is free for one site, hardware included. Travel is billed at actual cost. Indoor climate remains in the catalog.';
+
 export const metadata: Metadata = {
-  title: 'Solutions — Hardware + Autoconnecto Platform',
-  description:
-    'EnergyFleet 14-day trial is free for one site, hardware included. Travel is billed at actual cost. Indoor climate remains in the catalog.',
+  title: solutionsTitle,
+  description: solutionsDescription,
   alternates: { canonical: `${baseUrl}/solutions` },
-  openGraph: {
-    title: 'Solutions — Autoconnecto',
-    description:
-      'Hardware plus platform offerings. Climate kits, EnergyFleet Modbus energy monitoring, and growing catalog.',
-    url: `${baseUrl}/solutions`,
-  },
+  ...shareMeta(baseUrl, '/solutions', solutionsTitle, solutionsDescription),
 };
 
 export default function SolutionsPage() {

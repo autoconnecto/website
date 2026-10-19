@@ -35,7 +35,7 @@ function PlanCard({ plan }: { plan: PublicPlan }) {
     <article
       className={`relative flex flex-col rounded-2xl border bg-card p-6 transition-all duration-300 ${
         popular
-          ? "border-primary/60 shadow-[0_0_32px_rgba(14,165,233,0.15)] scale-[1.02]"
+          ? "border-primary/60 shadow-[0_0_32px_rgba(14,165,233,0.15)]"
           : "border-border card-glow card-glow-hover"
       }`}
       aria-labelledby={`plan-${plan.plan_id}-title`}
@@ -223,7 +223,7 @@ function PricingComparisonTable({ plans }: { plans: PublicPlan[] }) {
         </a>
         {" · "}
         <a
-          href="https://docs.autoconnecto.in/about/pricing"
+          href="https://docs.autoconnecto.in/about/pricing.html"
           className="text-primary hover:underline"
         >
           Documentation pricing page
@@ -249,11 +249,13 @@ export default function PricingPlansServer() {
           <p className="text-muted-foreground text-lg font-light">
             Start free, then scale to production. All prices in INR (₹). Plans
             include users, dashboards, devices, telemetry limits, and data
-            retention as listed below.
+            retention as listed below. A reading posted faster than the plan
+            minimum is refused and is not stored. Free is 30 seconds, Hobby 10,
+            Starter 5, Growth 1, Enterprise 1.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-5 items-stretch">
           {plans.map((plan) => (
             <PlanCard key={plan.plan_id} plan={plan} />
           ))}

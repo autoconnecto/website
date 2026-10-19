@@ -146,7 +146,7 @@ export default function HeroSection() {
 
         {/* PROTOCOLS */}
         <div className="mt-10 flex items-center justify-center gap-3 flex-wrap">
-          {['MQTT', 'HTTPS', 'Device WebSocket', 'CoAP', 'LoRaWAN', 'Modbus gateway'].map((p) => (
+          {['MQTT', 'HTTPS', 'MQTT WSS 8084', 'Device WebSocket', 'LoRaWAN', 'Modbus gateway'].map((p) => (
             <span key={p} className="px-3 py-1 rounded-full border text-xs">
               {p}
             </span>

@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import PricingPlansServer from '@/app/components/PricingPlansServer';
 import { getPublicPlans } from '@/lib/publicPlans';
 import { buildPricingJsonLd } from '@/lib/pricingJsonLd';
+import { shareMeta } from '@/lib/shareMeta';
 import { siteOrigin } from '@/lib/siteOrigin';
 
 const baseUrl = siteOrigin();
@@ -17,21 +18,19 @@ const priceSummary = plans
   })
   .join('; ');
 
+const pricingTitle = 'Pricing — Autoconnecto';
+const pricingDescription = `Autoconnecto IoT platform plans (INR): ${priceSummary}. Free tier and paid Hobby, Starter, Growth, Enterprise with device and telemetry limits.`;
+
 export const metadata: Metadata = {
-  title: 'Pricing — Autoconnecto',
-  description: `Autoconnecto IoT platform plans (INR): ${priceSummary}. Free tier and paid Hobby, Starter, Growth, Enterprise with device and telemetry limits.`,
+  title: pricingTitle,
+  description: pricingDescription,
   alternates: {
     canonical: `${baseUrl}/pricing`,
     types: {
       'application/json': `${baseUrl}/plans.json`,
     },
   },
-  openGraph: {
-    title: 'Pricing — Autoconnecto',
-    description:
-      'Compare Autoconnecto plans and limits. Start free, scale to enterprise IoT deployments.',
-    url: `${baseUrl}/pricing`,
-  },
+  ...shareMeta(baseUrl, '/pricing', pricingTitle, pricingDescription),
 };
 
 export default function PricingPage() {

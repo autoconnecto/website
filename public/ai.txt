@@ -10,6 +10,7 @@
 - Solutions catalog: https://www.autoconnecto.in/solutions
 - Indoor Humidity & Temperature: https://www.autoconnecto.in/solutions/humidity-temperature
 - EnergyFleet: https://www.autoconnecto.in/solutions/energy-fleet
+- Climate fleet: https://www.autoconnecto.in/solutions/climate-fleet
 - Pricing (HTML): https://www.autoconnecto.in/pricing
 - Pricing (JSON): https://www.autoconnecto.in/plans.json
 - Privacy: https://www.autoconnecto.in/privacy
@@ -26,9 +27,9 @@
 ## Documentation (indexed separately)
 
 - Docs home: https://docs.autoconnecto.in/
-- What is Autoconnecto: https://docs.autoconnecto.in/about/what-is-autoconnecto
-- Docs pricing: https://docs.autoconnecto.in/about/pricing
-- FAQ: https://docs.autoconnecto.in/about/faq
+- What is Autoconnecto: https://docs.autoconnecto.in/about/what-is-autoconnecto.html
+- Docs pricing: https://docs.autoconnecto.in/about/pricing.html
+- FAQ: https://docs.autoconnecto.in/about/faq.html
 
 ## Contact
 

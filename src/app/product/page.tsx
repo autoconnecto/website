@@ -2,36 +2,20 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductPageContent from '@/app/components/ProductPageContent';
+import { shareMeta } from '@/lib/shareMeta';
 import { siteOrigin } from '@/lib/siteOrigin';
 
 const baseUrl = siteOrigin();
 
+const productTitle = 'Product — Autoconnecto IoT Platform';
+const productDescription =
+  'Hosted IoT platform: connectivity, rule engine, Analytics, live dashboards, alarms, and an on-premises server install. Built in India.';
+
 export const metadata: Metadata = {
-  title: 'Product — Autoconnecto IoT Platform',
-  description:
-    'Hosted IoT platform: connectivity, rule engine, Analytics, live dashboards, alarms, and an on-premises server install. Built in India.',
+  title: productTitle,
+  description: productDescription,
   alternates: { canonical: `${baseUrl}/product` },
-  openGraph: {
-    title: 'Product — Autoconnecto IoT Platform',
-    description:
-      'Connect a device, store the reading, ask Analytics, and control from the last value the device reported. Hosted, or on your server.',
-    url: `${baseUrl}/product`,
-    images: [
-      {
-        url: '/assets/images/app_logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Autoconnecto IoT Platform',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Product — Autoconnecto IoT Platform',
-    description:
-      'Connect a device, store the reading, ask Analytics, and control from the last value the device reported. Hosted, or on your server.',
-    images: [`${baseUrl}/assets/images/app_logo.png`],
-  },
+  ...shareMeta(baseUrl, '/product', productTitle, productDescription),
 };
 
 export default function ProductPage() {

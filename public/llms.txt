@@ -9,6 +9,7 @@
 - Solutions catalog: https://www.autoconnecto.in/solutions
 - Indoor Humidity & Temperature: https://www.autoconnecto.in/solutions/humidity-temperature
 - EnergyFleet: https://www.autoconnecto.in/solutions/energy-fleet
+- Climate fleet: https://www.autoconnecto.in/solutions/climate-fleet
 - Pricing (HTML): https://www.autoconnecto.in/pricing
 - Pricing (JSON): https://www.autoconnecto.in/plans.json
 - Privacy: https://www.autoconnecto.in/privacy
@@ -22,9 +23,9 @@
 - API: https://api.autoconnecto.in
 - API plans: https://api.autoconnecto.in/api/plans
 - Documentation: https://docs.autoconnecto.in
-- What is Autoconnecto: https://docs.autoconnecto.in/about/what-is-autoconnecto
-- Docs pricing: https://docs.autoconnecto.in/about/pricing
-- FAQ: https://docs.autoconnecto.in/about/faq
+- What is Autoconnecto: https://docs.autoconnecto.in/about/what-is-autoconnecto.html
+- Docs pricing: https://docs.autoconnecto.in/about/pricing.html
+- FAQ: https://docs.autoconnecto.in/about/faq.html
 - Docs llms.txt: https://docs.autoconnecto.in/llms.txt
 - ESP32 SDK: https://github.com/autoconnecto/autoconnecto-sdk
 
@@ -61,6 +62,7 @@ Industrial IoT, energy and utilities, logistics and field assets, OEMs and syste
 ## Pricing (INR) — Autoconnecto IoT platform
 
 All prices in Indian Rupees. Billed monthly or yearly. See https://www.autoconnecto.in/plans.json for machine-readable data.
+A reading posted faster than the plan minimum is refused and is not stored. Free is 30 seconds, Hobby 10, Starter 5, Growth 1, Enterprise 1.
 
 > This table is generated at build time from https://api.autoconnecto.in/api/plans.
 

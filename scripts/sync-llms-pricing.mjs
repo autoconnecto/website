@@ -33,6 +33,7 @@ function buildPricingSection(plans) {
     pricingHeading,
     "",
     "All prices in Indian Rupees. Billed monthly or yearly. See https://www.autoconnecto.in/plans.json for machine-readable data.",
+    "A reading posted faster than the plan minimum is refused and is not stored. Free is 30 seconds, Hobby 10, Starter 5, Growth 1, Enterprise 1.",
     "",
     "> This table is generated at build time from https://api.autoconnecto.in/api/plans.",
     "",

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
 // Mock chart data — pre-computed, no Math.random in render
@@ -64,7 +63,7 @@ export default function DashboardSection() {
         </div>
 
         {/* Dashboard mock UI */}
-        <div className="scroll-reveal hidden-init scroll-reveal-delay-2 relative rounded-2xl border border-border bg-card overflow-hidden card-glow">
+        <div className="relative rounded-2xl border border-border bg-card overflow-hidden card-glow">
           {/* Mock toolbar */}
           <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-secondary/20">
             <div className="flex items-center gap-2">
@@ -113,7 +112,7 @@ export default function DashboardSection() {
                       <stop offset="100%" stopColor="#0EA5E9" stopOpacity="0" />
                     </linearGradient>
                   </defs>
-                  <path d={`M${SPARKLINE_POINTS.split(' ').map((p, i, arr) => {
+                  <path d={`${SPARKLINE_POINTS.split(' ').map((p, i) => {
                     if (i === 0) return `M${p}`;
                     return `L${p}`;
                   }).join(' ')} L200,50 L0,50 Z`}
@@ -152,12 +151,13 @@ export default function DashboardSection() {
 
             {/* Map widget placeholder */}
             <div className="lg:col-span-2 bg-secondary/30 border border-border rounded-xl overflow-hidden relative" style={{ minHeight: 160 }}>
-              <AppImage
-                src="https://img.rocket.new/generatedImages/rocket_gen_img_111965df0-1776609584105.png"
-                alt="Dark world map showing connected device locations across continents with teal pin markers"
-                fill
-                className="object-cover opacity-30" />
-              
+              <div
+                className="absolute inset-0 opacity-40 pointer-events-none"
+                style={{
+                  background:
+                    'radial-gradient(circle at 22% 38%, rgba(14,165,233,0.35), transparent 28%), radial-gradient(circle at 48% 52%, rgba(14,165,233,0.28), transparent 26%), radial-gradient(circle at 72% 40%, rgba(14,165,233,0.32), transparent 24%), radial-gradient(circle at 84% 34%, rgba(14,165,233,0.22), transparent 18%)',
+                }}
+              />
               <div className="absolute inset-0 p-4">
                 <span className="text-sm font-medium text-foreground">Device Map</span>
                 {/* Mock pins */}

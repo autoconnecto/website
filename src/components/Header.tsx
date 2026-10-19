@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Icon from '@/components/ui/AppIcon';
 import Link from 'next/link';
 import {
+  APP_SIGNUP_URL,
   ARDUINO_SDK_GITHUB_URL,
   MOBILE_APP_RELEASES_URL,
 } from '@/config/links';
@@ -57,7 +58,7 @@ export default function Header() {
               alt="Autoconnecto Logo"
               width={140}
               height={36}
-              className="h-9 w-auto object-contain mix-blend-lighten"
+              className="h-9 w-auto object-contain"
               priority
             />
           </Link>
@@ -80,7 +81,7 @@ export default function Header() {
           {/* CTA */}
           <div className="flex items-center gap-3">
             <a
-              href="/#contact"
+              href={APP_SIGNUP_URL}
               className="hidden sm:inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-all duration-200 shadow-[0_0_20px_rgba(14,165,233,0.3)]"
             >
               Get Started
@@ -100,7 +101,7 @@ export default function Header() {
       </div>
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#0B1120]/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-3">
+        <div className="md:hidden bg-[#0B1120] border-b border-border px-6 py-6 flex flex-col gap-3">
           {navLinks?.map((link) => (
             <a
               key={link?.href}
@@ -114,7 +115,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={APP_SIGNUP_URL}
             onClick={() => setMobileOpen(false)}
             className="mt-2 flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground text-sm font-semibold"
           >

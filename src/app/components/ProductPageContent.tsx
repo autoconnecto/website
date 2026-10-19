@@ -16,7 +16,7 @@ const FLOW_STEPS = [
   {
     icon: 'WifiIcon',
     title: 'Connect',
-    desc: 'MQTT, HTTPS, device WebSocket, CoAP, LoRaWAN webhooks, Modbus through a gateway. The ESP32 library speaks MQTT.',
+    desc: 'MQTT on port 8883, MQTT over WebSocket on port 8084, HTTPS, and the device WebSocket. LoRaWAN arrives by webhook. A gateway can relay a child, read Modbus, or poll OPC UA, BACnet, and Sparkplug when that protocol is turned on. The ESP32 library speaks MQTT. ESP8266 and Pico W send HTTPS telemetry.',
   },
   {
     icon: 'CircleStackIcon',
@@ -31,7 +31,7 @@ const FLOW_STEPS = [
   {
     icon: 'PresentationChartLineIcon',
     title: 'See',
-    desc: 'Live dashboards and the mobile app. A widget shows the last value the device reported.',
+    desc: 'Live dashboards and the mobile app. A widget shows the last value the device reported. Firmware updates, the scheduler, and reports are in the app.',
   },
   {
     icon: 'BellAlertIcon',
@@ -45,8 +45,8 @@ const PILLARS = [
     icon: 'WifiIcon',
     color: 'primary',
     title: 'Universal connectivity',
-    desc: 'ESP32 SDK over MQTT, HTTPS, device WebSocket, CoAP, gateway child relay, and LoRaWAN webhooks.',
-    tags: ['MQTT TLS', 'HTTPS', 'WebSocket', 'CoAP', 'LoRaWAN'],
+    desc: 'ESP32 SDK over MQTT, HTTPS, the device WebSocket, gateway child relay, and LoRaWAN webhooks. MQTT over WebSocket is port 8084. ESP8266 and Pico W use HTTPS. OPC UA, BACnet, and Sparkplug are gateway protocols.',
+    tags: ['MQTT TLS', 'WSS 8084', 'HTTPS', 'WebSocket', 'LoRaWAN'],
   },
   {
     icon: 'PresentationChartLineIcon',
@@ -161,6 +161,11 @@ export default function ProductPageContent() {
     const root = rootRef.current;
     if (!root) return undefined;
 
+    const hero = root.querySelector<HTMLElement>('[data-reveal-root]');
+    hero?.querySelectorAll<HTMLElement>('.scroll-reveal').forEach((el) => {
+      el.classList.remove('hidden-init');
+    });
+
     root.querySelectorAll<HTMLElement>('[data-reveal-root]').forEach((el) => {
       observer.observe(el);
     });
@@ -173,27 +178,27 @@ export default function ProductPageContent() {
       {/* Hero */}
       <section data-reveal-root className="px-4 sm:px-6 mb-24">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="scroll-reveal hidden-init flex justify-center mb-6">
+          <div className="flex justify-center mb-6">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
               <Icon name="CpuChipIcon" size={12} />
               Product overview
             </span>
           </div>
 
-          <h1 className="scroll-reveal hidden-init scroll-reveal-delay-1 font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight text-foreground mb-6 leading-[1.05]">
+          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight text-foreground mb-6 leading-[1.05]">
             The IoT platform that{' '}
             <span className="text-gradient-primary">ships with you</span>
           </h1>
 
-          <p className="scroll-reveal hidden-init scroll-reveal-delay-2 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
             Connect a device. The reading is stored. A profile alarm and a rule engine can both act.
             Analytics answers from those readings. The dashboard shows the last value the device reported.
           </p>
-          <p className="scroll-reveal hidden-init scroll-reveal-delay-2 text-sm text-primary/90 font-medium mb-10">
+          <p className="text-sm text-primary/90 font-medium mb-10">
             Built in India · INR plans · Hosted, or on your server · Scaled when you need more
           </p>
 
-          <div className="scroll-reveal hidden-init scroll-reveal-delay-3 flex flex-wrap items-center justify-center gap-3 mb-14">
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-14">
             <a
               href={APP_SIGNUP_URL}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
@@ -218,7 +223,7 @@ export default function ProductPageContent() {
             </a>
           </div>
 
-          <div className="scroll-reveal hidden-init scroll-reveal-delay-4 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
               { v: 'Analytics', l: 'Answers from stored readings' },
               { v: 'On-prem', l: 'Server install ready' },
@@ -350,7 +355,7 @@ export default function ProductPageContent() {
                 One graph on the ingest path — transform, branch, notify, forward, and control.
                 Bind a <strong className="text-foreground font-medium">Started</strong> engine on
                 the device profile (or a tenant default). Simple thresholds stay on profile Alarm
-                Rules. Legacy pipeline URLs redirect here.
+                Rules.
               </p>
 
               <div className="flex flex-wrap gap-1.5 mb-10">

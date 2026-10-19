@@ -24,7 +24,7 @@ const cards = [
   {
     title: 'Autoconnecto Arduino SDK',
     description:
-      'ESP32 library for MQTT — telemetry, attributes, RPC, LTE PPP (EC200), watchdog and reconnect, and batch telemetry examples. Plus gateway and integration scripts.',
+      'ESP32 library for MQTT — telemetry, attributes, RPC, watchdog and reconnect, and batch telemetry. ESP8266 and Pico W send HTTPS. LTE PPP is an ESP32 core 3.x option. Plus gateway and integration scripts.',
     href: ARDUINO_SDK_GITHUB_URL,
     cta: 'Arduino SDK on GitHub',
     icon: 'CodeBracketIcon' as const,
@@ -48,7 +48,7 @@ const cards = [
   {
     title: 'Industrial integrations',
     description:
-      'Gateway scripts for OPC‑UA, Modbus (TCP/RTU), MQTT bridging, and generic webhooks — forward plant protocols to Autoconnecto token telemetry topics.',
+      'Gateway scripts for OPC UA and Modbus, plus MQTT bridging. In the app, a gateway can also poll BACnet or take Sparkplug readings. Those protocols stay off until you turn them on.',
     href: SDK_INTEGRATIONS_URL,
     cta: 'Browse integrations',
     icon: 'CodeBracketIcon' as const,
@@ -56,7 +56,7 @@ const cards = [
   {
     title: 'Device connectivity',
     description:
-      'HTTP, MQTT, device WebSocket, CoAP, gateway child relay, and tenant webhooks. Copy-ready from Check connectivity in the app; full guide in the docs.',
+      'HTTPS, MQTT on port 8883, MQTT over WebSocket on port 8084, the device WebSocket, gateway child relay, and tenant webhooks. Copy-ready from Check connectivity in the app.',
     href: DEVICE_CONNECTIVITY_DOCS_URL,
     cta: 'Connectivity guide',
     icon: 'SignalIcon' as const,

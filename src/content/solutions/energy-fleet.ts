@@ -99,13 +99,5 @@ export const energyFleet: SolutionOffering = {
       'One weekly CSV',
     ],
     note: 'The only charge during the trial is travel, billed at actual cost. Day 15: paid SaaS plan via checkout, or stop; hardware return or purchase as agreed in writing.',
-    proof: {
-      label: 'Reference setup (Autoconnecto lab, not a customer plant)',
-      site: 'PurpleChilly tenant — lab gateway path',
-      dashboard:
-        'A live dashboard for device http3 with voltage telemetry. An out-of-range voltage raises HighVoltage.',
-      alarm:
-        'Telegram group autoconnecto_alarms received HighVoltage CRITICAL for device http3, value voltage1=288 (>= 260).',
-    },
   },
 };

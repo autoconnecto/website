@@ -1,10 +1,10 @@
 export const DOCS_URL = "https://docs.autoconnecto.in/";
 export const DOCS_ABOUT_URL =
-  "https://docs.autoconnecto.in/about/what-is-autoconnecto";
-export const DOCS_PRICING_URL = "https://docs.autoconnecto.in/about/pricing";
-export const DOCS_FAQ_URL = "https://docs.autoconnecto.in/about/faq";
+  "https://docs.autoconnecto.in/about/what-is-autoconnecto.html";
+export const DOCS_PRICING_URL = "https://docs.autoconnecto.in/about/pricing.html";
+export const DOCS_FAQ_URL = "https://docs.autoconnecto.in/about/faq.html";
 export const DEVICE_CONNECTIVITY_DOCS_URL =
-  "https://docs.autoconnecto.in/developer/device-connectivity";
+  "https://docs.autoconnecto.in/developer/device-connectivity.html";
 export const APP_LOGIN_URL = "https://app.autoconnecto.in/login";
 export const APP_SIGNUP_URL = "https://app.autoconnecto.in/signup";
 export const APP_URL = "https://app.autoconnecto.in";
@@ -20,7 +20,7 @@ export const ARDUINO_SDK_GITHUB_URL =
 
 // Deep links into the SDK repo (used on marketing site)
 export const SDK_STM32_ARDUINO_GUIDE_URL =
-  "https://github.com/autoconnecto/autoconnecto-sdk/blob/main/stm32/README.md";
+  "https://github.com/autoconnecto/autoconnecto-sdk/blob/main/extras/stm32/README.md";
 export const SDK_LINUX_SBC_EXAMPLES_URL =
   "https://github.com/autoconnecto/autoconnecto-sdk/blob/main/raspberrypi/README.md";
 export const SDK_INTEGRATIONS_URL =

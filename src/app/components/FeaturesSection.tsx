@@ -85,16 +85,16 @@ export default function FeaturesSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">Universal device connectivity</h3>
-                  <p className="text-xs text-muted-foreground">HTTPS, MQTT, device WebSocket, CoAP, gateways, LoRa webhooks</p>
+                  <p className="text-xs text-muted-foreground">HTTPS, MQTT, MQTT over WebSocket port 8084, device WebSocket, gateways, LoRa webhooks</p>
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-lg">
-                Connect an ESP32 with the Arduino SDK over MQTT, or any device over HTTPS, MQTT, CoAP, or the device WebSocket. Edge gateways relay child devices. LoRaWAN arrives by webhook. Modbus is read through a gateway.
+                Connect an ESP32 with the Arduino SDK over MQTT, or any device over HTTPS, MQTT, or the device WebSocket. MQTT over WebSocket uses port 8084. Edge gateways relay child devices and can poll OPC UA, BACnet, or Sparkplug. LoRaWAN arrives by webhook. Modbus is read through a gateway.
               </p>
             </div>
             {/* Protocol badges */}
             <div className="flex gap-2 mt-4 flex-wrap">
-              {['HTTPS / REST', 'MQTT (TLS)', 'Device WebSocket', 'CoAP', 'Gateway relay', 'LoRa webhooks', 'Modbus (gateway)', 'Generic webhook']?.map((p) => (
+              {['HTTPS / REST', 'MQTT (TLS)', 'MQTT WSS 8084', 'Device WebSocket', 'Gateway relay', 'LoRa webhooks', 'Modbus (gateway)', 'OPC UA / BACnet / Sparkplug']?.map((p) => (
                 <span key={p} className="px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-xs font-medium text-primary">
                   {p}
                 </span>

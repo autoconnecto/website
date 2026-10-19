@@ -8,6 +8,7 @@ import {
   listSolutionSlugs,
 } from '@/content/solutions';
 import { buildSolutionProductJsonLd } from '@/lib/solutionsJsonLd';
+import { shareMeta } from '@/lib/shareMeta';
 import { siteOrigin } from '@/lib/siteOrigin';
 
 const baseUrl = siteOrigin();
@@ -25,15 +26,17 @@ export function generateMetadata({
   if (!solution) {
     return { title: 'Solution not found — Autoconnecto' };
   }
+  const title = `${solution.title} — Autoconnecto Solutions`;
   return {
-    title: `${solution.title} — Autoconnecto Solutions`,
+    title,
     description: solution.shortDescription,
     alternates: { canonical: `${baseUrl}/solutions/${solution.slug}` },
-    openGraph: {
-      title: `${solution.title} — Autoconnecto`,
-      description: solution.shortDescription,
-      url: `${baseUrl}/solutions/${solution.slug}`,
-    },
+    ...shareMeta(
+      baseUrl,
+      `/solutions/${solution.slug}`,
+      title,
+      solution.shortDescription,
+    ),
   };
 }
 
