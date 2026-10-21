@@ -9,7 +9,7 @@ const baseUrl = siteOrigin();
 
 const productTitle = 'Product — Autoconnecto IoT Platform';
 const productDescription =
-  'Hosted IoT platform: connectivity, rule engine, Analytics, live dashboards, alarms, and an on-premises server install. Built in India.';
+  'Hosted IoT platform: connectivity, rule engine, Analytics, live dashboards, alarms, Built in India.';
 
 export const metadata: Metadata = {
   title: productTitle,

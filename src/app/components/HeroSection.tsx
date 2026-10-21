@@ -9,7 +9,7 @@ const trustStats = [
   { value: 'India', label: 'Hosted service, INR plans' },
   { value: 'Free', label: 'Open the app, no site visit' },
   { value: 'Analytics', label: 'Answers from stored readings' },
-  { value: 'On-prem', label: 'Server install ready' },
+  { value: 'INR', label: 'Plans in Indian rupees' },
 ];
 
 export default function HeroSection() {
@@ -75,7 +75,7 @@ export default function HeroSection() {
             Analytics answers a question from those stored readings: which device is highest, when a value will cross a line, a vibration check, and a watch that learns the normal band.
           </p>
           <p className="text-sm text-primary/90 font-medium max-w-2xl mx-auto mb-10">
-            Two ways to start. Open the app on the Free plan and connect a device yourself. Or book EnergyFleet: one site, gateway and meter included, 14 days, you pay only travel at cost. An on-premises install on your server is available. One server installation is ready.
+            Two ways to start. Open the app on the Free plan and connect a device yourself. Or book EnergyFleet: one site, gateway and meter included, 14 days, you pay only travel at cost.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">

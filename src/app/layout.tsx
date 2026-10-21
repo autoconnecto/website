@@ -16,14 +16,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: 'Autoconnecto — IoT platform for plants and OEMs',
   description:
-    'Hosted IoT platform for plants and OEMs in India. MQTT and HTTPS, Analytics from stored readings, alarms by email or Telegram, white-label on Growth and Enterprise, and an on-premises server install. Scaled when you need more.',
+    'Hosted IoT platform for plants and OEMs in India. MQTT and HTTPS, Analytics from stored readings, alarms by email or Telegram, white-label on Growth and Enterprise. Scaled when you need more.',
   keywords: [
     'IoT platform',
     'MQTT',
     'device management',
     'dashboards',
     'IoT analytics',
-    'on-premises IoT',
     'white-label',
     'rule engine',
     'IoT alarms',
@@ -95,7 +94,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               name: 'Autoconnecto',
               url: `${baseUrl}/`,
               description:
-                'Hosted IoT platform for plants and OEMs in India. Readings are stored. Analytics answers from those readings. Scaled when you need more. An on-premises server install is available.',
+                'Hosted IoT platform for plants and OEMs in India. Readings are stored. Analytics answers from those readings. Scaled when you need more. ',
               publisher: { '@type': 'Organization', name: 'Autoconnecto', url: `${baseUrl}/` },
               inLanguage: 'en',
             }),
@@ -110,7 +109,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               name: 'Autoconnecto',
               url: `${baseUrl}/`,
               logo: `${baseUrl}/assets/images/app_logo.png`,
-              description: 'Hosted IoT platform for plants and OEMs in India. Analytics answers from stored readings. An on-premises server install is available.',
+              description: 'Hosted IoT platform for plants and OEMs in India. Analytics answers from stored readings. ',
               email: 'support@autoconnecto.in',
               sameAs: [
                 'https://autoconnecto.in/',

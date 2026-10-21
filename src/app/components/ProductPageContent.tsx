@@ -80,8 +80,8 @@ const PILLARS = [
     icon: 'LockClosedIcon',
     color: 'emerald',
     title: 'Hosted or on your server',
-    desc: 'One database, tenant-scoped. Roles inside the tenant. White-label logo, colours, and your hostname on Growth and Enterprise. The public app is hosted. An on-premises install is available, and one server installation is ready. Plans list up to 500 devices on Enterprise. If you need more, it can be scaled.',
-    tags: ['INR plans', 'On-premises', 'White-label'],
+    desc: 'One database, tenant-scoped. Roles inside the tenant. White-label logo, colours, and your hostname on Growth and Enterprise. The public app is hosted. Plans list up to 500 devices on Enterprise. If you need more, it can be scaled.',
+    tags: ['INR plans', 'White-label'],
   },
 ];
 
@@ -226,7 +226,7 @@ export default function ProductPageContent() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
               { v: 'Analytics', l: 'Answers from stored readings' },
-              { v: 'On-prem', l: 'Server install ready' },
+              { v: 'INR', l: 'Plans in Indian rupees' },
               { v: 'Alarms', l: 'In the app, email, Telegram' },
               { v: 'Scaled', l: 'When you need more' },
             ].map((s) => (
@@ -518,7 +518,7 @@ export default function ProductPageContent() {
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Start on the Free plan. White-label is on Growth and Enterprise. If you need more than
-            the catalog, it can be scaled. An on-premises install on your server is available.
+            the catalog, it can be scaled.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             <a

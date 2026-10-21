@@ -10,7 +10,7 @@ const FACTS = [
     icon: 'CloudIcon',
   },
   {
-    value: 'On-premises',
+    value: 'Hosted',
     label: 'Install on your server. One server installation is ready.',
     icon: 'ServerIcon',
   },
@@ -74,7 +74,7 @@ export default function ScaleSection() {
             <span className="text-gradient-primary">or your server</span>
           </h2>
           <p className="text-muted-foreground text-lg font-light">
-            The app at app.autoconnecto.in is hosted. An on-premises installation is available. One server installation is ready. Write to us to arrange it.
+            The app at app.autoconnecto.in is hosted. Write to us if you need a larger deployment.
           </p>
         </div>
 
@@ -136,7 +136,7 @@ export default function ScaleSection() {
               <div className="grid grid-cols-2 gap-2">
                 {[
                   { icon: 'CloudIcon', label: 'Hosted', desc: 'The public app, plans in rupees' },
-                  { icon: 'ServerIcon', label: 'On-premises', desc: 'Your server. One install ready' },
+                  { icon: 'ServerIcon', label: 'Hosted', desc: 'app.autoconnecto.in' },
                 ].map((d) =>
                 <div key={d.label} className="bg-secondary/40 rounded-xl p-3 border border-border">
                     <Icon name={d.icon as 'CloudIcon'} size={16} className="text-primary mb-1.5" />

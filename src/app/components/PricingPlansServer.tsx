@@ -267,7 +267,7 @@ export default function PricingPlansServer() {
           Prices exclude applicable taxes. Paid subscriptions are non-refundable
           after activation. You can change or cancel plans from the app billing
           page. The public app is hosted. If you need more than the catalog, it
-          can be scaled. An on-premises install on your server is available. One
+          can be scaled. One
           server installation is ready.{" "}
           <a href="/#contact" className="text-primary hover:underline">
             Talk to us

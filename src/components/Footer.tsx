@@ -83,7 +83,7 @@ export default function Footer() {
 
         {/* Disclaimer */}
         <p className="mt-8 text-center text-xs text-muted-foreground/60">
-          Hosted in India. An on-premises install is available. Scaled when you need more.
+          Hosted in India.  Scaled when you need more.
         </p>
         <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-muted-foreground/60">
           <span className="flex items-center gap-1.5">

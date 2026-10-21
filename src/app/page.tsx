@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     url: `${baseUrl}/`,
     title: 'Autoconnecto — IoT platform for plants and OEMs',
     description:
-      'Hosted IoT platform from India. MQTT and HTTPS, Analytics from stored readings, alarms, and an on-premises install. Scaled when you need more.',
+      'Hosted IoT platform from India. MQTT and HTTPS, Analytics from stored readings, alarms. Scaled when you need more.',
     siteName: 'Autoconnecto',
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Autoconnecto — IoT platform for plants and OEMs',
     description:
-      'Hosted IoT platform from India. MQTT and HTTPS, Analytics from stored readings, alarms, and an on-premises install. Scaled when you need more.',
+      'Hosted IoT platform from India. MQTT and HTTPS, Analytics from stored readings, alarms. Scaled when you need more.',
     images: [`${baseUrl}/assets/images/app_logo.png`],
   },
 };
@@ -57,7 +57,7 @@ export default function LandingPage() {
             '@type': 'WebPage',
             name: 'Autoconnecto — IoT platform for plants and OEMs',
             description:
-              'Hosted IoT platform for plants and OEMs in India. Readings are stored. Analytics answers from those readings. An on-premises server install is available.',
+              'Hosted IoT platform for plants and OEMs in India. Readings are stored. Analytics answers from those readings. ',
             url: `${baseUrl}/`,
             image: `${baseUrl}/assets/images/app_logo.png`,
             isPartOf: {
@@ -77,10 +77,10 @@ export default function LandingPage() {
             '@context': 'https://schema.org',
             '@type': 'SoftwareApplication',
             name: 'Autoconnecto',
-            description: 'Hosted IoT platform for device connectivity, Analytics, dashboards, and on-premises installation',
+            description: 'Hosted IoT platform for device connectivity, Analytics, dashboards, and dashboards',
             url: baseUrl,
             applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Web, on-premises server',
+            operatingSystem: 'Web',
             offers: {
               '@type': 'Offer',
               price: '0',
