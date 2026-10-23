@@ -14,6 +14,14 @@ import {
 
 const cards = [
   {
+    title: 'ESP32 MQTT quick path',
+    description:
+      'Flash the SDK, put the device token in secrets.h, and open a live dashboard. Step-by-step on the site and in the docs.',
+    href: '/esp32-mqtt',
+    cta: 'ESP32 MQTT use case',
+    icon: 'CpuChipIcon' as const,
+  },
+  {
     title: 'Public documentation',
     description:
       'User guides, dashboard widgets, devices, alarms, tenant settings — maintained as a dedicated docs site.',

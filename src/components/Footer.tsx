@@ -13,6 +13,9 @@ const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.autoconnecto.i
 const footerLinks = [
   { label: 'Product', href: '/product', external: false },
   { label: 'Solutions', href: '/solutions', external: false },
+  { label: 'Use cases', href: '/use-cases', external: false },
+  { label: 'ESP32 MQTT', href: '/esp32-mqtt', external: false },
+  { label: 'For integrators', href: '/for-system-integrators', external: false },
   { label: 'Platform', href: '/#platform', external: false },
   { label: 'Pricing', href: '/pricing', external: false },
   { label: 'Features', href: '/#features', external: false },

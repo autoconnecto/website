@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { listSolutionSlugs } from '@/content/solutions';
+import { listUseCases } from '@/content/useCases';
 
 export const dynamic = 'force-static'; // ✅ REQUIRED for static export
 
@@ -22,6 +23,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
+    })),
+    { url: `${base}/use-cases`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
+    ...listUseCases().map((u) => ({
+      url: `${base}${u.path}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.92,
     })),
     { url: `${base}/pricing`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },

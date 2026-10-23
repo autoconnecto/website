@@ -8,6 +8,11 @@
 - Home: https://www.autoconnecto.in/
 - Product overview: https://www.autoconnecto.in/product
 - Solutions catalog: https://www.autoconnecto.in/solutions
+- Use cases hub: https://www.autoconnecto.in/use-cases
+- ESP32 MQTT: https://www.autoconnecto.in/esp32-mqtt
+- Shared attributes: https://www.autoconnecto.in/shared-attributes
+- OTA firmware: https://www.autoconnecto.in/ota-firmware
+- For system integrators: https://www.autoconnecto.in/for-system-integrators
 - Indoor Humidity & Temperature: https://www.autoconnecto.in/solutions/humidity-temperature
 - EnergyFleet: https://www.autoconnecto.in/solutions/energy-fleet
 - Climate fleet: https://www.autoconnecto.in/solutions/climate-fleet
