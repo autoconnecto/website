@@ -71,6 +71,7 @@ export const USE_CASES: UseCasePage[] = [
       { label: 'Arduino SDK on GitHub', href: 'https://github.com/autoconnecto/autoconnecto-sdk', external: true },
       { label: 'Device connectivity docs', href: 'https://docs.autoconnecto.in/devices/device-connectivity.html', external: true },
       { label: 'ESP32 quick start (docs)', href: 'https://docs.autoconnecto.in/guide/esp32-quickstart.html', external: true },
+      { label: 'Strongest access point on a mesh', href: '/esp32-wifi-strongest-ap' },
       { label: 'Product overview', href: '/product' },
       { label: 'Pricing', href: '/pricing' },
       { label: 'Start free', href: 'https://app.autoconnecto.in/signup', external: true },
@@ -172,7 +173,7 @@ export const USE_CASES: UseCasePage[] = [
       {
         heading: 'How integrators use it',
         body:
-          'Create a tenant (or use white-label on Growth / Enterprise), model SITE → AREA → ZONE assets, attach devices, drop in solution or custom dashboards, and hand operators the app URL. Email and Telegram for plant alarms.',
+          'Create a tenant (or use white-label on Growth / Enterprise), model SITE → AREA → ZONE assets, attach devices, drop in solution or custom dashboards, and hand operators the app URL. Email and Telegram for plant alarms. INR plans are on the pricing page.',
       },
       {
         heading: 'Hardware you already ship',

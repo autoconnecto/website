@@ -43,6 +43,10 @@ Post one of these per week. Attach a real board or app screenshot. No competitor
 > Start: https://www.autoconnecto.in/esp32-mqtt  
 > Docs: https://docs.autoconnecto.in/guide/esp32-quickstart.html
 
+Live 24 Oct 2026:
+- Profile: https://www.linkedin.com/feed/update/urn:li:activity:7519607054324432896/
+- Showcase: https://www.linkedin.com/feed/update/urn:li:share:7519607555581509632?actorCompanyId=145223603
+
 **Post B — Power cycle**
 
 > After a power cut, operators should not re-click every switch.
@@ -51,13 +55,21 @@ Post one of these per week. Attach a real board or app screenshot. No competitor
 >
 > https://www.autoconnecto.in/shared-attributes
 
+Live 24 Oct 2026, with the real attributes image. LinkedIn shortens the link in the post to `lnkd.in/gtEu2ZjW`.
+- Profile: https://www.linkedin.com/feed/update/urn:li:activity:7519623374717812736/
+- Showcase: https://www.linkedin.com/feed/update/urn:li:share:7519623601655037952?actorCompanyId=145223603
+
 **Post C — Integrators**
 
 > For system integrators and EPCs: multi-site assets, device profiles, dashboards, alarms, INR plans, white-label on Growth and Enterprise.
 >
 > https://www.autoconnecto.in/for-system-integrators
 
-Organization `sameAs` includes the Autoconnecto IoT Platform showcase: `https://www.linkedin.com/showcase/145223603/`. That is the page the daily posts use. It is not live until this website change is deployed.
+Live 24 Oct 2026:
+- Profile: https://www.linkedin.com/feed/update/urn:li:activity:7519670283738341376/
+- Showcase: https://www.linkedin.com/feed/update/urn:li:share:7519670711741857792/?actorCompanyId=145223603
+
+Organization `sameAs` includes the Autoconnecto IoT Platform showcase: `https://www.linkedin.com/showcase/145223603/`. That is the page the daily posts use. Live on www as of the website deploy on 24 Oct 2026.
 
 ## 4. YouTube proof loop (you)
 

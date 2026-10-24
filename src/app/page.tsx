@@ -9,6 +9,7 @@ import ScaleSection from '@/app/components/ScaleSection';
 import DevelopersSection from '@/app/components/DevelopersSection';
 import ContactSection from '@/app/components/ContactSection';
 import TestimonialsSection from '@/app/components/TestimonialsSection';
+import PostsSection from '@/app/components/PostsSection';
 import { siteOrigin } from '@/lib/siteOrigin';
 
 const baseUrl = siteOrigin();
@@ -112,6 +113,37 @@ export default function LandingPage() {
       <FeaturesSection />
       <ScaleSection />
       <DevelopersSection />
+      <PostsSection />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Autoconnecto notes',
+            itemListElement: [
+              {
+                '@type': 'SocialMediaPosting',
+                position: 1,
+                url: 'https://www.linkedin.com/feed/update/urn:li:share:7519607555581509632?actorCompanyId=145223603',
+                headline: 'ESP32 to a live dashboard',
+              },
+              {
+                '@type': 'SocialMediaPosting',
+                position: 2,
+                url: 'https://www.linkedin.com/feed/update/urn:li:share:7519623601655037952?actorCompanyId=145223603',
+                headline: 'Shared attributes after a power cut',
+              },
+              {
+                '@type': 'SocialMediaPosting',
+                position: 3,
+                url: 'https://www.linkedin.com/feed/update/urn:li:share:7519670711741857792/?actorCompanyId=145223603',
+                headline: 'For system integrators and EPCs',
+              },
+            ],
+          }),
+        }}
+      />
       <TestimonialsSection />
       <ContactSection />
       <Footer />
