@@ -32,7 +32,7 @@ const cards = [
   {
     title: 'Autoconnecto Arduino SDK',
     description:
-      'ESP32 library for MQTT — telemetry, attributes, RPC, watchdog and reconnect, and batch telemetry. ESP8266 and Pico W send HTTPS. LTE PPP is an ESP32 core 3.x option. Plus gateway and integration scripts.',
+      'ESP32 library for MQTT — telemetry, attributes, RPC, watchdog and reconnect, and batch telemetry. LTE PPP is an ESP32 core 3.x option. Plus gateway and integration scripts.',
     href: ARDUINO_SDK_GITHUB_URL,
     cta: 'Arduino SDK on GitHub',
     icon: 'CodeBracketIcon' as const,

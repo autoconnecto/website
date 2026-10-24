@@ -16,7 +16,7 @@ const FLOW_STEPS = [
   {
     icon: 'WifiIcon',
     title: 'Connect',
-    desc: 'MQTT on port 8883, MQTT over WebSocket on port 8084, HTTPS, and the device WebSocket. LoRaWAN arrives by webhook. A gateway can relay a child, read Modbus, or poll OPC UA, BACnet, and Sparkplug when that protocol is turned on. The ESP32 library speaks MQTT. ESP8266 and Pico W send HTTPS telemetry.',
+    desc: 'MQTT on port 8883, MQTT over WebSocket on port 8084, HTTPS, and the device WebSocket. LoRaWAN arrives by webhook. A gateway can relay a child, read Modbus, or poll OPC UA, BACnet, and Sparkplug when that protocol is turned on. The ESP32 library speaks MQTT.',
   },
   {
     icon: 'CircleStackIcon',
@@ -45,7 +45,7 @@ const PILLARS = [
     icon: 'WifiIcon',
     color: 'primary',
     title: 'Universal connectivity',
-    desc: 'ESP32 SDK over MQTT, HTTPS, the device WebSocket, gateway child relay, and LoRaWAN webhooks. MQTT over WebSocket is port 8084. ESP8266 and Pico W use HTTPS. OPC UA, BACnet, and Sparkplug are gateway protocols.',
+    desc: 'ESP32 SDK over MQTT, HTTPS, the device WebSocket, gateway child relay, and LoRaWAN webhooks. MQTT over WebSocket is port 8084. OPC UA, BACnet, and Sparkplug are gateway protocols.',
     tags: ['MQTT TLS', 'WSS 8084', 'HTTPS', 'WebSocket', 'LoRaWAN'],
   },
   {

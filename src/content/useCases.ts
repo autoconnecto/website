@@ -28,7 +28,7 @@ export const USE_CASES: UseCasePage[] = [
       'Connect ESP32 over MQTT or HTTPS to a hosted IoT platform in India. Telemetry, shared attributes, RPC, OTA, and live dashboards. Arduino SDK with secrets.h examples.',
     h1: 'ESP32 MQTT IoT dashboard, hosted in India',
     lead:
-      'Flash the Autoconnecto Arduino SDK, put your device token in secrets.h, and see live readings on a dashboard. MQTT on TLS for ESP32; HTTPS for ESP8266 and Pico W.',
+      'Flash the Autoconnecto Arduino SDK, put your device token in secrets.h, and see live readings on a dashboard. MQTT on TLS for ESP32.',
     keywords: [
       'ESP32 MQTT',
       'ESP32 IoT dashboard',
@@ -45,7 +45,7 @@ export const USE_CASES: UseCasePage[] = [
       {
         heading: 'Who this is for',
         body:
-          'Plant engineers, OEMs, and makers who need an ESP32 (or ESP8266 / Pico W) on a real cloud without running their own broker and time-series stack. INR plans; self-serve signup.',
+          'Plant engineers, OEMs, and makers who need an ESP32 on a real cloud without running their own broker and time-series stack. INR plans; self-serve signup.',
       },
       {
         heading: 'Board path that works',
@@ -56,7 +56,7 @@ export const USE_CASES: UseCasePage[] = [
     steps: [
       {
         title: 'Install the library',
-        body: 'Arduino Library Manager: search AutoconnectoSDK, or clone the GitHub repo.',
+        body: 'Arduino Library Manager: search AutoconnectoSDK. PlatformIO: lib_deps = autoconnecto/AutoconnectoSDK.',
       },
       {
         title: 'Create a device',

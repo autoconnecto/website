@@ -88,7 +88,7 @@ Upload as **Unlisted** or **Public**. Then ask Cursor to wire the Presentations 
 | Place | Action |
 | --- | --- |
 | Arduino Library Manager | Already via `library.properties` on the SDK repo; after next SDK tag, confirm search finds **AutoconnectoSDK**. |
-| PlatformIO Registry | Optional: publish library if you want PIO users; Cursor can prep when you ask. |
+| PlatformIO Registry | Already listed as autoconnecto/AutoconnectoSDK (automatic copy of 1.7.73). The next SDK tag (1.7.74) adds library.json. Install line: `lib_deps = autoconnecto/AutoconnectoSDK`. |
 | Crunchbase / similar | Company profile: Autoconnecto, Jaipur, IoT platform, link www + app. |
 | India tech / IoT listings | One listing each; same one-line: hosted IoT for plants and OEMs, ESP32 SDK, India. |
 | Telegram | Point community pin to `/esp32-quickstart` docs after publish. |
