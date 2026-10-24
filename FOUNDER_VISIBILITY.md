@@ -28,7 +28,7 @@ Live (confirm after CloudFront/docs CI):
    - `/use-cases`
    - Docs: `…/guide/esp32-quickstart.html`
    - GitHub README: `https://github.com/autoconnecto/autoconnecto-sdk` (optional; Google crawls GitHub on its own)
-5. Marketing property: `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` is set on the website GitHub Actions variables. The homepage must contain `<meta name="google-site-verification" …>` after that build. Click **Verify** in Search Console. `docs.autoconnecto.in` is a separate property and needs its own token. Do not reuse the www token there.
+5. Marketing property: verified. `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` is set on the website GitHub Actions variables. `docs.autoconnecto.in` is a separate property. Search Console issued the same HTML tag; it is in the docs VitePress `head`. Click **Verify** on the docs property, then request indexing for `/guide/esp32-quickstart.html`.
 
 ## 3. LinkedIn (you — post as yourself)
 
