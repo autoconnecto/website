@@ -217,7 +217,7 @@ export default function ContactSection() {
             </div>
             <div className="text-left">
               <p className="text-xs font-medium text-muted-foreground leading-none mb-1">Address</p>
-              <p className="text-sm font-semibold text-foreground">Villa-71, Galaxy Enclave, Mahindra SEZ Road,<br />Kalwara, Jaipur – 302037</p>
+              <p className="text-sm font-semibold text-foreground">Kalwara, Jaipur 302037</p>
             </div>
           </div>
         </div>

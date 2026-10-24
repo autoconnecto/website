@@ -161,7 +161,7 @@ export const USE_CASES: UseCasePage[] = [
       'Hosted IoT for system integrators and EPCs in India: multi-site assets, device profiles, dashboards, alarms, white-label on Growth and Enterprise, INR plans.',
     h1: 'Built for system integrators and EPCs',
     lead:
-      'One platform for the sites you commission: devices, profiles, dashboards, alarms, and optional white-label under your brand. Hosted in India with INR pricing — scale when a project needs more devices.',
+      'One platform for the sites you commission: devices, profiles, dashboards, alarms, and optional white-label under your brand. INR plans. The API runs in Mumbai. Scale when a project needs more devices.',
     keywords: [
       'IoT platform system integrator',
       'EPC IoT India',

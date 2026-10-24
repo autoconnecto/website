@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { MOBILE_APP_DOWNLOAD_URL } from '@/config/links';
 
 const trustStats = [
-  { value: 'India', label: 'Hosted service, INR plans' },
+  { value: 'India', label: 'INR plans, API in Mumbai' },
   { value: 'Free', label: 'Open the app, no site visit' },
   { value: 'Analytics', label: 'Answers from stored readings' },
   { value: 'INR', label: 'Plans in Indian rupees' },

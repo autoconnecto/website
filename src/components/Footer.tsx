@@ -86,7 +86,7 @@ export default function Footer() {
 
         {/* Disclaimer */}
         <p className="mt-8 text-center text-xs text-muted-foreground/60">
-          Hosted in India.  Scaled when you need more.
+          API in Mumbai. INR plans. Scaled when you need more.
         </p>
         <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-muted-foreground/60">
           <span className="flex items-center gap-1.5">
@@ -96,7 +96,7 @@ export default function Footer() {
           <span className="hidden sm:inline">·</span>
           <span className="flex items-center gap-1.5">
             <Icon name="MapPinIcon" size={12} />
-            Villa-71, Galaxy Enclave, Mahindra SEZ Road, Kalwara, Jaipur – 302037
+            Kalwara, Jaipur 302037
           </span>
         </div>
       </div>
