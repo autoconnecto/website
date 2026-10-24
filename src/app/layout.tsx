@@ -121,6 +121,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 'https://www.autoconnecto.in/',
                 'https://app.autoconnecto.in/',
                 'https://docs.autoconnecto.in/',
+                'https://www.linkedin.com/showcase/145223603/',
                 'https://github.com/autoconnecto/autoconnecto-sdk',
                 'https://github.com/autoconnecto/autoconnecto-mobile',
               ],

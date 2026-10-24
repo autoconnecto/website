@@ -57,7 +57,7 @@ Post one of these per week. Attach a real board or app screenshot. No competitor
 >
 > https://www.autoconnecto.in/for-system-integrators
 
-Add your company LinkedIn URL to the website Organization `sameAs` list when you want it in schema (tell Cursor the exact URL).
+Organization `sameAs` includes the Autoconnecto IoT Platform showcase: `https://www.linkedin.com/showcase/145223603/`. That is the page the daily posts use. It is not live until this website change is deployed.
 
 ## 4. YouTube proof loop (you)
 
