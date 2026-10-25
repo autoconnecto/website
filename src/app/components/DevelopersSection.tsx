@@ -48,7 +48,7 @@ const cards = [
   {
     title: 'Linux SBC / gateways',
     description:
-      'Raspberry Pi / Debian / Ubuntu gateway examples: MQTT + HTTPS device scripts mirroring ESP32 example names, plus a systemd template for run-on-boot.',
+      'Installable Python package autoconnecto (pip) for Raspberry Pi and Debian/Ubuntu gateways — MQTT + HTTPS, same contract as ESP32. Examples and systemd unit in the SDK.',
     href: SDK_LINUX_SBC_EXAMPLES_URL,
     cta: 'Open Linux examples',
     icon: 'SignalIcon' as const,

@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${base}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${base}/product`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${base}/compatible-hardware`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/solutions`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
     ...listSolutionSlugs().map((slug) => ({
       url: `${base}/solutions/${slug}`,

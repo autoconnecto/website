@@ -5,6 +5,19 @@ export const DOCS_PRICING_URL = "https://docs.autoconnecto.in/about/pricing.html
 export const DOCS_FAQ_URL = "https://docs.autoconnecto.in/about/faq.html";
 export const DEVICE_CONNECTIVITY_DOCS_URL =
   "https://docs.autoconnecto.in/developer/device-connectivity.html";
+export const COMPATIBLE_HARDWARE_DOCS_URL =
+  "https://docs.autoconnecto.in/devices/compatible-hardware.html";
+export const AVH14_DOCS_URL =
+  "https://docs.autoconnecto.in/devices/avh-14-m1-modbus-mqtt.html";
+export const DR154_DOCS_URL =
+  "https://docs.autoconnecto.in/devices/dr154-modbus-mqtt.html";
+export const ESP32_QUICKSTART_DOCS_URL =
+  "https://docs.autoconnecto.in/guide/esp32-quickstart.html";
+export const ESP32_MODBUS_EDGE_DOCS_URL =
+  "https://docs.autoconnecto.in/devices/esp32-modbus-mqtt-edge.html";
+export const ESP32_MQTT_URL = "/esp32-mqtt";
+export const LINUX_SBC_DOCS_URL =
+  "https://docs.autoconnecto.in/guide/linux-sbc-quickstart.html";
 export const APP_LOGIN_URL = "https://app.autoconnecto.in/login";
 export const APP_SIGNUP_URL = "https://app.autoconnecto.in/signup";
 export const APP_URL = "https://app.autoconnecto.in";
@@ -23,6 +36,8 @@ export const SDK_STM32_ARDUINO_GUIDE_URL =
   "https://github.com/autoconnecto/autoconnecto-sdk/blob/main/extras/stm32/README.md";
 export const SDK_LINUX_SBC_EXAMPLES_URL =
   "https://github.com/autoconnecto/autoconnecto-sdk/blob/main/raspberrypi/README.md";
+export const SDK_PYTHON_PACKAGE_URL =
+  "https://github.com/autoconnecto/autoconnecto-sdk/tree/main/python";
 export const SDK_INTEGRATIONS_URL =
   "https://github.com/autoconnecto/autoconnecto-sdk/tree/main/examples/integrations";
 export const SDK_OPCUA_GATEWAY_URL =
