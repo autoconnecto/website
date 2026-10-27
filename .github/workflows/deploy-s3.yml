@@ -67,9 +67,14 @@ jobs:
         run: |
           echo "Target bucket: ${WEBSITE_S3_BUCKET}"
           test -n "${WEBSITE_S3_BUCKET}"
-          # HTML short cache; hashed assets / images long cache (Core Web Vitals).
+          # HTML short cache + charset; hashed assets / images long cache (CWV).
           aws s3 sync out/ "s3://${WEBSITE_S3_BUCKET}/" --delete --region ap-south-1 \
-            --exclude "*" --include "*.html" --include "*.txt" --include "*.xml" \
+            --exclude "*" --include "*.html" \
+            --cache-control "public,max-age=300,must-revalidate" \
+            --content-type "text/html; charset=utf-8" \
+            --metadata-directive REPLACE
+          aws s3 sync out/ "s3://${WEBSITE_S3_BUCKET}/" --region ap-south-1 \
+            --exclude "*" --include "*.txt" --include "*.xml" \
             --cache-control "public,max-age=300,must-revalidate"
           aws s3 sync out/ "s3://${WEBSITE_S3_BUCKET}/" --region ap-south-1 \
             --exclude "*.html" --exclude "*.txt" --exclude "*.xml" \

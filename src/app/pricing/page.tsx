@@ -21,7 +21,7 @@ const priceSummary = plans
 const pricingTitle = 'Pricing — Autoconnecto';
 const pricingDescription = (
   priceSummary
-    ? `Autoconnecto INR plans: ${priceSummary}. Free and paid tiers with device and telemetry limits.`
+    ? `INR plans: ${priceSummary}. Device and telemetry limits by tier.`
     : 'Autoconnecto IoT plans in INR. Free tier plus Hobby, Starter, Growth, and Enterprise.'
 ).slice(0, 155);
 

@@ -1,25 +1,23 @@
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { shareMeta } from '@/lib/shareMeta';
 import { siteOrigin } from '@/lib/siteOrigin';
 
 const baseUrl = siteOrigin();
 const path = '/esp32-wifi-strongest-ap';
-const title = 'ESP32 Wi-Fi: joining the strongest access point on a mesh — Autoconnecto';
+const title = 'ESP32 strongest Wi-Fi on a mesh';
 const description =
-  'On a three-node mesh an ESP32 joined the weakest node at -79 to -84 dBm. Scanning all channels and sorting by signal joined the nearest node at -15 to -17 dBm. Wi-Fi in 6.4 s, MQTT in 12.0 s.';
+  'ESP32 joined the weakest mesh node until a full-channel scan by signal. Wi-Fi in 6.4 s, MQTT in 12.0 s. Autoconnecto SDK.';
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: `${baseUrl}${path}` },
-  openGraph: {
-    title,
-    description,
-    url: `${baseUrl}${path}`,
-    type: 'article',
-    siteName: 'Autoconnecto',
-  },
+  ...shareMeta(baseUrl, path, title, description, {
+    src: '/images/devices.png',
+    alt: 'Autoconnecto Devices page with connected boards',
+  }),
 };
 
 export default function Esp32WifiStrongestApPage() {

@@ -25,9 +25,9 @@ export const USE_CASES: UseCasePage[] = [
   {
     slug: 'esp32-mqtt',
     path: '/esp32-mqtt',
-    title: 'ESP32 MQTT IoT dashboard — Autoconnecto India',
+    title: 'ESP32 MQTT IoT dashboard — Autoconnecto',
     description:
-      'Connect ESP32 over MQTT or HTTPS to a hosted IoT platform in India. Telemetry, shared attributes, RPC, OTA, and live dashboards. Arduino SDK with secrets.h examples.',
+      'Connect ESP32 over MQTT or HTTPS in India. Telemetry, attributes, RPC, OTA, and live dashboards. Arduino SDK with secrets.h.',
     h1: 'ESP32 MQTT IoT dashboard, hosted in India',
     lead:
       'Flash the Autoconnecto Arduino SDK, put your device token in secrets.h, and see live readings on a dashboard. MQTT on TLS for ESP32.',
@@ -86,12 +86,16 @@ export const USE_CASES: UseCasePage[] = [
   {
     slug: 'shared-attributes',
     path: '/shared-attributes',
-    title: 'Shared and client attributes — reboot-safe device control',
+    title: 'Shared attributes — reboot-safe control',
     description:
-      'Dashboard writes shared attributes; the device confirms with client attributes. After a power cycle, state restores without re-clicking switches. Autoconnecto IoT platform.',
+      'Dashboard writes shared attributes; the device confirms with client attributes. State restores after power loss.',
     h1: 'Reboot-safe control with shared and client attributes',
     lead:
       'Operators change a switch or setpoint on the dashboard. The device applies it and confirms. After power loss, the board restores shared attributes and the dashboard stays aligned with the hardware.',
+    image: {
+      src: '/images/devices.png',
+      alt: 'Autoconnecto Devices page for attribute-backed control',
+    },
     keywords: [
       'device attributes IoT',
       'shared attributes MQTT',
@@ -162,9 +166,9 @@ export const USE_CASES: UseCasePage[] = [
   {
     slug: 'for-system-integrators',
     path: '/for-system-integrators',
-    title: 'IoT platform for system integrators and EPCs — Autoconnecto',
+    title: 'IoT for system integrators and EPCs',
     description:
-      'Hosted IoT for system integrators and EPCs in India: multi-site assets, device profiles, dashboards, alarms, white-label on Growth and Enterprise, INR plans.',
+      'Hosted IoT for integrators and EPCs in India: multi-site assets, profiles, dashboards, alarms, white-label on Growth and Enterprise.',
     h1: 'Built for system integrators and EPCs',
     lead:
       'One platform for the sites you commission: devices, profiles, dashboards, alarms, and optional white-label under your brand. INR plans. The API runs in Mumbai. Scale when a project needs more devices.',

@@ -70,33 +70,7 @@ export default function LandingPage() {
         }}
       />
 
-      {/* Structured Data - SoftwareApplication Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
-            name: 'Autoconnecto',
-            description:
-              'Hosted IoT platform for device connectivity, Analytics, live dashboards, and alarms',
-            url: baseUrl,
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Web',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'INR',
-              url: `${baseUrl}/pricing`,
-            },
-            author: {
-              '@type': 'Organization',
-              name: 'Autoconnecto',
-              url: baseUrl,
-            },
-          }),
-        }}
-      />
+      {/* SoftwareApplication JSON-LD lives once in root layout.tsx */}
 
       {/* Background atmosphere */}
       <div className="fixed inset-0 -z-10 pointer-events-none">

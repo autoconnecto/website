@@ -17,7 +17,15 @@ export function useCaseMetadata(slug: string): Metadata {
     description: page.description,
     keywords: page.keywords,
     alternates: { canonical: `${baseUrl}${page.path}` },
-    ...shareMeta(baseUrl, page.path, page.title, page.description),
+    ...shareMeta(
+      baseUrl,
+      page.path,
+      page.title,
+      page.description,
+      page.image
+        ? { src: page.image.src, alt: page.image.alt }
+        : undefined,
+    ),
   };
 }
 

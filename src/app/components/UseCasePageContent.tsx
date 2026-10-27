@@ -41,7 +41,7 @@ export default function UseCasePageContent({ page }: { page: UseCasePage }) {
               height={540}
               className="w-full rounded-xl border border-border shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
               sizes="(max-width: 768px) 100vw, 768px"
-              priority
+              loading="lazy"
             />
           </div>
         ) : null}

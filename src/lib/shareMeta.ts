@@ -1,13 +1,23 @@
 import type { Metadata } from 'next';
 
-/** Same preview image on every public page, with that page's own title and description. */
+export type ShareImage = {
+  /** Absolute or site-root path, e.g. /images/dashboard1.png */
+  src: string;
+  alt?: string;
+};
+
+/** Open Graph / Twitter preview. Pass a page screenshot when you have one. */
 export function shareMeta(
   baseUrl: string,
   path: string,
   title: string,
   description: string,
+  image?: ShareImage,
 ): Pick<Metadata, 'openGraph' | 'twitter'> {
-  const image = `${baseUrl}/images/homepage.png`;
+  const src = image?.src?.startsWith('http')
+    ? image.src
+    : `${baseUrl}${image?.src || '/images/homepage.png'}`;
+  const alt = image?.alt || 'Autoconnecto IoT platform';
   return {
     openGraph: {
       type: 'website',
@@ -18,10 +28,10 @@ export function shareMeta(
       url: `${baseUrl}${path}`,
       images: [
         {
-          url: image,
+          url: src,
           width: 1200,
           height: 630,
-          alt: 'Autoconnecto IoT platform',
+          alt,
           type: 'image/png',
         },
       ],
@@ -30,7 +40,7 @@ export function shareMeta(
       card: 'summary_large_image',
       title,
       description,
-      images: [image],
+      images: [src],
     },
   };
 }
