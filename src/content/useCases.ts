@@ -56,7 +56,7 @@ export const USE_CASES: UseCasePage[] = [
       {
         heading: 'Board path that works',
         body:
-          'Create a device in the app → copy the token into secrets.h → flash Telemetry_mqtt or Attributes_mqtt → open a dashboard widget on the same keys. Shared attributes keep switches and setpoints aligned after a power cycle.',
+          'Create a device in the app → copy the token into secrets.h → flash BasicTelemetry_mqtt (or Attributes_RestoreOnBoot_mqtt) → open a dashboard widget on the same keys. Shared attributes keep switches and setpoints aligned after a power cycle.',
       },
     ],
     steps: [
