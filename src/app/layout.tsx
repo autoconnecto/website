@@ -133,7 +133,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 'https://app.autoconnecto.in/',
                 'https://docs.autoconnecto.in/',
                 'https://www.linkedin.com/showcase/145223603/',
-                'https://www.youtube.com/channel/UCbBIVt4mENlkue_f_JEyWww',
+                'https://www.youtube.com/@AutoconnectoIoT',
                 'https://github.com/autoconnecto',
               ],
               contactPoint: [
