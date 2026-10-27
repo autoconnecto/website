@@ -7,9 +7,12 @@ export function shareMeta(
   title: string,
   description: string,
 ): Pick<Metadata, 'openGraph' | 'twitter'> {
-  const image = `${baseUrl}/assets/images/app_logo.png`;
+  const image = `${baseUrl}/images/homepage.png`;
   return {
     openGraph: {
+      type: 'website',
+      siteName: 'Autoconnecto',
+      locale: 'en_IN',
       title,
       description,
       url: `${baseUrl}${path}`,
@@ -18,7 +21,8 @@ export function shareMeta(
           url: image,
           width: 1200,
           height: 630,
-          alt: 'Autoconnecto',
+          alt: 'Autoconnecto IoT platform',
+          type: 'image/png',
         },
       ],
     },

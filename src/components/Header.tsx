@@ -20,6 +20,12 @@ const navLinks = [
   { label: 'Features', href: '/#features' },
   { label: 'Scale', href: '/#scale' },
   { label: 'Developers', href: '/#developers' },
+  { label: 'ESP32 MQTT', href: '/esp32-mqtt' },
+  {
+    label: 'ESP32 docs',
+    href: 'https://docs.autoconnecto.in/guide/esp32-quickstart.html',
+    external: true,
+  },
   { label: 'Arduino SDK', href: ARDUINO_SDK_GITHUB_URL, external: true },
   { label: 'Mobile app', href: MOBILE_APP_RELEASES_URL, external: true },
   { label: 'Docs', href: 'https://docs.autoconnecto.in', external: true },

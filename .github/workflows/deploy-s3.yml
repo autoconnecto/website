@@ -67,7 +67,13 @@ jobs:
         run: |
           echo "Target bucket: ${WEBSITE_S3_BUCKET}"
           test -n "${WEBSITE_S3_BUCKET}"
-          aws s3 sync out/ "s3://${WEBSITE_S3_BUCKET}/" --delete --region ap-south-1
+          # HTML short cache; hashed assets / images long cache (Core Web Vitals).
+          aws s3 sync out/ "s3://${WEBSITE_S3_BUCKET}/" --delete --region ap-south-1 \
+            --exclude "*" --include "*.html" --include "*.txt" --include "*.xml" \
+            --cache-control "public,max-age=300,must-revalidate"
+          aws s3 sync out/ "s3://${WEBSITE_S3_BUCKET}/" --region ap-south-1 \
+            --exclude "*.html" --exclude "*.txt" --exclude "*.xml" \
+            --cache-control "public,max-age=31536000,immutable"
 
       - name: Invalidate CloudFront
         id: invalidate

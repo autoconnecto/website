@@ -11,7 +11,7 @@ const useCases = listUseCases();
 
 const title = 'Use cases — Autoconnecto IoT';
 const description =
-  'ESP32 MQTT dashboards, reboot-safe attributes, OTA firmware, and IoT for system integrators — hosted in India.';
+  'Fuel theft, cold chain, energy, water tanks, geofence lockout, OEM white-label, ESP32 MQTT — hosted in India.';
 
 export const metadata: Metadata = {
   title,

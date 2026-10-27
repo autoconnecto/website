@@ -31,6 +31,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: '*', ...allowAll },
       ...aiAgents.map((userAgent) => ({ userAgent, ...allowAll })),
     ],
-    sitemap: `${base}/sitemap.xml`,
+    // Marketing sitemap + public docs sitemap (separate Search Console property).
+    sitemap: [`${base}/sitemap.xml`, 'https://docs.autoconnecto.in/sitemap.xml'],
   };
 }

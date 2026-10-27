@@ -36,12 +36,12 @@ export default function HeroSection() {
   }, []);
 
   const images = [
-    "/images/dashboard1.png",
-    "/images/devices.png",
-    "/images/assets.png",
-    "/images/alarmspage.png",
-    "/images/datasimulation.png",
-    "/images/documentation.png",
+    { src: '/images/dashboard1.png', alt: 'Autoconnecto live IoT dashboard with widgets' },
+    { src: '/images/devices.png', alt: 'Autoconnecto Devices list with online status' },
+    { src: '/images/assets.png', alt: 'Autoconnecto asset hierarchy for sites and zones' },
+    { src: '/images/alarmspage.png', alt: 'Autoconnecto alarms list with severity and status' },
+    { src: '/images/datasimulation.png', alt: 'Autoconnecto telemetry and data simulation view' },
+    { src: '/images/documentation.png', alt: 'Autoconnecto in-app documentation menu' },
   ];
 
   return (
@@ -118,14 +118,15 @@ export default function HeroSection() {
         {/* SCREENSHOT GRID */}
         <div className="mt-20 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {images.map((img, i) => (
-            <div key={i} className="relative group">
+            <div key={img.src} className="relative group">
               <div className="absolute -inset-3 bg-blue-500/10 blur-xl opacity-50 group-hover:opacity-80 transition"></div>
 
               <Image
-                src={img}
-                alt="Autoconnecto Platform"
+                src={img.src}
+                alt={img.alt}
                 width={800}
                 height={500}
+                loading={i < 2 ? 'eager' : 'lazy'}
                 className="relative rounded-xl border border-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.7)] transition-transform duration-500 group-hover:scale-105"
               />
             </div>

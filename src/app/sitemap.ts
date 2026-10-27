@@ -12,8 +12,8 @@ function siteOrigin(): string {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteOrigin();
+  // lastmod = build time (static export). Fragments like /#features are not entries.
   const now = new Date();
-  // Marketing site crawlable URLs (fragments like /#features are not separate index entries).
   return [
     { url: `${base}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${base}/product`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
@@ -36,7 +36,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/pricing`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${base}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/llms.txt`, lastModified: now, changeFrequency: 'weekly', priority: 0.4 },
-    { url: `${base}/ai.txt`, lastModified: now, changeFrequency: 'weekly', priority: 0.4 },
   ];
 }

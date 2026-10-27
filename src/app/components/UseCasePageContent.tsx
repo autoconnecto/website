@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import type { UseCasePage } from '@/content/useCases';
 import { APP_SIGNUP_URL } from '@/config/links';
 import Icon from '@/components/ui/AppIcon';
@@ -20,7 +21,7 @@ export default function UseCasePageContent({ page }: { page: UseCasePage }) {
             href={APP_SIGNUP_URL}
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
           >
-            Get started
+            Try the platform
             <Icon name="ArrowRightIcon" size={14} />
           </a>
           <a
@@ -30,6 +31,20 @@ export default function UseCasePageContent({ page }: { page: UseCasePage }) {
             Product overview
           </a>
         </div>
+
+        {page.image ? (
+          <div className="mt-12">
+            <Image
+              src={page.image.src}
+              alt={page.image.alt}
+              width={960}
+              height={540}
+              className="w-full rounded-xl border border-border shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
+              sizes="(max-width: 768px) 100vw, 768px"
+              priority
+            />
+          </div>
+        ) : null}
 
         <div className="mt-14 space-y-10">
           {page.sections.map((section) => (

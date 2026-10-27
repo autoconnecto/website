@@ -19,7 +19,11 @@ const priceSummary = plans
   .join('; ');
 
 const pricingTitle = 'Pricing — Autoconnecto';
-const pricingDescription = `Autoconnecto IoT platform plans (INR): ${priceSummary}. Free tier and paid Hobby, Starter, Growth, Enterprise with device and telemetry limits.`;
+const pricingDescription = (
+  priceSummary
+    ? `Autoconnecto INR plans: ${priceSummary}. Free and paid tiers with device and telemetry limits.`
+    : 'Autoconnecto IoT plans in INR. Free tier plus Hobby, Starter, Growth, and Enterprise.'
+).slice(0, 155);
 
 export const metadata: Metadata = {
   title: pricingTitle,

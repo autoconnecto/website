@@ -14,6 +14,8 @@ export type UseCasePage = {
   h1: string;
   lead: string;
   keywords: string[];
+  /** Real product screenshot (under /public). */
+  image?: { src: string; alt: string };
   sections: Array<{ heading: string; body: string }>;
   steps?: Array<{ title: string; body: string }>;
   links: UseCaseLink[];
@@ -29,6 +31,10 @@ export const USE_CASES: UseCasePage[] = [
     h1: 'ESP32 MQTT IoT dashboard, hosted in India',
     lead:
       'Flash the Autoconnecto Arduino SDK, put your device token in secrets.h, and see live readings on a dashboard. MQTT on TLS for ESP32.',
+    image: {
+      src: '/images/devices.png',
+      alt: 'Autoconnecto Devices page showing connected ESP32 devices',
+    },
     keywords: [
       'ESP32 MQTT',
       'ESP32 IoT dashboard',
@@ -192,6 +198,237 @@ export const USE_CASES: UseCasePage[] = [
       { label: 'Pricing', href: '/pricing' },
       { label: 'Talk to founder', href: 'mailto:founder@autoconnecto.in', external: true },
       { label: 'Start free', href: 'https://app.autoconnecto.in/signup', external: true },
+    ],
+  },
+  {
+    slug: 'fuel-theft-detection',
+    path: '/fuel-theft-detection',
+    title: 'Fuel theft detection IoT — Autoconnecto',
+    description:
+      'Monitor tank level and sudden drops. Store readings, raise alarms by email or Telegram, and open a live dashboard. Hosted in India.',
+    h1: 'Fuel theft detection on a live dashboard',
+    lead:
+      'Connect a level or volume sensor over MQTT or HTTPS. Autoconnecto stores every reading, keeps the last value on the dashboard, and can open an alarm when the level falls faster than your rule allows.',
+    image: {
+      src: '/images/alarmspage.png',
+      alt: 'Autoconnecto Alarms page for fuel and tank events',
+    },
+    keywords: [
+      'fuel theft detection IoT',
+      'fuel tank monitoring India',
+      'diesel theft alarm',
+      'IoT fuel level MQTT',
+    ],
+    sections: [
+      {
+        heading: 'What the platform does',
+        body:
+          'Telemetry is stored without a save node in the rule engine. Profile alarm rules and an optional rule-engine alarm node can both run. Operators see Active alarms, acknowledge them, and open the device that raised the event.',
+      },
+      {
+        heading: 'What you configure',
+        body:
+          'Device profile keys for level or volume, a threshold or rate rule, email or Telegram notification settings, and a dashboard with gauges or an alarm table. Scope the table to the tank fleet you care about.',
+      },
+      {
+        heading: 'What stays your work',
+        body:
+          'Sensor choice, wiring, and site process. Autoconnecto is the cloud path: ingest, storage, alarms, and dashboards.',
+      },
+    ],
+    links: [
+      { label: 'FuelFleet solution', href: '/solutions/fuel-fleet' },
+      { label: 'Alarms guide', href: 'https://docs.autoconnecto.in/guide/alarms.html', external: true },
+      { label: 'Try the platform', href: 'https://app.autoconnecto.in/signup', external: true },
+      { label: 'Pricing', href: '/pricing' },
+    ],
+  },
+  {
+    slug: 'cold-chain-monitoring',
+    path: '/cold-chain-monitoring',
+    title: 'Cold chain monitoring IoT — Autoconnecto',
+    description:
+      'Track temperature on cold rooms and vehicles. Store readings, chart history, and alarm when a line is crossed. Hosted IoT in India.',
+    h1: 'Cold chain temperature monitoring',
+    lead:
+      'Publish temperature (and optional humidity or door state) from gateways or ESP32 boards. The platform stores the series, shows live values, and can alarm when the reading leaves the band you set.',
+    image: {
+      src: '/images/dashboard1.png',
+      alt: 'Autoconnecto dashboard with live temperature widgets',
+    },
+    keywords: [
+      'cold chain monitoring IoT',
+      'cold room temperature alarm',
+      'refrigerated vehicle IoT India',
+      'MQTT temperature dashboard',
+    ],
+    sections: [
+      {
+        heading: 'Fleet and vehicle paths',
+        body:
+          'Use device types and assets (SITE → AREA → ZONE) to group rooms or vans. Solution packs such as ColdChainFleet give a starting dashboard layout you can copy and edit.',
+      },
+      {
+        heading: 'Alarms and history',
+        body:
+          'Profile rules watch live values. Forecast rules can warn before a limit if you configure them. Analytics answers from stored readings — which probe is highest, when a line will be crossed.',
+      },
+    ],
+    links: [
+      { label: 'ColdChainFleet solution', href: '/solutions/cold-chain-fleet' },
+      { label: 'Dashboards guide', href: 'https://docs.autoconnecto.in/guide/dashboards.html', external: true },
+      { label: 'Try the platform', href: 'https://app.autoconnecto.in/signup', external: true },
+    ],
+  },
+  {
+    slug: 'geofenced-equipment-lockout',
+    path: '/geofenced-equipment-lockout',
+    title: 'Geofenced equipment lockout — Autoconnecto',
+    description:
+      'Use location and attributes to keep machines inside a work zone. Shared attributes and RPC drive lockout; dashboards show state. India-hosted IoT.',
+    h1: 'Geofenced equipment lockout',
+    lead:
+      'When a tracker or gateway reports position, rules and shared attributes can hold a machine in a safe state outside the work zone. The dashboard shows confirmed state after the device replies with client attributes.',
+    image: {
+      src: '/images/assets.png',
+      alt: 'Autoconnecto Assets hierarchy for sites and equipment',
+    },
+    keywords: [
+      'geofence equipment lockout',
+      'IoT machine geofence India',
+      'shared attributes lockout',
+      'GPS equipment control MQTT',
+    ],
+    sections: [
+      {
+        heading: 'Control path',
+        body:
+          'Sticky setpoints use shared attributes with client confirmation so state survives a power cycle. One-shot lock or unlock can use RPC. Location widgets and attributes belong on the same device token.',
+      },
+      {
+        heading: 'Site model',
+        body:
+          'Assets and device profiles keep fleets tidy. Operators open the asset or device detail, not a separate map product.',
+      },
+    ],
+    links: [
+      { label: 'Shared attributes use case', href: '/shared-attributes' },
+      { label: 'Site tracking solution', href: '/solutions/site-tracking-fleet' },
+      { label: 'Try the platform', href: 'https://app.autoconnecto.in/signup', external: true },
+    ],
+  },
+  {
+    slug: 'factory-energy-monitoring',
+    path: '/factory-energy-monitoring',
+    title: 'Factory energy monitoring — Autoconnecto',
+    description:
+      'Ingest meter readings over MQTT or Modbus gateways. Live power widgets, alarms, and Analytics from stored kWh. Hosted in India.',
+    h1: 'Factory energy monitoring',
+    lead:
+      'Connect energy meters through a gateway or MQTT bridge. Autoconnecto stores power and energy keys, shows them on plant dashboards, and can alarm on overload or missing data.',
+    image: {
+      src: '/images/dashboard2.png',
+      alt: 'Autoconnecto energy and plant dashboard widgets',
+    },
+    keywords: [
+      'factory energy monitoring IoT',
+      'industrial energy dashboard India',
+      'Modbus MQTT energy meter',
+      'plant kWh monitoring',
+    ],
+    sections: [
+      {
+        heading: 'Connectivity',
+        body:
+          'ESP32 SDK, HTTPS ingest, and Modbus / MQTT gateway examples are documented. EnergyFleet packages a trial path with gateway and meter when you want a site start.',
+      },
+      {
+        heading: 'Operations view',
+        body:
+          'Dashboards hold gauges, tables, and alarm summaries. Analytics answers from stored readings. Quiet hours and Monday energy mail stay off unless you turn them on.',
+      },
+    ],
+    links: [
+      { label: 'EnergyFleet solution', href: '/solutions/energy-fleet' },
+      { label: 'Compatible hardware', href: '/compatible-hardware' },
+      { label: 'Book EnergyFleet trial', href: '/solutions/energy-fleet' },
+      { label: 'Try the platform', href: 'https://app.autoconnecto.in/signup', external: true },
+    ],
+  },
+  {
+    slug: 'water-tank-monitoring',
+    path: '/water-tank-monitoring',
+    title: 'Water tank monitoring IoT — Autoconnecto',
+    description:
+      'Level and pump status on a hosted dashboard. Store readings, alarm on empty or overflow, control setpoints with shared attributes. India.',
+    h1: 'Water tank level monitoring',
+    lead:
+      'Publish tank level (and optional pump or valve state). See the live value, chart history, and open alarms when the level crosses the band you set on the device profile or rule engine.',
+    image: {
+      src: '/images/datasimulation.png',
+      alt: 'Autoconnecto telemetry and simulation views for tank data',
+    },
+    keywords: [
+      'water tank monitoring IoT',
+      'tank level MQTT India',
+      'pump control shared attributes',
+      'overflow empty alarm IoT',
+    ],
+    sections: [
+      {
+        heading: 'Dashboards and control',
+        body:
+          'Gauges and tables show level. Shared attributes can carry setpoints; the device confirms with client attributes. WaterFleet is a catalog starting point you can copy.',
+      },
+      {
+        heading: 'Alarms',
+        body:
+          'Profile threshold rules and optional chain alarm nodes both run. Do not copy the same limit into both unless you intend two different conditions.',
+      },
+    ],
+    links: [
+      { label: 'WaterFleet solution', href: '/solutions/water-fleet' },
+      { label: 'Telemetry guide', href: 'https://docs.autoconnecto.in/guide/telemetry-and-attributes.html', external: true },
+      { label: 'Try the platform', href: 'https://app.autoconnecto.in/signup', external: true },
+    ],
+  },
+  {
+    slug: 'oem-white-label',
+    path: '/oem-white-label',
+    title: 'OEM white-label IoT platform — Autoconnecto',
+    description:
+      'White-label Autoconnecto on Growth and Enterprise: your logo, colours, and app name for the tenants you run. Hosted in India.',
+    h1: 'OEM and white-label IoT platform',
+    lead:
+      'Ship connected products under your brand. Growth and Enterprise plans support tenant branding — logo, colours, and sidebar title — while Autoconnecto runs the hosted stack in India.',
+    image: {
+      src: '/images/whitelabeling.png',
+      alt: 'Autoconnecto tenant branding and white-label settings',
+    },
+    keywords: [
+      'white-label IoT platform',
+      'OEM IoT cloud India',
+      'branded IoT dashboard',
+      'multi-tenant IoT OEM',
+    ],
+    sections: [
+      {
+        heading: 'What you brand',
+        body:
+          'Tenant settings cover logo, header and sidebar colours, and display names shown to your operators. The same MQTT, dashboards, alarms, and SDK path stay underneath.',
+      },
+      {
+        heading: 'Who this fits',
+        body:
+          'OEMs and system integrators who need a multi-tenant cloud without building brokers, storage, and widget editors. INR plans; talk to the founder for Growth and Enterprise rollout.',
+      },
+    ],
+    links: [
+      { label: 'For system integrators', href: '/for-system-integrators' },
+      { label: 'Pricing', href: '/pricing' },
+      { label: 'Product overview', href: '/product' },
+      { label: 'Talk to founder', href: 'mailto:founder@autoconnecto.in', external: true },
+      { label: 'Try the platform', href: 'https://app.autoconnecto.in/signup', external: true },
     ],
   },
 ];

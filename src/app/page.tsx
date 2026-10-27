@@ -15,34 +15,34 @@ import { siteOrigin } from '@/lib/siteOrigin';
 const baseUrl = siteOrigin();
 
 export const metadata: Metadata = {
-  title: 'Autoconnecto — IoT platform for plants and OEMs',
+  title: 'Autoconnecto — IoT for plants and OEMs',
   description:
-    'Hosted IoT platform for plants and OEMs in India. Connect MQTT or HTTPS, store readings, ask Analytics, raise alarms, and run on your own server when you need to. Plans scale when you need more.',
+    'Hosted IoT for plants and OEMs in India. MQTT or HTTPS, store readings, Analytics, alarms. INR plans.',
   alternates: { canonical: `${baseUrl}/` },
   openGraph: {
     type: 'website',
     url: `${baseUrl}/`,
-    title: 'Autoconnecto — IoT platform for plants and OEMs',
+    title: 'Autoconnecto — IoT for plants and OEMs',
     description:
-      'Hosted IoT platform from India. MQTT and HTTPS, Analytics from stored readings, alarms. Scaled when you need more.',
+      'Hosted IoT from India. MQTT and HTTPS, Analytics from stored readings, alarms.',
     siteName: 'Autoconnecto',
     images: [
       {
-        url: `${baseUrl}/assets/images/app_logo.png`,
+        url: `${baseUrl}/images/homepage.png`,
         width: 1200,
         height: 630,
-        alt: 'Autoconnecto Enterprise IoT Platform',
+        alt: 'Autoconnecto IoT platform homepage',
         type: 'image/png',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Autoconnecto — IoT platform for plants and OEMs',
+    title: 'Autoconnecto — IoT for plants and OEMs',
     description:
-      'Hosted IoT platform from India. MQTT and HTTPS, Analytics from stored readings, alarms. Scaled when you need more.',
-    images: [`${baseUrl}/assets/images/app_logo.png`],
+      'Hosted IoT from India. MQTT and HTTPS, Analytics from stored readings, alarms.',
+    images: [`${baseUrl}/images/homepage.png`],
   },
 };
 
@@ -78,7 +78,8 @@ export default function LandingPage() {
             '@context': 'https://schema.org',
             '@type': 'SoftwareApplication',
             name: 'Autoconnecto',
-            description: 'Hosted IoT platform for device connectivity, Analytics, dashboards, and dashboards',
+            description:
+              'Hosted IoT platform for device connectivity, Analytics, live dashboards, and alarms',
             url: baseUrl,
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Web',

@@ -14,9 +14,12 @@ const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: 'Autoconnecto — IoT platform for plants and OEMs',
+  title: {
+    default: 'Autoconnecto — IoT for plants and OEMs',
+    template: '%s',
+  },
   description:
-    'Hosted IoT platform for plants and OEMs in India. MQTT and HTTPS, Analytics from stored readings, alarms by email or Telegram, white-label on Growth and Enterprise. Scaled when you need more.',
+    'Hosted IoT for plants and OEMs in India. MQTT and HTTPS, Analytics from stored readings, alarms, white-label on Growth and Enterprise.',
   keywords: [
     'IoT platform',
     'MQTT',
@@ -56,26 +59,28 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_IN',
     url: `${baseUrl}/`,
     siteName: 'Autoconnecto',
-    title: 'Autoconnecto — IoT platform for plants and OEMs',
-    description: 'Full-stack IoT platform for enterprise device management and visualization.',
+    title: 'Autoconnecto — IoT for plants and OEMs',
+    description:
+      'Hosted IoT for plants and OEMs in India. MQTT, HTTPS, Analytics, alarms, white-label.',
     images: [
       {
-        url: '/assets/images/app_logo.png',
+        url: '/images/homepage.png',
         width: 1200,
         height: 630,
-        alt: 'Autoconnecto Enterprise IoT Platform',
+        alt: 'Autoconnecto IoT platform homepage preview',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Autoconnecto — IoT platform for plants and OEMs',
-    description: 'Full-stack IoT platform for enterprise device management and visualization.',
-    images: ['/assets/images/app_logo.png'],
+    title: 'Autoconnecto — IoT for plants and OEMs',
+    description:
+      'Hosted IoT for plants and OEMs in India. MQTT, HTTPS, Analytics, alarms, white-label.',
+    images: ['/images/homepage.png'],
   },
   ...(googleSiteVerification
     ? { verification: { google: googleSiteVerification } }
@@ -99,9 +104,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               name: 'Autoconnecto',
               url: `${baseUrl}/`,
               description:
-                'Hosted IoT platform for plants and OEMs in India. Readings are stored. Analytics answers from those readings. Scaled when you need more. ',
-              publisher: { '@type': 'Organization', name: 'Autoconnecto', url: `${baseUrl}/` },
-              inLanguage: 'en',
+                'Hosted IoT platform for plants and OEMs in India. Readings are stored. Analytics answers from those readings.',
+              publisher: {
+                '@type': 'Organization',
+                name: 'Purple Chilly Pvt Ltd',
+                url: `${baseUrl}/`,
+              },
+              inLanguage: 'en-IN',
             }),
           }}
         />
@@ -111,19 +120,21 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Autoconnecto',
+              name: 'Purple Chilly Pvt Ltd',
+              legalName: 'Purple Chilly Pvt Ltd',
+              alternateName: ['Autoconnecto', 'Autoconnecto IoT'],
               url: `${baseUrl}/`,
               logo: `${baseUrl}/assets/images/app_logo.png`,
-              description: 'Hosted IoT platform for plants and OEMs in India. Analytics answers from stored readings. ',
+              description:
+                'Purple Chilly Pvt Ltd builds Autoconnecto, a hosted IoT platform for plants and OEMs in India.',
               email: 'support@autoconnecto.in',
               sameAs: [
-                'https://autoconnecto.in/',
                 'https://www.autoconnecto.in/',
                 'https://app.autoconnecto.in/',
                 'https://docs.autoconnecto.in/',
                 'https://www.linkedin.com/showcase/145223603/',
-                'https://github.com/autoconnecto/autoconnecto-sdk',
-                'https://github.com/autoconnecto/autoconnecto-mobile',
+                'https://www.youtube.com/channel/UCbBIVt4mENlkue_f_JEyWww',
+                'https://github.com/autoconnecto',
               ],
               contactPoint: [
                 {
@@ -145,8 +156,34 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 '@type': 'PostalAddress',
                 streetAddress: 'Villa-71, Galaxy Enclave, Mahindra SEZ Road, Kalwara',
                 addressLocality: 'Jaipur',
+                addressRegion: 'Rajasthan',
                 postalCode: '302037',
                 addressCountry: 'IN',
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'SoftwareApplication',
+              name: 'Autoconnecto',
+              applicationCategory: 'BusinessApplication',
+              operatingSystem: 'Web',
+              url: 'https://app.autoconnecto.in/',
+              description:
+                'Hosted multi-tenant IoT platform: MQTT and HTTPS ingest, stored telemetry, live dashboards, alarms, rule engine, OTA, and ESP32 SDK.',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'INR',
+                url: `${baseUrl}/pricing`,
+              },
+              publisher: {
+                '@type': 'Organization',
+                name: 'Purple Chilly Pvt Ltd',
               },
             }),
           }}
