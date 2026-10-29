@@ -88,37 +88,11 @@ export default function LandingPage() {
       <FeaturesSection />
       <ScaleSection />
       <DevelopersSection />
+      {/* LinkedIn notes stay as HTML links in PostsSection only.
+          Do not emit SocialMediaPosting / DiscussionForumPosting JSON-LD here —
+          those posts live on LinkedIn; empty author/datePublished made Google
+          Search Console report discussion-forum structured-data errors. */}
       <PostsSection />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ItemList',
-            name: 'Autoconnecto notes',
-            itemListElement: [
-              {
-                '@type': 'SocialMediaPosting',
-                position: 1,
-                url: 'https://www.linkedin.com/feed/update/urn:li:share:7519607555581509632?actorCompanyId=145223603',
-                headline: 'ESP32 to a live dashboard',
-              },
-              {
-                '@type': 'SocialMediaPosting',
-                position: 2,
-                url: 'https://www.linkedin.com/feed/update/urn:li:share:7519623601655037952?actorCompanyId=145223603',
-                headline: 'Shared attributes after a power cut',
-              },
-              {
-                '@type': 'SocialMediaPosting',
-                position: 3,
-                url: 'https://www.linkedin.com/feed/update/urn:li:share:7519670711741857792/?actorCompanyId=145223603',
-                headline: 'For system integrators and EPCs',
-              },
-            ],
-          }),
-        }}
-      />
       <TestimonialsSection />
       <ContactSection />
       <Footer />
