@@ -48,7 +48,7 @@ export const SDK_MQTT_BRIDGE_URL =
   "https://github.com/autoconnecto/autoconnecto-sdk/tree/main/examples/integrations/mqtt-bridge";
 
 /** Keep in step with autoconnecto-mobile package.json and the APK tag. */
-export const MOBILE_APP_VERSION = "1.7.68";
+export const MOBILE_APP_VERSION = "1.7.95";
 
 /** Latest mobile release notes (GitHub redirects to newest tag). */
 export const MOBILE_APP_RELEASES_URL =
