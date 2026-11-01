@@ -1,6 +1,6 @@
 {
   "name": "autoconnecto",
-  "version": "1.7.98",
+  "version": "1.7.99",
   "private": true,
   "rocketCritical": {
     "dependencies": [
