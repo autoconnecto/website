@@ -72,7 +72,7 @@ const cards = [
   {
     title: 'Mobile app (Android APK)',
     description:
-      'Monitor live telemetry and manage alarms on the go. The download link always serves the latest APK — same Cognito login and production API as the web app.',
+      'Monitor live telemetry and manage alarms on the go. Download Android app v1.8.2 — same login and production API as the web app.',
     href: MOBILE_APP_DOWNLOAD_URL,
     cta: 'Download latest APK',
     icon: 'DevicePhoneMobileIcon' as const,
