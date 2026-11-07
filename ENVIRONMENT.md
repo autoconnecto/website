@@ -35,26 +35,15 @@ If you use **DNS TXT** verification instead, you do not need this env var; add t
 
 Older templates sometimes listed **Supabase, OpenAI, Gemini, Anthropic, GA, AdSense, Perplexity, Stripe** keys. The current **`website/src`** code does **not** read any of those. If you add analytics, payments, or auth to this Next app later, introduce variables then and document them here.
 
-## GitHub Actions deploy (`deploy-s3.yml`)
+## Deploy (E2E — AWS closed)
 
-Production (confirmed):
+Production marketing host is **`www.autoconnecto.in`** on E2E (`e2e-autoconnecto` / `151.185.47.153`).
 
-| Setting | Value |
-|---------|--------|
-| S3 bucket | `autoconnecto-www-site` |
-| CloudFront distribution | `E3UPPLM5N2GQ5Z` |
-| Region | `ap-south-1` |
+1. `NEXT_PUBLIC_SITE_URL=https://www.autoconnecto.in npm run build` in `website/`
+2. Sync `out/` into `/root/autoconnecto/website-dist` on E2E (compose mount `WEBSITE_DIST` → nginx `html-www`)
+3. Confirm `https://www.autoconnecto.in/support/` returns 200
 
-On **https://github.com/autoconnecto/website** → **Settings → Secrets and variables → Actions**, add:
-
-| Secret | Value |
-|--------|--------|
-| `AWS_ACCESS_KEY_ID` | IAM user access key (e.g. `autoconnecto-backend`) |
-| `AWS_SECRET_ACCESS_KEY` | Matching secret |
-| `WEBSITE_S3_BUCKET` | `autoconnecto-www-site` |
-| `WEBSITE_CLOUDFRONT_DISTRIBUTION_ID` | `E3UPPLM5N2GQ5Z` |
-
-Attach IAM policy **`scripts/iam/website-deploy-s3-cloudfront.policy.json`** to that user (inline or customer-managed). **`ListDistributions` is not required** — only `CreateInvalidation` on the distribution ARN above.
+Do **not** use S3 / CloudFront / `deploy-s3.yml` (removed).
 
 ## Security
 
