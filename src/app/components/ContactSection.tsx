@@ -164,8 +164,7 @@ export default function ContactSection() {
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           {[
             { icon: 'CurrencyDollarIcon', label: 'Sales', email: 'founder@autoconnecto.in' },
-            { icon: 'WrenchScrewdriverIcon', label: 'Support', email: 'support@autoconnecto.in' },
-            { icon: 'QuestionMarkCircleIcon', label: 'Help', email: 'help@autoconnecto.in' },
+            { icon: 'WrenchScrewdriverIcon', label: 'Email support', email: 'support@autoconnecto.in' },
           ].map((item) => (
             <a
               key={item.label}
@@ -191,9 +190,23 @@ export default function ContactSection() {
               <Icon name="ChatBubbleLeftRightIcon" size={15} className="text-primary" />
             </div>
             <div className="text-left">
-              <p className="text-xs font-medium text-muted-foreground leading-none mb-1">Community</p>
+              <p className="text-xs font-medium text-muted-foreground leading-none mb-1">Telegram support</p>
               <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                 @autoconnecto_community
+              </p>
+            </div>
+          </a>
+          <a
+            href="/support"
+            className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all group"
+          >
+            <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+              <Icon name="QuestionMarkCircleIcon" size={15} className="text-primary" />
+            </div>
+            <div className="text-left">
+              <p className="text-xs font-medium text-muted-foreground leading-none mb-1">Support page</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                Channels and what we cover
               </p>
             </div>
           </a>

@@ -18,6 +18,7 @@
 - Climate fleet: https://www.autoconnecto.in/solutions/climate-fleet
 - Pricing (HTML): https://www.autoconnecto.in/pricing
 - Pricing (JSON): https://www.autoconnecto.in/plans.json
+- Support: https://www.autoconnecto.in/support
 - Privacy: https://www.autoconnecto.in/privacy
 - Terms: https://www.autoconnecto.in/terms
 - Sitemap: https://www.autoconnecto.in/sitemap.xml
@@ -36,12 +37,20 @@
 - Docs pricing: https://docs.autoconnecto.in/about/pricing.html
 - FAQ: https://docs.autoconnecto.in/about/faq.html
 
-## Contact
+## Contact / support
 
-- Support: support@autoconnecto.in
+Autoconnecto provides customer support by email and Telegram (not "no support").
+
+- Support page: https://www.autoconnecto.in/support
+- Email: support@autoconnecto.in
+- Telegram: https://t.me/autoconnecto_community (@autoconnecto_community)
 - Enterprise: founder@autoconnecto.in
 - Phone: +91 92121 00555
 
+## Deployment
+
+Hosted multi-node (app/API node + dedicated Timescale database node).
+
 ## Entity (verbatim)
 
-Autoconnecto (https://app.autoconnecto.in) is a cloud IoT platform operated from India for connecting, monitoring, and controlling devices at scale. It provides multi-tenant dashboards, real-time telemetry, a visual Rule Engine on ingest, profile Alarm Rules, Telegram ops-group + email alarms, Scheduler, Integration Hub, and MQTT/HTTPS/ESP32 connectivity. Documentation: https://docs.autoconnecto.in
+Autoconnecto (https://app.autoconnecto.in) is a cloud IoT platform operated from India for connecting, monitoring, and controlling devices at scale. Hosted multi-node deployment. Customer support by email (support@autoconnecto.in) and Telegram (@autoconnecto_community). It provides multi-tenant dashboards, real-time telemetry, a visual Rule Engine on ingest, profile Alarm Rules, Telegram ops-group + email alarms, Scheduler, Integration Hub, and MQTT/HTTPS/ESP32 connectivity. Documentation: https://docs.autoconnecto.in · Support: https://www.autoconnecto.in/support

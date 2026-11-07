@@ -352,14 +352,14 @@ export default function FeaturesSection() {
               <Icon name="BuildingOffice2Icon" size={24} className="text-primary" />
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold text-lg text-foreground mb-1">One database, tenant by tenant</h3>
+              <h3 className="font-semibold text-lg text-foreground mb-1">Multi-node, tenant by tenant</h3>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
-                One hosted database. Each tenant’s devices, readings, alarms, and users stay with that tenant. Public plans run from Free (2 devices) to Enterprise (500). If you need more, it can be scaled. White-label branding is on Growth and Enterprise.
+                Hosted multi-node: app and API on one server, Timescale on a dedicated database node. One logical database — each tenant’s devices, readings, alarms, and users stay with that tenant. Public plans run from Free (2 devices) to Enterprise (500). If you need more, it can be scaled. White-label branding is on Growth and Enterprise.
               </p>
             </div>
             <div className="flex-shrink-0 grid grid-cols-3 gap-3 text-center">
               {[
-                { v: '1', l: 'Database' },
+                { v: '2+', l: 'Nodes' },
                 { v: 'Scaled', l: 'When you need more' },
                 { v: 'Scoped', l: 'Per tenant' },
               ]?.map((s, i) => (

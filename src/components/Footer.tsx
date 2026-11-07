@@ -33,7 +33,8 @@ const footerLinks = [
   { label: 'Developers', href: '/#developers', external: false },
   { label: 'Arduino SDK', href: ARDUINO_SDK_GITHUB_URL, external: true },
   { label: `Android app v${MOBILE_APP_VERSION}`, href: MOBILE_APP_DOWNLOAD_URL, external: true },
-  { label: 'Community', href: COMMUNITY_TELEGRAM_URL, external: true },
+  { label: 'Support', href: '/support', external: false },
+  { label: 'Telegram support', href: COMMUNITY_TELEGRAM_URL, external: true },
   { label: 'Docs', href: 'https://docs.autoconnecto.in', external: true },
   { label: 'Privacy', href: '/privacy', external: false },
   { label: 'Terms', href: '/terms', external: false },
@@ -42,7 +43,7 @@ const footerLinks = [
 
 const socialLinks = [
   { icon: 'GlobeAltIcon', href: `${siteUrl}/`, label: 'Marketing site' },
-  { icon: 'ChatBubbleLeftRightIcon', href: COMMUNITY_TELEGRAM_URL, label: 'Telegram community' },
+  { icon: 'ChatBubbleLeftRightIcon', href: COMMUNITY_TELEGRAM_URL, label: 'Telegram support' },
   { icon: 'EnvelopeIcon', href: 'mailto:support@autoconnecto.in', label: 'Email support' },
   { icon: 'EnvelopeIcon', href: 'mailto:founder@autoconnecto.in', label: 'Email founder' },
 ];
@@ -96,7 +97,7 @@ export default function Footer() {
 
         {/* Disclaimer */}
         <p className="mt-8 text-center text-xs text-muted-foreground/60">
-          API in Mumbai. INR plans. Scaled when you need more.
+          Hosted multi-node. INR plans. Support by email and Telegram.
         </p>
         <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-muted-foreground/60">
           <span className="flex items-center gap-1.5">

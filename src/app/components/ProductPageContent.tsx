@@ -79,8 +79,8 @@ const PILLARS = [
   {
     icon: 'LockClosedIcon',
     color: 'emerald',
-    title: 'Hosted or on your server',
-    desc: 'One database, tenant-scoped. Roles inside the tenant. White-label logo, colours, and your hostname on Growth and Enterprise. The public app is hosted. Plans list up to 500 devices on Enterprise. If you need more, it can be scaled.',
+    title: 'Hosted multi-node',
+    desc: 'App and API on one node, Timescale on a dedicated database node. One logical database, tenant-scoped. Roles inside the tenant. White-label logo, colours, and your hostname on Growth and Enterprise. Plans list up to 500 devices on Enterprise. If you need more, it can be scaled.',
     tags: ['INR plans', 'White-label'],
   },
 ];
@@ -195,7 +195,7 @@ export default function ProductPageContent() {
             Analytics answers from those readings. The dashboard shows the last value the device reported.
           </p>
           <p className="text-sm text-primary/90 font-medium mb-10">
-            Built in India · INR plans · Hosted, or on your server · Scaled when you need more
+            Built in India · INR plans · Hosted multi-node · Scaled when you need more
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 mb-14">

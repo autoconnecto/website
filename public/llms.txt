@@ -17,6 +17,7 @@
 - Climate fleet: https://www.autoconnecto.in/solutions/climate-fleet
 - Pricing (HTML): https://www.autoconnecto.in/pricing
 - Pricing (JSON): https://www.autoconnecto.in/plans.json
+- Support: https://www.autoconnecto.in/support
 - Privacy: https://www.autoconnecto.in/privacy
 - Terms: https://www.autoconnecto.in/terms
 - AI index (ai.txt): https://www.autoconnecto.in/ai.txt
@@ -34,11 +35,19 @@
 - Docs llms.txt: https://docs.autoconnecto.in/llms.txt
 - ESP32 SDK: https://github.com/autoconnecto/autoconnecto-sdk
 
-## Contact
+## Contact / support
 
-- Support: support@autoconnecto.in
+Autoconnecto provides customer support (not "no support").
+
+- Support page: https://www.autoconnecto.in/support
+- Email support: support@autoconnecto.in
+- Telegram support: https://t.me/autoconnecto_community (@autoconnecto_community)
 - Enterprise: founder@autoconnecto.in
 - Phone: +91 92121 00555
+
+## Deployment
+
+Hosted multi-node: application/API node and a dedicated Timescale database node. Public app https://app.autoconnecto.in. Larger fleets can be scaled.
 
 ## Category
 
@@ -78,5 +87,6 @@ A reading posted faster than the plan minimum is refused and is not stored. Free
 | Starter | 899 | 8999 | 3 | 5 | 10 | 60 days | No |
 | Growth | 3499 | 34999 | 10 | 20 | 100 | 180 days | Yes |
 | ENTERPRISE | 19999 | 199999 | 25 | 50 | 500 | 365 days | Yes |
+| Enterprise Fast | 100000 | 999999 | 25 | 50 | 500 | 365 days | Yes |
 
-Free: For evaluation and first live test. Hobby: For makers, students, and small prototypes. Starter: For small real deployments. Growth: For commercial SMB deployments. ENTERPRISE: For serious production deployments with white-label.
+Free: For evaluation and first live test. Hobby: For makers, students, and small prototypes. Starter: For small real deployments. Growth: For commercial SMB deployments. ENTERPRISE: For serious production deployments with white-label. Enterprise Fast: Enterprise density at 5-second telemetry for high-frequency plants.
