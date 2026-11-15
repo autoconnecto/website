@@ -8,7 +8,7 @@ import { siteOrigin } from '@/lib/siteOrigin';
 const baseUrl = siteOrigin();
 const title = 'Export your data — Autoconnecto';
 const description =
-  'Download readings and alarms as CSV, dashboards as JSON, and move devices on standard MQTT or HTTP. Steps for leaving Autoconnecto without a support ticket.';
+  'Download readings and alarms as CSV, export dashboards, profiles, rule engines, SCADA, assets, and scheduler as JSON, and move devices on standard MQTT or HTTP.';
 
 export const metadata: Metadata = {
   title,

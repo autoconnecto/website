@@ -15,8 +15,8 @@ const STEPS = [
     body: 'Reports → Alarms export → set filters → Download. Same Reports area as readings; the two types stay separate.',
   },
   {
-    title: 'Dashboards as JSON',
-    body: 'Dashboards list → Export JSON on a board. Keep the file as a backup or Import it into another Autoconnecto tenant.',
+    title: 'Boards and configuration as JSON',
+    body: 'Export / Import on Dashboards, Device Profiles, Rule Engines, SCADA Boards, Assets (tree), and Scheduler. Back up a board or move it to another Autoconnecto tenant. Secrets and device links are cleared where they cannot transfer — re-enter them after import.',
   },
   {
     title: 'Move devices',
@@ -35,9 +35,9 @@ export default function ExportYourDataContent() {
           Export your data
         </h1>
         <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-          Leaving is straightforward. Download history as CSV, boards as JSON, and
-          retarget devices on open protocols — no ticket required for the exports
-          below.
+          Leaving is straightforward. Download history as CSV, configuration as
+          JSON, and retarget devices on open protocols — no ticket required for
+          the exports below.
         </p>
 
         <ol className="mt-12 space-y-8">
