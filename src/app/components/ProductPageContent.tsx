@@ -484,6 +484,11 @@ export default function ProductPageContent() {
                 </a>
               </li>
               <li>
+                <a href="/export-your-data" className="text-primary font-medium hover:underline">
+                  Export your data
+                </a>
+              </li>
+              <li>
                 <a
                   href={DOCS_FAQ_URL}
                   target="_blank"

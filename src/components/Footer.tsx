@@ -34,6 +34,7 @@ const footerLinks = [
   { label: 'Arduino SDK', href: ARDUINO_SDK_GITHUB_URL, external: true },
   { label: `Android app v${MOBILE_APP_VERSION}`, href: MOBILE_APP_DOWNLOAD_URL, external: true },
   { label: 'Support', href: '/support', external: false },
+  { label: 'Export your data', href: '/export-your-data', external: false },
   { label: 'Telegram support', href: COMMUNITY_TELEGRAM_URL, external: true },
   { label: 'Docs', href: 'https://docs.autoconnecto.in', external: true },
   { label: 'Privacy', href: '/privacy', external: false },

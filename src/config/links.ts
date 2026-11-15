@@ -3,6 +3,8 @@ export const DOCS_ABOUT_URL =
   "https://docs.autoconnecto.in/about/what-is-autoconnecto.html";
 export const DOCS_PRICING_URL = "https://docs.autoconnecto.in/about/pricing.html";
 export const DOCS_FAQ_URL = "https://docs.autoconnecto.in/about/faq.html";
+export const DOCS_EXPORT_URL =
+  "https://docs.autoconnecto.in/guide/export-your-data.html";
 export const DEVICE_CONNECTIVITY_DOCS_URL =
   "https://docs.autoconnecto.in/developer/device-connectivity.html";
 export const COMPATIBLE_HARDWARE_DOCS_URL =

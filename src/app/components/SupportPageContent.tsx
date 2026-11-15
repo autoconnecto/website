@@ -126,6 +126,10 @@ export default function SupportPageContent() {
             >
               FAQ
             </a>
+            {' · '}
+            <a href="/export-your-data" className="text-primary hover:underline">
+              Export your data
+            </a>
           </p>
         </div>
       </div>

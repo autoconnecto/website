@@ -35,6 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/esp32-wifi-strongest-ap`, lastModified: now, changeFrequency: 'weekly', priority: 0.88 },
     { url: `${base}/pricing`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/support`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${base}/export-your-data`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${base}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ];

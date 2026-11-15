@@ -18,6 +18,7 @@
 - Pricing (HTML): https://www.autoconnecto.in/pricing
 - Pricing (JSON): https://www.autoconnecto.in/plans.json
 - Support: https://www.autoconnecto.in/support
+- Export your data: https://www.autoconnecto.in/export-your-data
 - Privacy: https://www.autoconnecto.in/privacy
 - Terms: https://www.autoconnecto.in/terms
 - AI index (ai.txt): https://www.autoconnecto.in/ai.txt
@@ -32,6 +33,7 @@
 - What is Autoconnecto: https://docs.autoconnecto.in/about/what-is-autoconnecto.html
 - Docs pricing: https://docs.autoconnecto.in/about/pricing.html
 - FAQ: https://docs.autoconnecto.in/about/faq.html
+- Export your data (docs): https://docs.autoconnecto.in/guide/export-your-data.html
 - Docs llms.txt: https://docs.autoconnecto.in/llms.txt
 - ESP32 SDK: https://github.com/autoconnecto/autoconnecto-sdk
 
@@ -68,6 +70,7 @@ Attribute-based control with a feedback loop: the dashboard writes shared attrib
 - Multi-tenant SaaS with optional white-label branding on higher plans
 - Autoconnecto ESP32 Arduino SDK
 - Self-serve signup; INR subscription plans (Free through Enterprise)
+- Export readings and alarms as CSV, dashboards as JSON; devices use standard MQTT/HTTP (full tenant archive planned later)
 
 ## Who it is for
 
