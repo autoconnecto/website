@@ -16,7 +16,7 @@ const STEPS = [
   },
   {
     title: 'Boards and configuration as JSON',
-    body: 'Export / Import on Dashboards, Device Profiles, Rule Engines, SCADA Boards, Assets (tree), and Scheduler. Back up a board or move it to another Autoconnecto tenant. Secrets and device links are cleared where they cannot transfer — re-enter them after import.',
+    body: 'Export / Import on Dashboards, Device Profiles, Rule Engines, SCADA Boards, Assets (whole tree or one SITE and its children), and Scheduler. Back up a board or move it to another Autoconnecto tenant. Secrets and device links are cleared where they cannot transfer — re-enter them after import. Scheduler Activate stays blocked until devices are picked.',
   },
   {
     title: 'Move devices',
