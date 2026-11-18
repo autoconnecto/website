@@ -5,18 +5,21 @@ export function buildPricingJsonLd(
   plans: PublicPlan[],
   siteUrl: string
 ): Record<string, unknown> {
-  const offers = plans.map((plan) => {
+  const pricedAmounts = plans.map((plan) => {
+    if (isFreePlan(plan)) return 0;
     const monthly = Number(plan.price_monthly_inr);
-    const price = isFreePlan(plan)
-      ? 0
-      : Number.isFinite(monthly)
-        ? monthly
-        : 0;
+    if (Number.isFinite(monthly) && monthly > 0) return monthly;
+    const onetime = Number(plan.price_onetime_inr);
+    if (Number.isFinite(onetime) && onetime > 0) return onetime;
+    return 0;
+  });
+
+  const offers = plans.map((plan, index) => {
     return {
       "@type": "Offer",
       name: planDisplayName(plan),
       description: plan.description ?? undefined,
-      price: String(price),
+      price: String(pricedAmounts[index] ?? 0),
       priceCurrency: "INR",
       url: `${siteUrl}/pricing#plan-${plan.plan_id}`,
       availability: "https://schema.org/InStock",
@@ -34,12 +37,7 @@ export function buildPricingJsonLd(
       "@type": "AggregateOffer",
       priceCurrency: "INR",
       lowPrice: "0",
-      highPrice: String(
-        Math.max(
-          ...plans.map((p) => Number(p.price_monthly_inr) || 0),
-          0
-        )
-      ),
+      highPrice: String(Math.max(...pricedAmounts, 0)),
       offerCount: plans.length,
       offers,
     },

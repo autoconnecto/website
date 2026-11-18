@@ -80,7 +80,7 @@ const PILLARS = [
     icon: 'LockClosedIcon',
     color: 'emerald',
     title: 'Hosted multi-node',
-    desc: 'App and API on one node, Timescale on a dedicated database node. One logical database, tenant-scoped. Roles inside the tenant. White-label logo, colours, and your hostname on Growth and Enterprise. Plans list up to 500 devices on Enterprise. If you need more, it can be scaled.',
+    desc: 'App and API on one node, Timescale on a dedicated database node. One logical database, tenant-scoped. Roles inside the tenant. White-label logo, colours, and your hostname on Startup and above. Hosted Business lists 2,500 devices; Enterprise and on-prem Scale go higher by catalogue or quote.',
     tags: ['INR plans', 'White-label'],
   },
 ];
@@ -522,7 +522,7 @@ export default function ProductPageContent() {
             Ready to connect your fleet?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Start on the Free plan. White-label is on Growth and Enterprise. If you need more than
+            Start on the Free plan. White-label web UI is on Startup and above. If you need more than
             the catalog, it can be scaled.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">

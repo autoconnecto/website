@@ -15,13 +15,22 @@ function formatInr(value) {
   return String(Number(value));
 }
 
-function formatRetention(days) {
+function formatRetention(days, kind) {
+  if (kind === "onprem" && (days == null || days === "")) return "Your storage";
   if (days == null) return "—";
   return `${days} days`;
 }
 
 function formatYesNo(flag) {
   return flag ? "Yes" : "No";
+}
+
+function planKind(plan) {
+  const kind = String(plan.plan_kind || "").toLowerCase();
+  if (kind === "onprem") return "onprem";
+  const id = String(plan.plan_id || "").toLowerCase();
+  if (id.includes("onprem") || id === "forever") return "onprem";
+  return "hosted";
 }
 
 function buildPricingSection(plans) {
@@ -32,18 +41,19 @@ function buildPricingSection(plans) {
   const header = [
     pricingHeading,
     "",
-    "All prices in Indian Rupees. Billed monthly or yearly. See https://www.autoconnecto.in/plans.json for machine-readable data.",
-    "A reading posted faster than the plan minimum is refused and is not stored. Free is 30 seconds, Hobby 10, Starter 5, Growth 1, Enterprise 1.",
+    "All prices in Indian Rupees, excluding GST. Hosted or on your servers. Billed monthly or yearly (self-serve). See https://www.autoconnecto.in/plans.json for machine-readable data.",
+    "Limits are sustained DP/s (1-hour rolling average) and device count. Insight analytics is an optional paid add-on on Maker and above — never included free. Free has no Insight.",
     "",
     "> This table is generated at build time from https://api.autoconnecto.in/api/plans.",
     "",
-    "| Plan | Monthly INR | Yearly INR | Users | Dashboards | Devices | Retention | White-label |",
-    "|------|-------------|------------|-------|------------|---------|-----------|-------------|",
+    "| Plan | Kind | Monthly INR | Yearly INR | One-time INR | DP/s | Devices | Retention | White-label | Insight / mo |",
+    "|------|------|-------------|------------|--------------|------|---------|-----------|-------------|--------------|",
   ];
 
   const rows = sorted.map((plan) => {
     const name = plan.display_name || plan.plan_id || "Plan";
-    return `| ${name} | ${formatInr(plan.price_monthly_inr)} | ${formatInr(plan.price_yearly_inr)} | ${formatInr(plan.max_users)} | ${formatInr(plan.max_dashboards)} | ${formatInr(plan.max_devices)} | ${formatRetention(plan.retention_days)} | ${formatYesNo(plan.whitelabel_enabled)} |`;
+    const kind = planKind(plan);
+    return `| ${name} | ${kind} | ${formatInr(plan.price_monthly_inr)} | ${formatInr(plan.price_yearly_inr)} | ${formatInr(plan.price_onetime_inr)} | ${formatInr(plan.dps_included)} | ${formatInr(plan.max_devices)} | ${formatRetention(plan.retention_days, kind)} | ${formatYesNo(plan.whitelabel_enabled)} | ${formatInr(plan.insight_price_inr_month)} |`;
   });
 
   const summaries = sorted

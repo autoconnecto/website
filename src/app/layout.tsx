@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: '%s',
   },
   description:
-    'Hosted IoT for plants and OEMs in India. MQTT and HTTPS, Analytics from stored readings, alarms, white-label on Growth and Enterprise.',
+    'Hosted and on-prem IoT for plants and OEMs in India. MQTT and HTTPS, Insight analytics as an add-on, alarms, white-label from Startup upward.',
   keywords: [
     'IoT platform',
     'MQTT',

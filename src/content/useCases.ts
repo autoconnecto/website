@@ -168,7 +168,7 @@ export const USE_CASES: UseCasePage[] = [
     path: '/for-system-integrators',
     title: 'IoT for system integrators and EPCs',
     description:
-      'Hosted IoT for integrators and EPCs in India: multi-site assets, profiles, dashboards, alarms, white-label on Growth and Enterprise.',
+      'Hosted IoT for integrators and EPCs in India: multi-site assets, profiles, dashboards, alarms, white-label from Startup upward.',
     h1: 'Built for system integrators and EPCs',
     lead:
       'One platform for the sites you commission: devices, profiles, dashboards, alarms, and optional white-label under your brand. INR plans. The API runs in Mumbai. Scale when a project needs more devices.',
@@ -183,7 +183,7 @@ export const USE_CASES: UseCasePage[] = [
       {
         heading: 'How integrators use it',
         body:
-          'Create a tenant (or use white-label on Growth / Enterprise), model SITE → AREA → ZONE assets, attach devices, drop in solution or custom dashboards, and hand operators the app URL. Email and Telegram for plant alarms. INR plans are on the pricing page.',
+          'Create a tenant (or use white-label on Startup and above), model SITE → AREA → ZONE assets, attach devices, drop in solution or custom dashboards, and hand operators the app URL. Email and Telegram for plant alarms. INR plans are on the pricing page.',
       },
       {
         heading: 'Hardware you already ship',
@@ -401,10 +401,10 @@ export const USE_CASES: UseCasePage[] = [
     path: '/oem-white-label',
     title: 'OEM white-label IoT platform — Autoconnecto',
     description:
-      'White-label Autoconnecto on Growth and Enterprise: your logo, colours, and app name for the tenants you run. Hosted in India.',
+      'White-label Autoconnecto from Startup upward: your logo, colours, and app name for the tenants you run. Hosted in India.',
     h1: 'OEM and white-label IoT platform',
     lead:
-      'Ship connected products under your brand. Growth and Enterprise plans support tenant branding — logo, colours, and sidebar title — while Autoconnecto runs the hosted stack in India.',
+      'Ship connected products under your brand. Startup and above support tenant branding — logo, colours, and sidebar title — while Autoconnecto runs the hosted stack in India.',
     image: {
       src: '/images/whitelabeling.png',
       alt: 'Autoconnecto tenant branding and white-label settings',
@@ -424,7 +424,7 @@ export const USE_CASES: UseCasePage[] = [
       {
         heading: 'Who this fits',
         body:
-          'OEMs and system integrators who need a multi-tenant cloud without building brokers, storage, and widget editors. INR plans; talk to the founder for Growth and Enterprise rollout.',
+          'OEMs and system integrators who need a multi-tenant cloud without building brokers, storage, and widget editors. INR plans; talk to the founder for Business, on-prem, or Enterprise rollout.',
       },
     ],
     links: [

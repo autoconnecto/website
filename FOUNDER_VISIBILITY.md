@@ -61,7 +61,7 @@ Live 24 Oct 2026, with the real attributes image. LinkedIn shortens the link in 
 
 **Post C — Integrators**
 
-> For system integrators and EPCs: multi-site assets, device profiles, dashboards, alarms, INR plans, white-label on Growth and Enterprise.
+> For system integrators and EPCs: multi-site assets, device profiles, dashboards, alarms, INR plans, white-label from Startup upward.
 >
 > https://www.autoconnecto.in/for-system-integrators
 

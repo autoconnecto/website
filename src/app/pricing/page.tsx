@@ -21,8 +21,8 @@ const priceSummary = plans
 const pricingTitle = 'Pricing — Autoconnecto';
 const pricingDescription = (
   priceSummary
-    ? `INR plans: ${priceSummary}. Device and telemetry limits by tier.`
-    : 'Autoconnecto IoT plans in INR. Free tier plus Hobby, Starter, Growth, and Enterprise.'
+    ? `INR plans: ${priceSummary}. Hosted and on-prem. DP/s and device caps by plan.`
+    : 'Autoconnecto IoT plans in INR. Hosted Free to Business, on-prem Startup to Scale, Forever licence, Enterprise by quote.'
 ).slice(0, 155);
 
 export const metadata: Metadata = {

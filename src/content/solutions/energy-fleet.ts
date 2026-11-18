@@ -71,7 +71,7 @@ export const energyFleet: SolutionOffering = {
     {
       question: 'What happens on day 15?',
       answer:
-        'To keep the live site, move onto a paid Autoconnecto plan (Hobby, Starter, Growth, or Enterprise) and complete checkout in the app. If you stop, the trial workspace returns to the Free plan. Gateway and meter included for the trial are returned or purchased as agreed before day 15 — that is separate from the SaaS subscription.',
+        'To keep the live site, move onto a paid Autoconnecto plan (Maker, Startup, SME, Business, or on-prem) and complete checkout in the app. If you stop, the trial workspace returns to the Free plan. Gateway and meter included for the trial are returned or purchased as agreed before day 15 — that is separate from the SaaS subscription.',
     },
     {
       question: 'What about ClimateFleet?',
@@ -81,7 +81,7 @@ export const energyFleet: SolutionOffering = {
     {
       question: 'Can this white-label later?',
       answer:
-        'Yes on Growth and Enterprise after the pilot. The pilot itself is one Autoconnecto tenant.',
+        'Yes on Startup and above after the pilot. The pilot itself is one Autoconnecto tenant.',
     },
   ],
   ctaLabel: 'Book the free 14-day trial',

@@ -247,7 +247,7 @@ export default function FeaturesSection() {
             </div>
             <h3 className="font-semibold text-base text-foreground mb-1">White-Label Ready</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-              Logo, colours, and your own hostname. White-label is on Growth and Enterprise.
+              Logo, colours, and your own hostname. White-label web UI is on Startup and above.
             </p>
             <div className="flex gap-2">
               {['#0EA5E9', '#8B5CF6', '#10B981', '#F59E0B']?.map((color, i) => (
@@ -354,7 +354,7 @@ export default function FeaturesSection() {
             <div className="flex-1">
               <h3 className="font-semibold text-lg text-foreground mb-1">Multi-node, tenant by tenant</h3>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
-                Hosted multi-node: app and API on one server, Timescale on a dedicated database node. One logical database — each tenant’s devices, readings, alarms, and users stay with that tenant. Public plans run from Free (2 devices) to Enterprise (500). If you need more, it can be scaled. White-label branding is on Growth and Enterprise.
+                Hosted multi-node: app and API on one server, Timescale on a dedicated database node. One logical database — each tenant’s devices, readings, alarms, and users stay with that tenant. Public hosted plans run from Free (25 devices, 2 DP/s) through Business (2,500 devices, 400 DP/s); Enterprise and on-prem Scale are by catalogue. White-label web UI is on Startup and above.
               </p>
             </div>
             <div className="flex-shrink-0 grid grid-cols-3 gap-3 text-center">

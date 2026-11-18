@@ -78,18 +78,24 @@ Industrial IoT, energy and utilities, logistics and field assets, OEMs and syste
 
 ## Pricing (INR) — Autoconnecto IoT platform
 
-All prices in Indian Rupees. Billed monthly or yearly. See https://www.autoconnecto.in/plans.json for machine-readable data.
-A reading posted faster than the plan minimum is refused and is not stored. Free is 30 seconds, Hobby 10, Starter 5, Growth 1, Enterprise 1.
+All prices in Indian Rupees, excluding GST. Hosted or on your servers. Billed monthly or yearly (self-serve). See https://www.autoconnecto.in/plans.json for machine-readable data.
+Limits are sustained DP/s (1-hour rolling average) and device count. Insight analytics is an optional paid add-on on Maker and above — never included free. Free has no Insight.
 
 > This table is generated at build time from https://api.autoconnecto.in/api/plans.
 
-| Plan | Monthly INR | Yearly INR | Users | Dashboards | Devices | Retention | White-label |
-|------|-------------|------------|-------|------------|---------|-----------|-------------|
-| Free | 0 | 0 | 1 | 1 | 2 | 3 days | No |
-| Hobby | 199 | 1999 | 1 | 2 | 2 | 15 days | No |
-| Starter | 899 | 8999 | 3 | 5 | 10 | 60 days | No |
-| Growth | 3499 | 34999 | 10 | 20 | 100 | 180 days | Yes |
-| ENTERPRISE | 19999 | 199999 | 25 | 50 | 500 | 365 days | Yes |
-| Enterprise Fast | 100000 | 999999 | 25 | 50 | 500 | 365 days | Yes |
+| Plan | Kind | Monthly INR | Yearly INR | One-time INR | DP/s | Devices | Retention | White-label | Insight / mo |
+|------|------|-------------|------------|--------------|------|---------|-----------|-------------|--------------|
+| Free | hosted | 0 | 0 | — | 2 | 25 | 60 days | No | — |
+| Maker | hosted | 3299 | 32990 | — | 4 | 100 | 90 days | No | 999 |
+| Startup | hosted | 9999 | 99990 | — | 40 | 250 | 274 days | Yes | 2999 |
+| SME | hosted | 26999 | 269990 | — | 200 | 1000 | 548 days | Yes | 5999 |
+| Business | hosted | 49999 | 499990 | — | 400 | 2500 | 731 days | Yes | 10499 |
+| Enterprise | hosted | — | — | — | 401 | 5000 | 731 days | Yes | — |
+| Startup On-Prem | onprem | 6499 | 64990 | — | 40 | 500 | Your storage | Yes | 2999 |
+| SME On-Prem | onprem | 19999 | 199990 | — | 200 | 2500 | Your storage | Yes | 5999 |
+| Business On-Prem | onprem | 33999 | 339990 | — | 400 | 5000 | Your storage | Yes | 10499 |
+| Scale On-Prem | onprem | 99999 | 999990 | — | 1000 | 25000 | Your storage | Yes | 22999 |
+| Enterprise On-Prem | onprem | — | — | — | 1001 | 50000 | Your storage | Yes | — |
+| Forever licence | onprem | — | — | 349999 | 100 | 2500 | Your storage | Yes | — |
 
-Free: For evaluation and first live test. Hobby: For makers, students, and small prototypes. Starter: For small real deployments. Growth: For commercial SMB deployments. ENTERPRISE: For serious production deployments with white-label. Enterprise Fast: Enterprise density at 5-second telemetry for high-frequency plants.
+Free: Hosted Free — 2 DP/s, 25 devices, 60-day data. Insight not available. Maker: Hosted Maker — 4 DP/s, 100 devices, 90-day data. Startup: Hosted Startup — 40 DP/s, 250 devices, 9 months (274 days). SME: Hosted SME — 200 DP/s, 1,000 devices, 18 months (548 days). Business: Hosted Business — 400 DP/s, 2,500 devices, 24 months (731 days). Enterprise: Hosted Enterprise — quote. From 401 DP/s and 5,000 devices; retention at least 731 days. Startup On-Prem: On-prem Startup — licence: 40 DP/s, 500 devices. SME On-Prem: On-prem SME — licence: 200 DP/s, 2,500 devices. Business On-Prem: On-prem Business — licence: 400 DP/s, 5,000 devices, 3 product nodes (HA layout issued as nodes=4 in the licence file). Scale On-Prem: On-prem Scale — licence: 1,000 DP/s, 25,000 devices, at least 3 product nodes. Insight +₹22,999 / month. Enterprise On-Prem: On-prem Enterprise — quote. From 1,001 DP/s and 50,000 devices. Forever licence: Perpetual on-prem — up to 100 DP/s, 2,500 devices; from ₹3,49,999 once + 20%/yr AMC from year 2. Quote.

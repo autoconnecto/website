@@ -58,7 +58,7 @@ export const climateFleet: SolutionOffering = {
     {
       title: 'Operate and expand',
       description:
-        'Keep on a paid plan, add zones, or white-label on Growth / Enterprise when you are ready.',
+        'Keep on a paid plan, add zones, or white-label on Startup and above when you are ready.',
     },
   ],
   faqs: [
@@ -74,7 +74,7 @@ export const climateFleet: SolutionOffering = {
     },
     {
       question: 'Does white-label apply?',
-      answer: 'Yes on Growth and Enterprise after you are past the pilot.',
+      answer: 'Yes on Startup and above after you are past the pilot.',
     },
   ],
   ctaLabel: 'Ask about ClimateFleet',

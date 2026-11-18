@@ -1,17 +1,29 @@
+export type PlanKind = "hosted" | "onprem" | string;
+
 export type PublicPlan = {
   plan_id: string;
   display_name: string | null;
+  plan_kind?: PlanKind | null;
   price_monthly_inr: number | null;
   price_yearly_inr: number | null;
+  price_onetime_inr?: number | null;
+  dps_included?: number | null;
+  dps_burst?: number | null;
   max_users: number | null;
   max_dashboards: number | null;
   max_devices: number | null;
+  max_assets?: number | null;
+  max_rule_chains?: number | null;
   telemetry_per_minute: number | null;
   telemetry_per_day: number | null;
   retention_days: number | null;
   min_telemetry_interval_sec: number | null;
   min_aggregation_interval_sec: number | null;
+  insight_price_inr_month?: number | null;
   whitelabel_enabled: boolean | null;
+  rule_queue_isolated?: boolean | null;
+  licence_nodes?: number | null;
+  is_quote_only?: boolean | null;
   description: string | null;
   sort_order: number | null;
   is_active: boolean | null;
