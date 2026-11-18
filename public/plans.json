@@ -255,7 +255,7 @@
     "rule_queue_isolated": true,
     "licence_nodes": 3,
     "is_quote_only": false,
-    "description": "On-prem Business — licence: 400 DP/s, 5,000 devices, 3 product nodes (HA layout issued as nodes=4 in the licence file).",
+    "description": "On-prem Business — licence: 400 DP/s, 5,000 devices, 3 product nodes.",
     "sort_order": 130,
     "is_active": true,
     "is_public_visible": true
