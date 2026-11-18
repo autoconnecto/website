@@ -6,49 +6,26 @@ import { getPublicPlans } from '@/lib/publicPlans';
 import { buildPricingJsonLd } from '@/lib/pricingJsonLd';
 import { shareMeta } from '@/lib/shareMeta';
 import { siteOrigin } from '@/lib/siteOrigin';
-import {
-  formatInr,
-  isFreePlan,
-  isQuoteOnly,
-  planDisplayName,
-  toNullableNumber,
-} from '@/lib/plans';
 
 const baseUrl = siteOrigin();
 
 const plans = getPublicPlans();
-const priceSummary = plans
-  .map((p) => {
-    const name = planDisplayName(p);
-    if (isFreePlan(p)) return `${name} ₹0/mo`;
-    const onetime = toNullableNumber(p.price_onetime_inr);
-    const monthly = toNullableNumber(p.price_monthly_inr);
-    if (onetime != null && onetime > 0 && monthly == null) {
-      return `${name} ${formatInr(onetime)} one-time`;
-    }
-    if (isQuoteOnly(p) && monthly == null) return `${name} quote`;
-    if (monthly != null) return `${name} ${formatInr(monthly)}/mo`;
-    return `${name} quote`;
-  })
-  .join('; ');
 
 const pricingTitle = 'Pricing — Autoconnecto';
-const pricingDescription = (
-  priceSummary
-    ? `INR plans: ${priceSummary}. Hosted and on-prem. DP/s and device caps by plan.`
-    : 'Autoconnecto IoT plans in INR. Hosted Free to Business, on-prem Startup to Scale, Forever licence, Enterprise by quote.'
-).slice(0, 155);
+/** Keep under ~155 chars without cutting mid-price (og/twitter). */
+const pricingDescription =
+  'Autoconnecto INR plans: hosted Free to Business, on-prem Startup to Scale, Forever licence, Enterprise by quote. DP/s and device caps by plan.';
 
 export const metadata: Metadata = {
   title: pricingTitle,
   description: pricingDescription,
   alternates: {
-    canonical: `${baseUrl}/pricing`,
+    canonical: `${baseUrl}/pricing/`,
     types: {
       'application/json': `${baseUrl}/plans.json`,
     },
   },
-  ...shareMeta(baseUrl, '/pricing', pricingTitle, pricingDescription),
+  ...shareMeta(baseUrl, '/pricing/', pricingTitle, pricingDescription),
 };
 
 export default function PricingPage() {

@@ -61,14 +61,18 @@ export function formatInr(amount: number | null | undefined): string {
 export function publicPlanDescription(plan: PublicPlan): string | null {
   const raw = (plan.description || "").trim();
   if (!raw) return null;
-  return raw
-    .replace(
-      /\s*;?\s*HA layout issued as nodes=\d+ in the licence file\.?/gi,
-      ""
-    )
-    .replace(/\s{2,}/g, " ")
-    .replace(/\s+([.;])/g, "$1")
-    .trim() || null;
+  return (
+    raw
+      .replace(
+        /\s*;?\s*HA layout issued as nodes=\d+ in the licence file\.?/gi,
+        ""
+      )
+      .replace(/\(\s*\)/g, "")
+      .replace(/\s{2,}/g, " ")
+      .replace(/\s+([.;])/g, "$1")
+      .replace(/\s+,/g, ",")
+      .trim() || null
+  );
 }
 
 export function formatDeviceCap(plan: PublicPlan): string {

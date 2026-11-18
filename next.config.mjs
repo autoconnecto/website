@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export', // ✅ required for S3 static hosting
+  // Directory URLs (/pricing/, /solutions/energy-fleet/) match nginx try_files.
+  trailingSlash: true,
 
   productionBrowserSourceMaps: true,
 
