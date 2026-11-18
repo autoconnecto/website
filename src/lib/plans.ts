@@ -8,6 +8,15 @@ export function normalizePlanId(planId: string): string {
   return String(planId || "free").trim().toLowerCase();
 }
 
+/** Null-safe number: `Number(null)` is 0 in JS — never treat API null as ₹0. */
+export function toNullableNumber(
+  value: number | string | null | undefined
+): number | null {
+  if (value == null || value === "") return null;
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
+}
+
 export function isFreePlan(plan: PublicPlan): boolean {
   return normalizePlanId(plan.plan_id) === "free";
 }
@@ -21,13 +30,13 @@ export function isQuoteOnly(plan: PublicPlan): boolean {
 export function isPaidPlan(plan: PublicPlan): boolean {
   if (isFreePlan(plan)) return false;
   if (isQuoteOnly(plan)) return true;
-  const monthly = Number(plan.price_monthly_inr);
-  const yearly = Number(plan.price_yearly_inr);
-  const onetime = Number(plan.price_onetime_inr);
+  const monthly = toNullableNumber(plan.price_monthly_inr);
+  const yearly = toNullableNumber(plan.price_yearly_inr);
+  const onetime = toNullableNumber(plan.price_onetime_inr);
   return (
-    (Number.isFinite(monthly) && monthly > 0) ||
-    (Number.isFinite(yearly) && yearly > 0) ||
-    (Number.isFinite(onetime) && onetime > 0)
+    (monthly != null && monthly > 0) ||
+    (yearly != null && yearly > 0) ||
+    (onetime != null && onetime > 0)
   );
 }
 
@@ -35,10 +44,60 @@ export function planDisplayName(plan: PublicPlan): string {
   return plan.display_name?.trim() || plan.plan_id;
 }
 
-export function formatInr(amount: number | null | undefined): string {
-  const n = Number(amount);
+export function fmtLimit(value: number | null | undefined): string {
+  if (value == null) return "—";
+  const n = Number(value);
   if (!Number.isFinite(n)) return "—";
+  return n.toLocaleString("en-IN");
+}
+
+export function formatInr(amount: number | null | undefined): string {
+  const n = toNullableNumber(amount);
+  if (n == null) return "—";
   return `₹${n.toLocaleString("en-IN")}`;
+}
+
+/** Strip internal licence notes from public plan blurbs. */
+export function publicPlanDescription(plan: PublicPlan): string | null {
+  const raw = (plan.description || "").trim();
+  if (!raw) return null;
+  return raw
+    .replace(
+      /\s*;?\s*HA layout issued as nodes=\d+ in the licence file\.?/gi,
+      ""
+    )
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+([.;])/g, "$1")
+    .trim() || null;
+}
+
+export function formatDeviceCap(plan: PublicPlan): string {
+  const id = normalizePlanId(plan.plan_id);
+  const n = toNullableNumber(plan.max_devices);
+  if (id === "enterprise") return "5,000+";
+  if (id === "enterprise_onprem") return "50,000+";
+  if (n == null) return "By quote";
+  return fmtLimit(n);
+}
+
+export function formatMonthlyCell(plan: PublicPlan): string {
+  if (isFreePlan(plan)) return formatInr(0);
+  const onetime = toNullableNumber(plan.price_onetime_inr);
+  const monthly = toNullableNumber(plan.price_monthly_inr);
+  if (onetime != null && onetime > 0 && monthly == null) {
+    return `${formatInr(onetime)} one-time`;
+  }
+  if (isQuoteOnly(plan) && monthly == null) return "Quote";
+  if (monthly != null) return formatInr(monthly);
+  return "Quote";
+}
+
+export function formatYearlyCell(plan: PublicPlan): string {
+  if (isFreePlan(plan)) return formatInr(0);
+  const yearly = toNullableNumber(plan.price_yearly_inr);
+  if (yearly != null && yearly > 0) return formatInr(yearly);
+  if (isQuoteOnly(plan)) return "—";
+  return "—";
 }
 
 export function planKindOf(plan: PublicPlan): DeploymentKind {
@@ -54,26 +113,26 @@ export function planPriceForPeriod(
   period: BillingPeriod
 ): number | null {
   if (isFreePlan(plan)) return 0;
-  const onetime = Number(plan.price_onetime_inr);
-  if (Number.isFinite(onetime) && onetime > 0 && !Number(plan.price_monthly_inr)) {
+  const onetime = toNullableNumber(plan.price_onetime_inr);
+  const monthly = toNullableNumber(plan.price_monthly_inr);
+  if (onetime != null && onetime > 0 && monthly == null) {
     return onetime;
   }
-  const raw =
-    period === "yearly" ? plan.price_yearly_inr : plan.price_monthly_inr;
-  const n = Number(raw);
-  return Number.isFinite(n) ? n : null;
+  return toNullableNumber(
+    period === "yearly" ? plan.price_yearly_inr : plan.price_monthly_inr
+  );
 }
 
 export function yearlyEffectiveMonthly(plan: PublicPlan): number | null {
-  const yearly = Number(plan.price_yearly_inr);
-  if (!Number.isFinite(yearly) || yearly <= 0) return null;
+  const yearly = toNullableNumber(plan.price_yearly_inr);
+  if (yearly == null || yearly <= 0) return null;
   return Math.round(yearly / 12);
 }
 
 export function yearlySavingsLabel(plan: PublicPlan): string | null {
-  const monthly = Number(plan.price_monthly_inr);
-  const yearly = Number(plan.price_yearly_inr);
-  if (!Number.isFinite(monthly) || !Number.isFinite(yearly) || monthly <= 0 || yearly <= 0) {
+  const monthly = toNullableNumber(plan.price_monthly_inr);
+  const yearly = toNullableNumber(plan.price_yearly_inr);
+  if (monthly == null || yearly == null || monthly <= 0 || yearly <= 0) {
     return null;
   }
   const monthsPaid = yearly / monthly;
@@ -88,13 +147,6 @@ export function planSignupUrl(planId: string, period: BillingPeriod): string {
   url.searchParams.set("planId", normalizePlanId(planId));
   url.searchParams.set("period", period);
   return url.toString();
-}
-
-export function fmtLimit(value: number | null | undefined): string {
-  if (value == null) return "—";
-  const n = Number(value);
-  if (!Number.isFinite(n)) return "—";
-  return n.toLocaleString("en-IN");
 }
 
 export function formatRetention(days: number | null | undefined, kind: DeploymentKind): string {

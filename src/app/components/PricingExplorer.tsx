@@ -6,15 +6,20 @@ import {
   type BillingPeriod,
   type DeploymentKind,
   filterPlansByKind,
+  formatDeviceCap,
   formatDps,
   formatInr,
+  formatMonthlyCell,
   formatRetention,
+  formatYearlyCell,
   fmtLimit,
   isFreePlan,
   isQuoteOnly,
   planDisplayName,
   planSignupUrl,
   popularPlanId,
+  publicPlanDescription,
+  toNullableNumber,
   yearlyEffectiveMonthly,
   yearlySavingsLabel,
 } from "@/lib/plans";
@@ -104,16 +109,20 @@ function PlanCard({
   const free = isFreePlan(plan);
   const quote = isQuoteOnly(plan);
   const popular = id === popularPlanId(kind);
-  const monthly = Number(plan.price_monthly_inr);
-  const yearly = Number(plan.price_yearly_inr);
-  const onetime = Number(plan.price_onetime_inr);
+  const monthly = toNullableNumber(plan.price_monthly_inr);
+  const yearly = toNullableNumber(plan.price_yearly_inr);
+  const onetime = toNullableNumber(plan.price_onetime_inr);
   const effMonthly = yearlyEffectiveMonthly(plan);
   const savings = yearlySavingsLabel(plan);
-  const insight = Number(plan.insight_price_inr_month);
+  const insight = toNullableNumber(plan.insight_price_inr_month);
+  const blurb = publicPlanDescription(plan);
 
   const ctaHref = quote
     ? "/#contact"
-    : planSignupUrl(plan.plan_id, period === "yearly" && yearly > 0 ? "yearly" : "monthly");
+    : planSignupUrl(
+        plan.plan_id,
+        period === "yearly" && yearly != null && yearly > 0 ? "yearly" : "monthly"
+      );
   const ctaLabel = quote
     ? "Talk to us"
     : free
@@ -128,24 +137,24 @@ function PlanCard({
         <span className="ml-1 text-base font-normal text-muted-foreground">/ month</span>
       </p>
     );
-  } else if (Number.isFinite(onetime) && onetime > 0 && !Number.isFinite(monthly)) {
+  } else if (onetime != null && onetime > 0 && monthly == null) {
     priceBlock = (
       <>
         <p className="font-display text-3xl font-bold text-foreground tracking-tight">
-          from {formatInr(onetime)}
+          {formatInr(onetime)}
         </p>
         <p className="text-sm text-muted-foreground mt-1">
           one-time · 20% AMC / year from year 2
         </p>
       </>
     );
-  } else if (quote && !Number.isFinite(monthly)) {
+  } else if (quote && monthly == null) {
     priceBlock = (
       <p className="font-display text-3xl font-bold text-foreground tracking-tight">
-        Custom quote
+        Quote
       </p>
     );
-  } else if (period === "yearly" && Number.isFinite(yearly) && yearly > 0) {
+  } else if (period === "yearly" && yearly != null && yearly > 0) {
     priceBlock = (
       <>
         <p className="font-display text-4xl font-bold text-foreground tracking-tight">
@@ -169,7 +178,7 @@ function PlanCard({
             / month
           </span>
         </p>
-        {Number.isFinite(yearly) && yearly > 0 ? (
+        {yearly != null && yearly > 0 ? (
           <p className="text-sm text-muted-foreground mt-1">
             or {formatInr(yearly)} / year
             {savings ? ` (${savings})` : null}
@@ -205,9 +214,9 @@ function PlanCard({
         >
           {planDisplayName(plan)}
         </h2>
-        {plan.description ? (
+        {blurb ? (
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            {plan.description}
+            {blurb}
           </p>
         ) : null}
       </div>
@@ -220,15 +229,7 @@ function PlanCard({
           value={formatDps(plan.dps_included)}
           emphasis
         />
-        <PlanFeature
-          label="Devices"
-          value={
-            plan.max_devices != null
-              ? `${fmtLimit(plan.max_devices)}${quote && id.includes("enterprise") ? "+" : ""}`
-              : "By quote"
-          }
-          emphasis
-        />
+        <PlanFeature label="Devices" value={formatDeviceCap(plan)} emphasis />
         <PlanFeature label="Data kept" value={retention} emphasis />
         {openLimits ? (
           <PlanFeature label="Users / boards / assets" value="Open on your servers" />
@@ -250,7 +251,7 @@ function PlanCard({
         <PlanFeature
           label="Insight analytics"
           value={
-            Number.isFinite(insight) && insight > 0
+            insight != null && insight > 0
               ? `Add-on ${formatInr(insight)} / mo`
               : free
                 ? "Not available"
@@ -325,35 +326,21 @@ function ComparisonTable({
           </thead>
           <tbody className="divide-y divide-border">
             {plans.map((plan) => {
-              const insight = Number(plan.insight_price_inr_month);
-              const onetime = Number(plan.price_onetime_inr);
-              const monthly = Number(plan.price_monthly_inr);
+              const insight = toNullableNumber(plan.insight_price_inr_month);
               return (
                 <tr key={plan.plan_id} className="text-foreground">
                   <th scope="row" className="px-4 py-3 font-medium">
                     {planDisplayName(plan)}
                   </th>
-                  <td className="px-4 py-3">
-                    {isFreePlan(plan)
-                      ? formatInr(0)
-                      : Number.isFinite(monthly)
-                        ? formatInr(monthly)
-                        : Number.isFinite(onetime)
-                          ? `from ${formatInr(onetime)} once`
-                          : "Quote"}
-                  </td>
-                  <td className="px-4 py-3">
-                    {isFreePlan(plan)
-                      ? formatInr(0)
-                      : formatInr(plan.price_yearly_inr)}
-                  </td>
+                  <td className="px-4 py-3">{formatMonthlyCell(plan)}</td>
+                  <td className="px-4 py-3">{formatYearlyCell(plan)}</td>
                   <td className="px-4 py-3">{fmtLimit(plan.dps_included)}</td>
-                  <td className="px-4 py-3">{fmtLimit(plan.max_devices)}</td>
+                  <td className="px-4 py-3">{formatDeviceCap(plan)}</td>
                   <td className="px-4 py-3">
                     {formatRetention(plan.retention_days, kind)}
                   </td>
                   <td className="px-4 py-3">
-                    {Number.isFinite(insight) && insight > 0
+                    {insight != null && insight > 0
                       ? formatInr(insight)
                       : isFreePlan(plan)
                         ? "—"

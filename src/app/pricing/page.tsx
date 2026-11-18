@@ -6,15 +6,29 @@ import { getPublicPlans } from '@/lib/publicPlans';
 import { buildPricingJsonLd } from '@/lib/pricingJsonLd';
 import { shareMeta } from '@/lib/shareMeta';
 import { siteOrigin } from '@/lib/siteOrigin';
+import {
+  formatInr,
+  isFreePlan,
+  isQuoteOnly,
+  planDisplayName,
+  toNullableNumber,
+} from '@/lib/plans';
 
 const baseUrl = siteOrigin();
 
 const plans = getPublicPlans();
 const priceSummary = plans
   .map((p) => {
-    const m = Number(p.price_monthly_inr);
-    const name = p.display_name || p.plan_id;
-    return Number.isFinite(m) ? `${name} ₹${m}/mo` : name;
+    const name = planDisplayName(p);
+    if (isFreePlan(p)) return `${name} ₹0/mo`;
+    const onetime = toNullableNumber(p.price_onetime_inr);
+    const monthly = toNullableNumber(p.price_monthly_inr);
+    if (onetime != null && onetime > 0 && monthly == null) {
+      return `${name} ${formatInr(onetime)} one-time`;
+    }
+    if (isQuoteOnly(p) && monthly == null) return `${name} quote`;
+    if (monthly != null) return `${name} ${formatInr(monthly)}/mo`;
+    return `${name} quote`;
   })
   .join('; ');
 

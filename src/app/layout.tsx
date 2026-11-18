@@ -107,7 +107,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 'Hosted IoT platform for plants and OEMs in India. Readings are stored. Analytics answers from those readings.',
               publisher: {
                 '@type': 'Organization',
-                name: 'Purple Chilly Pvt Ltd',
+                name: 'Autoconnecto',
                 url: `${baseUrl}/`,
               },
               inLanguage: 'en-IN',
@@ -120,13 +120,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Purple Chilly Pvt Ltd',
-              legalName: 'Purple Chilly Pvt Ltd',
-              alternateName: ['Autoconnecto', 'Autoconnecto IoT'],
+              name: 'Autoconnecto',
+              legalName: 'Autoconnecto',
+              alternateName: ['Autoconnecto IoT'],
               url: `${baseUrl}/`,
               logo: `${baseUrl}/assets/images/app_logo.png`,
               description:
-                'Purple Chilly Pvt Ltd builds Autoconnecto, a hosted IoT platform for plants and OEMs in India.',
+                'Autoconnecto is a hosted and on-prem IoT platform for plants and OEMs in India.',
               email: 'support@autoconnecto.in',
               sameAs: [
                 'https://www.autoconnecto.in/',
@@ -196,7 +196,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               },
               publisher: {
                 '@type': 'Organization',
-                name: 'Purple Chilly Pvt Ltd',
+                name: 'Autoconnecto',
               },
             }),
           }}

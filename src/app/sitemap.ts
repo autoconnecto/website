@@ -1,14 +1,9 @@
 import { MetadataRoute } from 'next';
 import { listSolutionSlugs } from '@/content/solutions';
 import { listUseCases } from '@/content/useCases';
+import { siteOrigin } from '@/lib/siteOrigin';
 
 export const dynamic = 'force-static'; // ✅ REQUIRED for static export
-
-/** Canonical origin for sitemap URLs (no trailing slash). Must match production `NEXT_PUBLIC_SITE_URL`. */
-function siteOrigin(): string {
-  const raw = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').trim();
-  return raw.replace(/\/+$/, '');
-}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteOrigin();

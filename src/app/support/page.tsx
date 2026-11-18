@@ -32,8 +32,8 @@ export default function SupportPage() {
             isPartOf: { '@type': 'WebSite', name: 'Autoconnecto', url: baseUrl },
             mainEntity: {
               '@type': 'Organization',
-              name: 'Purple Chilly Pvt Ltd',
-              alternateName: 'Autoconnecto',
+              name: 'Autoconnecto',
+              alternateName: 'Autoconnecto IoT',
               url: baseUrl,
               email: 'support@autoconnecto.in',
               contactPoint: [
