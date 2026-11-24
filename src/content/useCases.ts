@@ -33,7 +33,7 @@ export const USE_CASES: UseCasePage[] = [
       'Flash the Autoconnecto Arduino SDK, put your device token in secrets.h, and see live readings on a dashboard. MQTT on TLS for ESP32.',
     image: {
       src: '/images/devices.png',
-      alt: 'Autoconnecto Devices page showing connected ESP32 devices',
+      alt: 'Autoconnecto Devices list',
     },
     keywords: [
       'ESP32 MQTT',
@@ -94,7 +94,7 @@ export const USE_CASES: UseCasePage[] = [
       'Operators change a switch or setpoint on the dashboard. The device applies it and confirms. After power loss, the board restores shared attributes and the dashboard stays aligned with the hardware.',
     image: {
       src: '/images/devices.png',
-      alt: 'Autoconnecto Devices page for attribute-backed control',
+      alt: 'Autoconnecto Devices list',
     },
     keywords: [
       'device attributes IoT',
@@ -215,7 +215,7 @@ export const USE_CASES: UseCasePage[] = [
       'Connect a level or volume sensor over MQTT or HTTPS. Autoconnecto stores every reading, keeps the last value on the dashboard, and can open an alarm when the level falls faster than your rule allows.',
     image: {
       src: '/images/alarmspage.png',
-      alt: 'Autoconnecto Alarms page for fuel and tank events',
+      alt: 'Autoconnecto Alarms list with severity filters',
     },
     keywords: [
       'fuel theft detection IoT',
@@ -258,7 +258,7 @@ export const USE_CASES: UseCasePage[] = [
       'Publish temperature (and optional humidity or door state) from gateways or ESP32 boards. The platform stores the series, shows live values, and can alarm when the reading leaves the band you set.',
     image: {
       src: '/images/dashboard1.png',
-      alt: 'Autoconnecto dashboard with live temperature widgets',
+      alt: 'Autoconnecto Widget Gallery with Alarm Summary cards and Alarm Table',
     },
     keywords: [
       'cold chain monitoring IoT',
@@ -295,7 +295,7 @@ export const USE_CASES: UseCasePage[] = [
       'When a tracker or gateway reports position, rules and shared attributes can hold a machine in a safe state outside the work zone. The dashboard shows confirmed state after the device replies with client attributes.',
     image: {
       src: '/images/assets.png',
-      alt: 'Autoconnecto Assets hierarchy for sites and equipment',
+      alt: 'Autoconnecto Assets (Customers) list',
     },
     keywords: [
       'geofence equipment lockout',
@@ -332,7 +332,7 @@ export const USE_CASES: UseCasePage[] = [
       'Connect energy meters through a gateway or MQTT bridge. Autoconnecto stores power and energy keys, shows them on plant dashboards, and can alarm on overload or missing data.',
     image: {
       src: '/images/dashboard2.png',
-      alt: 'Autoconnecto energy and plant dashboard widgets',
+      alt: 'Autoconnecto Widget Gallery edit view with bars, doughnut and gauges',
     },
     keywords: [
       'factory energy monitoring IoT',
@@ -370,7 +370,7 @@ export const USE_CASES: UseCasePage[] = [
       'Publish tank level (and optional pump or valve state). See the live value, chart history, and open alarms when the level crosses the band you set on the device profile or rule engine.',
     image: {
       src: '/images/datasimulation.png',
-      alt: 'Autoconnecto telemetry and simulation views for tank data',
+      alt: 'Autoconnecto Rule Engines list',
     },
     keywords: [
       'water tank monitoring IoT',

@@ -67,10 +67,10 @@ export const metadata: Metadata = {
       'Hosted IoT for plants and OEMs in India. MQTT, HTTPS, Analytics, alarms, white-label.',
     images: [
       {
-        url: '/images/homepage.png',
+        url: '/images/og-dashboard.png',
         width: 1200,
         height: 630,
-        alt: 'Autoconnecto IoT platform homepage preview',
+        alt: 'Autoconnecto Widget Gallery dashboard with live gauges',
         type: 'image/png',
       },
     ],
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     title: 'Autoconnecto — IoT for plants and OEMs',
     description:
       'Hosted IoT for plants and OEMs in India. MQTT, HTTPS, Analytics, alarms, white-label.',
-    images: ['/images/homepage.png'],
+    images: ['/images/og-dashboard.png'],
   },
   ...(googleSiteVerification
     ? { verification: { google: googleSiteVerification } }

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${baseUrl}${path}` },
   ...shareMeta(baseUrl, path, title, description, {
     src: '/images/devices.png',
-    alt: 'Autoconnecto Devices page with connected boards',
+    alt: 'Autoconnecto Devices list',
   }),
 };
 

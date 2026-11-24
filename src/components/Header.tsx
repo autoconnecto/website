@@ -7,6 +7,7 @@ import Link from 'next/link';
 import {
   APP_SIGNUP_URL,
   ARDUINO_SDK_GITHUB_URL,
+  LICENCES_PORTAL_URL,
   MOBILE_APP_RELEASES_URL,
 } from '@/config/links';
 
@@ -17,6 +18,7 @@ const navLinks = [
   { label: 'Use cases', href: '/use-cases' },
   { label: 'Platform', href: '/#platform' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Licences', href: LICENCES_PORTAL_URL, external: true },
   { label: 'Features', href: '/#features' },
   { label: 'Scale', href: '/#scale' },
   { label: 'Developers', href: '/#developers' },

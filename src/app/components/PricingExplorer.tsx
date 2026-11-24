@@ -117,6 +117,9 @@ function PlanCard({
   const insight = toNullableNumber(plan.insight_price_inr_month);
   const blurb = publicPlanDescription(plan);
 
+  const onpremSelfServe =
+    kind === "onprem" &&
+    (id === "startup_onprem" || id === "sme_onprem");
   const ctaHref = quote
     ? "/#contact"
     : planSignupUrl(
@@ -127,7 +130,11 @@ function PlanCard({
     ? "Talk to us"
     : free
       ? "Start free"
-      : "Get started";
+      : onpremSelfServe
+        ? "Buy licence"
+        : kind === "onprem"
+          ? "Request licence"
+          : "Get started";
 
   let priceBlock: React.ReactNode;
   if (free) {
@@ -471,6 +478,71 @@ export default function PricingExplorer({ plans }: { plans: PublicPlan[] }) {
 
         <AddOns />
         <ComparisonTable plans={visible} kind={kind} />
+
+        <section className="mt-16 max-w-4xl mx-auto">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl text-foreground mb-3 text-center">
+            Worked example: 1,000 devices every 5 seconds
+          </h2>
+          <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto leading-relaxed">
+            Sustained DP/s ≈ devices × keys per send ÷ seconds between sends. Pick the
+            plan whose DP/s covers that rate — not a guess from device count alone.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-border/60 bg-card/40">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="border-b border-border/60 text-muted-foreground">
+                  <th className="px-4 py-3 font-medium">Send pattern</th>
+                  <th className="px-4 py-3 font-medium">DP/s</th>
+                  <th className="px-4 py-3 font-medium">Hosted (ex-GST)</th>
+                  <th className="px-4 py-3 font-medium">On your servers (ex-GST)</th>
+                </tr>
+              </thead>
+              <tbody className="text-foreground/90">
+                <tr className="border-b border-border/40">
+                  <td className="px-4 py-3">1,000 × 1 key / 5 s</td>
+                  <td className="px-4 py-3 font-medium">200</td>
+                  <td className="px-4 py-3">SME · ₹26,999 / mo</td>
+                  <td className="px-4 py-3">SME On-Prem · ₹19,999 / mo</td>
+                </tr>
+                <tr className="border-b border-border/40">
+                  <td className="px-4 py-3">1,000 × 2 keys / 5 s</td>
+                  <td className="px-4 py-3 font-medium">400</td>
+                  <td className="px-4 py-3">Business · ₹49,999 / mo</td>
+                  <td className="px-4 py-3">Business On-Prem · ₹33,999 / mo</td>
+                </tr>
+                <tr className="border-b border-border/40">
+                  <td className="px-4 py-3">2 readings as one combined key / 5 s</td>
+                  <td className="px-4 py-3 font-medium">200</td>
+                  <td className="px-4 py-3">SME · ₹26,999 / mo</td>
+                  <td className="px-4 py-3">SME On-Prem · ₹19,999 / mo</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3">Key A / 5 s + Key B / 15 s</td>
+                  <td className="px-4 py-3 font-medium">≈267</td>
+                  <td className="px-4 py-3">SME + +2 DP/s packs, or Business</td>
+                  <td className="px-4 py-3">SME On-Prem or quote</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-center text-sm text-muted-foreground mt-4">
+            On-prem keys:{" "}
+            <a
+              href="https://licences.autoconnecto.in"
+              className="text-primary hover:underline"
+            >
+              licences.autoconnecto.in
+            </a>
+            {" · "}
+            Full write-up:{" "}
+            <a
+              href="https://docs.autoconnecto.in/about/pricing-fleet-example.html"
+              className="text-primary hover:underline"
+            >
+              Fleet size and DP/s
+            </a>
+          </p>
+        </section>
 
         <div className="mt-14 max-w-3xl mx-auto space-y-4 text-sm text-muted-foreground leading-relaxed">
           <p>

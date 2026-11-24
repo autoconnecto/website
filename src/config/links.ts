@@ -24,6 +24,8 @@ export const APP_LOGIN_URL = "https://app.autoconnecto.in/login";
 export const APP_SIGNUP_URL = "https://app.autoconnecto.in/signup";
 export const APP_URL = "https://app.autoconnecto.in";
 export const API_URL = "https://api.autoconnecto.in";
+/** On-prem Connected licence portal (GoDaddy A → E2E; same website app). */
+export const LICENCES_PORTAL_URL = "https://licences.autoconnecto.in";
 export const SUPPORT_EMAIL = "support@autoconnecto.in";
 export const FOUNDER_EMAIL = "founder@autoconnecto.in";
 export const SUPPORT_PHONE = "+919212100555";

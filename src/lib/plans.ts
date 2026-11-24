@@ -1,5 +1,5 @@
 import type { PublicPlan } from "@/types/plan";
-import { APP_SIGNUP_URL } from "@/config/links";
+import { APP_SIGNUP_URL, LICENCES_PORTAL_URL } from "@/config/links";
 
 export type BillingPeriod = "monthly" | "yearly";
 export type DeploymentKind = "hosted" | "onprem";
@@ -147,8 +147,26 @@ export function yearlySavingsLabel(plan: PublicPlan): string | null {
 }
 
 export function planSignupUrl(planId: string, period: BillingPeriod): string {
+  const id = normalizePlanId(planId);
+  if (planKindOf({ plan_id: id } as PublicPlan) === "onprem") {
+    // On-prem lives on the Licence Portal — never hosted app signup.
+    const url = new URL(LICENCES_PORTAL_URL);
+    url.searchParams.set("planId", id);
+    url.searchParams.set("period", period);
+    if (
+      id === "forever" ||
+      id === "enterprise_onprem" ||
+      id.startsWith("business") ||
+      id.startsWith("scale")
+    ) {
+      url.searchParams.set("mode", "quote");
+    } else {
+      url.searchParams.set("mode", "buy");
+    }
+    return url.toString();
+  }
   const url = new URL(APP_SIGNUP_URL);
-  url.searchParams.set("planId", normalizePlanId(planId));
+  url.searchParams.set("planId", id);
   url.searchParams.set("period", period);
   return url.toString();
 }

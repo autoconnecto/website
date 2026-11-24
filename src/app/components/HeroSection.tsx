@@ -36,11 +36,14 @@ export default function HeroSection() {
   }, []);
 
   const images = [
-    { src: '/images/dashboard1.png', alt: 'Autoconnecto live IoT dashboard with widgets' },
-    { src: '/images/devices.png', alt: 'Autoconnecto Devices list with online status' },
-    { src: '/images/assets.png', alt: 'Autoconnecto asset hierarchy for sites and zones' },
-    { src: '/images/alarmspage.png', alt: 'Autoconnecto alarms list with severity and status' },
-    { src: '/images/datasimulation.png', alt: 'Autoconnecto telemetry and data simulation view' },
+    {
+      src: '/images/dashboard1.png',
+      alt: 'Autoconnecto Widget Gallery dashboard with Alarm Summary cards and Alarm Table',
+    },
+    { src: '/images/devices.png', alt: 'Autoconnecto Devices list' },
+    { src: '/images/assets.png', alt: 'Autoconnecto Assets (Customers) list' },
+    { src: '/images/alarmspage.png', alt: 'Autoconnecto Alarms list with severity filters' },
+    { src: '/images/datasimulation.png', alt: 'Autoconnecto Rule Engines list' },
     { src: '/images/documentation.png', alt: 'Autoconnecto in-app documentation menu' },
   ];
 

@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     siteName: 'Autoconnecto',
     images: [
       {
-        url: `${baseUrl}/images/homepage.png`,
+        url: `${baseUrl}/images/og-dashboard.png`,
         width: 1200,
         height: 630,
-        alt: 'Autoconnecto IoT platform homepage',
+        alt: 'Autoconnecto Widget Gallery dashboard with live gauges',
         type: 'image/png',
       },
     ],
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: 'Autoconnecto — IoT for plants and OEMs',
     description:
       'Hosted IoT from India. MQTT and HTTPS, Analytics from stored readings, alarms.',
-    images: [`${baseUrl}/images/homepage.png`],
+    images: [`${baseUrl}/images/og-dashboard.png`],
   },
 };
 

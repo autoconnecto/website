@@ -4,6 +4,7 @@ import Icon from '@/components/ui/AppIcon';
 import {
   ARDUINO_SDK_GITHUB_URL,
   COMMUNITY_TELEGRAM_URL,
+  LICENCES_PORTAL_URL,
   MOBILE_APP_DOWNLOAD_URL,
   MOBILE_APP_VERSION,
 } from '@/config/links';
@@ -28,6 +29,7 @@ const footerLinks = [
   { label: 'For integrators', href: '/for-system-integrators', external: false },
   { label: 'Platform', href: '/#platform', external: false },
   { label: 'Pricing', href: '/pricing', external: false },
+  { label: 'Manage licences', href: LICENCES_PORTAL_URL, external: true },
   { label: 'Features', href: '/#features', external: false },
   { label: 'Scale', href: '/#scale', external: false },
   { label: 'Developers', href: '/#developers', external: false },

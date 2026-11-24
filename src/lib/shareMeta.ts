@@ -16,7 +16,7 @@ export function shareMeta(
 ): Pick<Metadata, 'openGraph' | 'twitter'> {
   const src = image?.src?.startsWith('http')
     ? image.src
-    : `${baseUrl}${image?.src || '/images/homepage.png'}`;
+    : `${baseUrl}${image?.src || '/images/og-dashboard.png'}`;
   const alt = image?.alt || 'Autoconnecto IoT platform';
   return {
     openGraph: {
