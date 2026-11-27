@@ -23,7 +23,7 @@ export const LINUX_SBC_DOCS_URL =
 export const EDGE_OFFLINE_GATEWAY_DOCS_URL =
   "https://docs.autoconnecto.in/guide/edge-offline-gateway.html";
 export const EDGE_OFFLINE_GATEWAY_DOWNLOAD_URL =
-  "https://docs.autoconnecto.in/downloads/autoconnecto-edge-gateway-v0.1.0.zip";
+  "https://docs.autoconnecto.in/downloads/autoconnecto-edge-gateway-v0.1.1.zip";
 export const ALARM_NOTIFICATIONS_DOCS_URL =
   "https://docs.autoconnecto.in/users/alarm-notification-settings.html";
 export const APP_LOGIN_URL = "https://app.autoconnecto.in/login";
