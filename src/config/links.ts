@@ -20,6 +20,12 @@ export const ESP32_MODBUS_EDGE_DOCS_URL =
 export const ESP32_MQTT_URL = "/esp32-mqtt";
 export const LINUX_SBC_DOCS_URL =
   "https://docs.autoconnecto.in/guide/linux-sbc-quickstart.html";
+export const EDGE_OFFLINE_GATEWAY_DOCS_URL =
+  "https://docs.autoconnecto.in/guide/edge-offline-gateway.html";
+export const EDGE_OFFLINE_GATEWAY_DOWNLOAD_URL =
+  "https://docs.autoconnecto.in/downloads/autoconnecto-edge-gateway-v0.1.0.zip";
+export const ALARM_NOTIFICATIONS_DOCS_URL =
+  "https://docs.autoconnecto.in/users/alarm-notification-settings.html";
 export const APP_LOGIN_URL = "https://app.autoconnecto.in/login";
 export const APP_SIGNUP_URL = "https://app.autoconnecto.in/signup";
 export const APP_URL = "https://app.autoconnecto.in";

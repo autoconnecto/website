@@ -45,8 +45,8 @@ const PILLARS = [
     icon: 'WifiIcon',
     color: 'primary',
     title: 'Universal connectivity',
-    desc: 'ESP32 SDK over MQTT, HTTPS, the device WebSocket, gateway child relay, and LoRaWAN webhooks. MQTT over WebSocket is port 8084. OPC UA, BACnet, and Sparkplug are gateway protocols.',
-    tags: ['MQTT TLS', 'WSS 8084', 'HTTPS', 'WebSocket', 'LoRaWAN'],
+    desc: 'ESP32 SDK over MQTT, HTTPS, the device WebSocket, gateway child relay, and LoRaWAN webhooks. MQTT over WebSocket is port 8084. OPC UA, BACnet, and Sparkplug are gateway protocols. A site Edge offline gateway can buffer when the uplink drops.',
+    tags: ['MQTT TLS', 'WSS 8084', 'HTTPS', 'WebSocket', 'LoRaWAN', 'Edge offline'],
   },
   {
     icon: 'PresentationChartLineIcon',
@@ -66,8 +66,8 @@ const PILLARS = [
     icon: 'BellAlertIcon',
     color: 'orange',
     title: 'Alarms & notifications',
-    desc: 'Profile Alarm Rules plus Rule Engine create_alarm. Escalation, acknowledge, inactivity, email digests, and Telegram L1/L2/L3 ops groups for the plant team.',
-    tags: ['Alarms', 'Telegram', 'Email'],
+    desc: 'Profile Alarm Rules plus Rule Engine create_alarm. Escalation, acknowledge, inactivity, email digests, Telegram L1/L2/L3 ops groups, and optional Android push when FCM is configured.',
+    tags: ['Alarms', 'Telegram', 'Email', 'Android push'],
   },
   {
     icon: 'ChartBarIcon',

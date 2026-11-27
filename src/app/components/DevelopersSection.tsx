@@ -6,6 +6,7 @@ import {
   ARDUINO_SDK_GITHUB_URL,
   DEVICE_CONNECTIVITY_DOCS_URL,
   DOCS_URL,
+  EDGE_OFFLINE_GATEWAY_DOCS_URL,
   MOBILE_APP_DOWNLOAD_URL,
   SDK_INTEGRATIONS_URL,
   SDK_LINUX_SBC_EXAMPLES_URL,
@@ -51,6 +52,14 @@ const cards = [
       'Installable Python package autoconnecto (pip) for Raspberry Pi and Debian/Ubuntu gateways — MQTT + HTTPS, same contract as ESP32. Examples and systemd unit in the SDK.',
     href: SDK_LINUX_SBC_EXAMPLES_URL,
     cta: 'Open Linux examples',
+    icon: 'SignalIcon' as const,
+  },
+  {
+    title: 'Edge offline gateway',
+    description:
+      'Site-box runtime: local MQTT ingest, disk buffer when the uplink drops, optional forward to Autoconnecto, and simple local thresholds. Download the zip from the docs and run with Node.js.',
+    href: EDGE_OFFLINE_GATEWAY_DOCS_URL,
+    cta: 'Edge offline guide',
     icon: 'SignalIcon' as const,
   },
   {
