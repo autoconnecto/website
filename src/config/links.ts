@@ -22,8 +22,9 @@ export const LINUX_SBC_DOCS_URL =
   "https://docs.autoconnecto.in/guide/linux-sbc-quickstart.html";
 export const EDGE_OFFLINE_GATEWAY_DOCS_URL =
   "https://docs.autoconnecto.in/guide/edge-offline-gateway.html";
-export const EDGE_OFFLINE_GATEWAY_DOWNLOAD_URL =
-  "https://docs.autoconnecto.in/downloads/autoconnecto-edge-gateway-v0.1.1.zip";
+/** Keep in step with frontend EDGE_GATEWAY_VERSION and tools/edge-gateway package.json. */
+export const EDGE_GATEWAY_VERSION = "0.1.1";
+export const EDGE_OFFLINE_GATEWAY_DOWNLOAD_URL = `https://docs.autoconnecto.in/downloads/autoconnecto-edge-gateway-v${EDGE_GATEWAY_VERSION}.zip`;
 export const ALARM_NOTIFICATIONS_DOCS_URL =
   "https://docs.autoconnecto.in/users/alarm-notification-settings.html";
 export const APP_LOGIN_URL = "https://app.autoconnecto.in/login";
