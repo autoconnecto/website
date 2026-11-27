@@ -81,7 +81,7 @@ const cards = [
   {
     title: 'Mobile app (Android APK)',
     description:
-      'Monitor live telemetry and manage alarms on the go. Download Android app v1.8.3 — same login and production API as the web app.',
+      'Monitor live telemetry and manage alarms on the go. Download Android app v1.8.4 — same login and production API as the web app; alarm push when allowed.',
     href: MOBILE_APP_DOWNLOAD_URL,
     cta: 'Download latest APK',
     icon: 'DevicePhoneMobileIcon' as const,
