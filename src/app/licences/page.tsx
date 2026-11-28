@@ -37,6 +37,8 @@ type LicenceRow = {
   productionSlots: number;
   activeInstances: number;
   updatesUntil: string;
+  updatesOpen?: boolean;
+  entitledPackageVersion?: string | null;
   status: string;
 };
 
@@ -57,6 +59,10 @@ type InstallAssets = {
   scriptUrl: string | null;
   installCommand: string;
   activateNote: string;
+  updatesOpen?: boolean;
+  latestPackageUrl?: string | null;
+  entitledPackageVersion?: string | null;
+  entitledPackageUrl?: string | null;
 };
 
 const TOKEN_KEY = 'autoconnecto_licence_portal_token';
@@ -82,6 +88,9 @@ export default function LicencesPortalPage() {
   const [session, setSession] = useState<Session | null>(null);
   const [catalog, setCatalog] = useState<CataloguePlan[]>([]);
   const [install, setInstall] = useState<InstallAssets | null>(null);
+  const [licenceInstall, setLicenceInstall] = useState<InstallAssets | null>(
+    null
+  );
   const [licences, setLicences] = useState<LicenceRow[]>([]);
   const [selectedId, setSelectedId] = useState('');
   const [instances, setInstances] = useState<InstanceRow[]>([]);
@@ -151,6 +160,7 @@ export default function LicencesPortalPage() {
   useEffect(() => {
     if (!session?.accessToken || !selectedId) return;
     void loadInstances(selectedId, session.accessToken);
+    void loadLicenceInstall(selectedId, session.accessToken);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedId, session?.accessToken]);
 
@@ -220,6 +230,18 @@ export default function LicencesPortalPage() {
     }
   }
 
+  async function loadLicenceInstall(licenceId: string, token: string) {
+    try {
+      const data = await api<InstallAssets>(
+        `/api/licence-portal/licences/${licenceId}/install-assets`,
+        { token }
+      );
+      setLicenceInstall(data);
+    } catch {
+      setLicenceInstall(null);
+    }
+  }
+
   async function onAuth(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
@@ -249,6 +271,7 @@ export default function LicencesPortalPage() {
     setSession(null);
     setLicences([]);
     setInstances([]);
+    setLicenceInstall(null);
     setSelectedId('');
     setSecret('');
   }
@@ -598,12 +621,14 @@ export default function LicencesPortalPage() {
             {install ? (
               <section className="rounded-xl border border-slate-700 bg-slate-900/60 p-4 space-y-2 text-sm">
                 <h2 className="text-lg font-medium">Install</h2>
-                <p className="text-slate-400">{install.activateNote}</p>
+                <p className="text-slate-400">
+                  {(selected && licenceInstall?.activateNote) ||
+                    install.activateNote}
+                </p>
                 <p className="text-slate-300">
-                  Channel: <strong>{install.channel || 'latest'}</strong>
-                  {install.packageVersion
-                    ? ` · current ${install.packageVersion}`
-                    : ''}
+                  Packages are GitHub Release assets. While updates are open you
+                  get <strong>Latest</strong>; after the update year use{' '}
+                  <strong>My version</strong> (entitled) to reinstall or move.
                 </p>
                 <p>
                   Guide:{' '}
@@ -616,24 +641,63 @@ export default function LicencesPortalPage() {
                     {install.docsUrl}
                   </a>
                 </p>
-                {install.packageUrl ? (
-                  <p>
-                    Package (latest):{' '}
-                    <a
-                      className="text-sky-400 underline"
-                      href={install.packageUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Download
-                    </a>
-                  </p>
-                ) : (
-                  <p className="text-slate-500">
-                    Latest package URL will appear here once Autoconnecto publishes
-                    the on-prem release channel (same latest for every buyer).
-                  </p>
-                )}
+                {(() => {
+                  const assets = selected && licenceInstall ? licenceInstall : install;
+                  const latestUrl =
+                    assets.latestPackageUrl ??
+                    (assets.updatesOpen === false ? null : assets.packageUrl);
+                  const myUrl = assets.entitledPackageUrl || null;
+                  const myVer = assets.entitledPackageVersion || null;
+                  return (
+                    <>
+                      {latestUrl ? (
+                        <p>
+                          Latest
+                          {assets.packageVersion
+                            ? ` (${assets.packageVersion})`
+                            : ''}
+                          :{' '}
+                          <a
+                            className="text-sky-400 underline"
+                            href={latestUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Download
+                          </a>
+                        </p>
+                      ) : selected && licenceInstall?.updatesOpen === false ? (
+                        <p className="text-slate-500">
+                          Latest is closed for this licence (update year ended).
+                          Use My version below, or renew AMC.
+                        </p>
+                      ) : (
+                        <p className="text-slate-500">
+                          Latest package appears after Autoconnecto publishes a
+                          GitHub Release for this channel.
+                        </p>
+                      )}
+                      {myUrl ? (
+                        <p>
+                          My version{myVer ? ` (${myVer})` : ''}:{' '}
+                          <a
+                            className="text-sky-400 underline"
+                            href={myUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Download
+                          </a>
+                        </p>
+                      ) : selected ? (
+                        <p className="text-slate-500">
+                          My version is recorded after the plant activates or
+                          heartbeats while updates are open.
+                        </p>
+                      ) : null}
+                    </>
+                  );
+                })()}
                 {install.scriptUrl ? (
                   <p>
                     Script:{' '}
@@ -648,7 +712,8 @@ export default function LicencesPortalPage() {
                   </p>
                 ) : null}
                 <p>
-                  Command: <code className="text-slate-200">{install.installCommand}</code>
+                  Command:{' '}
+                  <code className="text-slate-200">{install.installCommand}</code>
                 </p>
               </section>
             ) : null}
@@ -685,6 +750,9 @@ export default function LicencesPortalPage() {
                           {lic.dpsIncluded} DP/s · {lic.deviceLimit} devices · seats{' '}
                           {lic.activeInstances}/{lic.productionSlots} · updates until{' '}
                           {when(lic.updatesUntil)}
+                          {lic.entitledPackageVersion
+                            ? ` · my ${lic.entitledPackageVersion}`
+                            : ''}
                         </div>
                       </button>
                     </li>

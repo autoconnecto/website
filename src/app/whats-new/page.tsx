@@ -50,6 +50,72 @@ export default function WhatsNewPage() {
 
         <section className="mb-12 space-y-4">
           <h2 className="text-xl font-semibold text-foreground">
+            Platform 2.0.0 — 28 Nov 2026
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Commercial milestone: hosted and on-prem share one Platform version.
+            From here, every customer-visible change updates this page and the
+            in-app docs What&apos;s new in the same ship.
+          </p>
+          <h3 className="text-base font-medium text-foreground">Pricing</h3>
+          <ul className="list-disc pl-5 space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              Hosted: Free, Maker, Startup, SME, Business, Enterprise (INR).
+            </li>
+            <li>
+              On-prem: Startup / SME / Business / Scale / Enterprise On-Prem and
+              Forever licence — buy at{' '}
+              <a
+                className="text-sky-400 underline"
+                href="https://licences.autoconnecto.in"
+                target="_blank"
+                rel="noreferrer"
+              >
+                licences.autoconnecto.in
+              </a>
+              .
+            </li>
+          </ul>
+          <h3 className="text-base font-medium text-foreground">
+            On-prem packages
+          </h3>
+          <ul className="list-disc pl-5 space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong className="text-foreground">Latest</strong> while the
+              update year is open;{' '}
+              <strong className="text-foreground">My version</strong> (entitled
+              GitHub Release) after it ends for reinstall or a move.
+            </li>
+            <li>
+              Right to run continues after the update year; newer packages need
+              AMC.
+            </li>
+          </ul>
+          <h3 className="text-base font-medium text-foreground">
+            Tablet, sign-in, mobile
+          </h3>
+          <ul className="list-disc pl-5 space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              Tablet dashboards: compact widgets share a row; phone stays one
+              column.
+            </li>
+            <li>
+              Remember me on web and Android. Android APK v{MOBILE_APP_VERSION}:{' '}
+              <a
+                className="text-sky-400 underline"
+                href={MOBILE_APP_DOWNLOAD_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                download
+              </a>
+              .
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-12 space-y-4">
+          <h2 className="text-xl font-semibold text-foreground">
             Platform 1.9.22 — 28 Nov 2026
           </h2>
           <h3 className="text-base font-medium text-foreground">
@@ -112,10 +178,11 @@ export default function WhatsNewPage() {
             >
               licences.autoconnecto.in
             </a>{' '}
-            → Install. Today the portal always offers the{' '}
-            <strong className="text-foreground">latest</strong> published
-            package (not a picker of older versions). Install steps ship inside
-            the package (<code className="text-foreground">GUIDE.md</code> +{' '}
+            → Install. The portal offers{' '}
+            <strong className="text-foreground">Latest</strong> (updates open)
+            and <strong className="text-foreground">My version</strong>{' '}
+            (entitled GitHub Release). Install steps ship inside the package (
+            <code className="text-foreground">GUIDE.md</code> +{' '}
             <code className="text-foreground">scripts/install.sh</code>).
             Customer path:{' '}
             <a
